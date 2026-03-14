@@ -1,1 +1,1 @@
-# CLAUDE_CODE_GIT_BASH_PATH
+# carol-gustavo-finances
