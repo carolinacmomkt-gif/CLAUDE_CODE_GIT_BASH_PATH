@@ -1,6 +1,6 @@
 /* ============ BACKUP: exportar, importar e cópia semanal ============
    O localStorage continua sendo a fonte principal. O backup é um JSON com tudo,
-   incluindo as capas enviadas (guardadas em "_capas"). */
+   incluindo as capas ("_capas") e os anexos ("_anexos") enviados. */
 const BKP_KEY='carol-sistema-v1-ultimo-backup',BKP_DIAS=7;
 
 function baixarJSON(obj,nome){
@@ -8,7 +8,7 @@ function baixarJSON(obj,nome){
   const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=nome;
   document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
-function montarBackup(){return Capas.exportar().then(c=>({...S,_capas:c,_exportadoEm:new Date().toISOString()}))}
+function montarBackup(){return Promise.all([Capas.exportar(),Anexos.exportar()]).then(([c,a])=>({...S,_capas:c,_anexos:a,_exportadoEm:new Date().toISOString()}))}
 
 function exportarBackup(prefixo='backup-conteudo-'){
   return montarBackup().then(d=>{
@@ -23,8 +23,8 @@ function importarBackup(file){
     const d=JSON.parse(txt);
     if(!d||typeof d!=='object'||Array.isArray(d)||!Array.isArray(d.posts))throw new Error('formato');
     if(!window.confirm('Importar este backup vai substituir os dados atuais deste navegador. Continuar?'))return;
-    const capas=d._capas;delete d._capas;delete d._exportadoEm;
-    return Capas.importar(capas).then(()=>{S=completarPadroes(d);save();Capas.limpar();render();toast('Backup importado')});
+    const capas=d._capas,anexos=d._anexos;delete d._capas;delete d._anexos;delete d._exportadoEm;
+    return Promise.all([Capas.importar(capas),Anexos.importar(anexos)]).then(()=>{S=completarPadroes(d);save();limparArquivos();render();toast('Backup importado')});
   }).catch(()=>toast('Arquivo inválido'));
 }
 

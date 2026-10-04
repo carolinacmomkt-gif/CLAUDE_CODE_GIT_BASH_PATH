@@ -4,6 +4,11 @@
   "private": true,
   "description": "Sistema de gestão de conteúdo da Carol Lima (HTML, CSS e JS puros, sem build).",
   "scripts": {
-    "start": "npx --yes serve . -l 3000"
+    "start": "npx --yes serve public -l 3000",
+    "dev": "npx --yes netlify-cli dev",
+    "test:servidor": "node --experimental-default-type=module --test tests/servidor.test.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0"
   }
 }

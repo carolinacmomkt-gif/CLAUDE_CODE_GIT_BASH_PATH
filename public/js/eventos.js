@@ -33,14 +33,14 @@ document.addEventListener('click',e=>{
    if(a==='menu')$('#side').classList.toggle('on');
    if(a==='newpost'){e.preventDefault();newItem('posts',{date:today()})}
    if(a==='close')closeDrawer();
-   if(a==='del'&&open&&window.confirm('Excluir este item?')){S[open.col]=S[open.col].filter(x=>x.id!==open.id);save();Capas.limpar();closeDrawer()}
+   if(a==='del'&&open&&window.confirm('Excluir este item?')){S[open.col]=S[open.col].filter(x=>x.id!==open.id);save();limparArquivos();closeDrawer()}
    if(a==='dup'&&open){const x=JSON.parse(JSON.stringify(S[open.col].find(i=>i.id===open.id)));x.id=uid();x.title+=' (cópia)';S[open.col].push(x);save();openItem(open.col,x.id)}
    if(a==='calprev'){calMonth.setMonth(calMonth.getMonth()-1);render()}
    if(a==='calnext'){calMonth.setMonth(calMonth.getMonth()+1);render()}
    if(a==='caltoday'){calMonth=new Date();render()}
    if(a==='export')exportarBackup();
    if(a==='import')$('#fileIn').click();
-   if(a==='coverclear'&&open){const x=S[open.col].find(i=>i.id===open.id);x.cover='';save();Capas.limpar();openItem(open.col,open.id)}
+   if(a==='coverclear'&&open){const x=S[open.col].find(i=>i.id===open.id);x.cover='';save();limparArquivos();openItem(open.col,open.id)}
    if(a==='plansched'){if(!S.plan30.start){toast('Escolha a data de início');return}PLAN30.forEach((x,i)=>{const d=new Date(S.plan30.start+'T12:00');d.setDate(d.getDate()+i);const k=iso(d);if(!S.posts.some(p=>p.plan30===i&&p.date===k))S.posts.push({id:uid(),title:x[0],date:k,format:'Stories',status:'Ideia',funnel:'Meio',techs:[],metrics:{},bda:{},hook:'',script:x[1],caption:'',cta:'',plan30:i})});save();toast('30 stories agendados');render()}}
 });
 document.addEventListener('input',e=>{

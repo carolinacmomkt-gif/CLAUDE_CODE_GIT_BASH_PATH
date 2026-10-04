@@ -12,11 +12,12 @@ function openItem(col,id){
    return `<label>${l}</label>${inp}`};
   let extra='';
   if(col==='posts'){const m=x.metrics||{};
-   extra=`<div class="row" style="margin-top:20px"><h2 style="margin:0">Texto</h2><span class="spacer"></span><button class="btn sm" data-go2write="${x.id}">Abrir no modo foco</button></div>
+   extra=`<div class="row" style="margin-top:20px"><h2 style="margin:0">Texto</h2><span class="spacer"></span><button class="btn sm" data-ia="post:${x.id}">Revisar com IA</button><button class="btn sm" data-go2write="${x.id}">Abrir no modo foco</button></div>
    <label class="lab">Gancho</label><input class="f" data-f="hook" value="${esc(x.hook)}">
    <label class="lab">Roteiro</label><textarea class="f" data-f="script" style="min-height:180px">${esc(x.script)}</textarea>
    <label class="lab">Legenda</label><textarea class="f" data-f="caption">${esc(x.caption)}</textarea>
    <label class="lab">CTA</label><input class="f" data-f="cta" value="${esc(x.cta)}">
+   ${Anexos.secao(x)}
    <h2>Análise</h2><div class="grid g4">${[['reach','Alcance'],['views','Visualizações'],['likes','Curtidas'],['comments','Comentários'],['shares','Compartilhamentos'],['saves','Salvos'],['follows','Seguidores'],['dms','DMs e leads']].map(([k,l])=>`<div><label class="lab" style="margin-top:0">${l}</label><input class="f" type="number" data-m="${k}" value="${esc(m[k]??'')}"></div>`).join('')}</div>
    <p>Engajamento: <b id="engv">${eng(x)!==null?eng(x).toFixed(2)+'%':'—'}</b></p>
    <label class="lab">Aprendizados (o que funcionou, perguntas e objeções que surgiram)</label><textarea class="f" data-f="analysis">${esc(x.analysis)}</textarea>`}

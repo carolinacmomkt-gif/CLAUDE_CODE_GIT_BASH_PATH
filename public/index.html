@@ -15,18 +15,20 @@
     <div class="progress-mini" id="pmini"></div>
     <div class="sidefoot">
       <div class="nav" data-act="theme"><span data-ic="moon"></span><span id="themeLbl">Modo escuro</span></div>
+      <div class="nav" data-act="sair" id="sairBtn" hidden><span data-ic="lock"></span>Sair</div>
     </div>
   </aside>
   <main>
     <div class="top">
       <div class="row"><button class="btn ghost menu-btn" data-act="menu">Menu</button><span class="crumb" id="crumb"></span></div>
-      <div class="row"><button class="btn ghost" data-act="export"><span data-ic="down"></span>Exportar</button><button class="btn ghost" data-act="import"><span data-ic="up"></span>Importar</button><input type="file" id="fileIn" accept=".json,application/json" hidden><button class="btn pri" data-act="newpost"><span data-ic="plus"></span>Novo conteúdo</button></div>
+      <div class="row"><button class="btn" data-ia="abrir"><span data-ic="spark"></span>Assistente</button><button class="btn ghost" data-act="export"><span data-ic="down"></span>Exportar</button><button class="btn ghost" data-act="import"><span data-ic="up"></span>Importar</button><input type="file" id="fileIn" accept=".json,application/json" hidden><button class="btn pri" data-act="newpost"><span data-ic="plus"></span>Novo conteúdo</button></div>
     </div>
     <div class="page" id="page"></div>
   </main>
 </div>
 <div class="overlay" id="ov" data-act="close"></div>
 <div class="drawer" id="drawer"><div class="inner" id="drawerIn"></div></div>
+<div class="chat" id="chat"></div>
 <div class="toast" id="toast"></div>
 <div class="lb" id="lb"><button data-lbnav="-1">‹</button><img id="lbimg" alt=""><button data-lbnav="1">›</button></div>
 
@@ -34,7 +36,9 @@
 <script src="js/icones.js"></script>
 <script src="js/dados-tecnicas.js"></script>
 <script src="js/estado.js"></script>
+<script src="js/idb.js"></script>
 <script src="js/capas.js"></script>
+<script src="js/anexos.js"></script>
 <script src="js/persistencia.js"></script>
 <script src="js/guia.js"></script>
 <script src="js/dados-conhecimento.js"></script>
@@ -45,6 +49,8 @@
 <script src="js/views-conhecimento.js"></script>
 <script src="js/ficha.js"></script>
 <script src="js/eventos.js"></script>
+<script src="js/assistente.js"></script>
+<script src="js/sessao.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

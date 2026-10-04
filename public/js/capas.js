@@ -2,24 +2,11 @@
    Imagens enviadas ficam no IndexedDB do navegador; o conteúdo guarda só a referência "idb:<id>".
    Também aceita URL comum. Várias capas podem apontar para a mesma imagem (ex.: ao duplicar). */
 const Capas=(()=>{
-  const DB='carol-sistema-capas',STORE='capas',cache={};   // cache: id -> blob: URL
-  let db=null;
-  const abrir=()=>new Promise((ok,no)=>{
-    if(db)return ok(db);
-    if(!window.indexedDB)return no(new Error('sem IndexedDB'));
-    const r=indexedDB.open(DB,1);
-    r.onupgradeneeded=()=>r.result.createObjectStore(STORE);
-    r.onsuccess=()=>{db=r.result;ok(db)};
-    r.onerror=()=>no(r.error);
-  });
-  const tx=(modo,fn)=>abrir().then(d=>new Promise((ok,no)=>{
-    const t=d.transaction(STORE,modo),req=fn(t.objectStore(STORE));
-    t.oncomplete=()=>ok(req&&req.result);t.onerror=()=>no(t.error);t.onabort=()=>no(t.error);
-  }));
-  const guardar=(id,blob)=>tx('readwrite',s=>s.put(blob,id)).then(()=>{cache[id]=URL.createObjectURL(blob)});
-  const apagar=id=>tx('readwrite',s=>s.delete(id)).then(()=>{if(cache[id]){URL.revokeObjectURL(cache[id]);delete cache[id]}});
-  const ler=id=>tx('readonly',s=>s.get(id));
-  const ids=()=>tx('readonly',s=>s.getAllKeys());
+  const L='capas',cache={};   // cache: id -> blob: URL
+  const guardar=(id,blob)=>IDB.put(L,id,blob).then(()=>{cache[id]=URL.createObjectURL(blob)});
+  const apagar=id=>IDB.del(L,id).then(()=>{if(cache[id]){URL.revokeObjectURL(cache[id]);delete cache[id]}});
+  const ler=id=>IDB.get(L,id);
+  const ids=()=>IDB.keys(L);
 
   /* Carrega todas as capas para a memória antes do primeiro render */
   const carregar=()=>ids().then(ks=>Promise.all(ks.map(id=>ler(id).then(b=>{if(b)cache[id]=URL.createObjectURL(b)})))).catch(()=>{});
@@ -74,12 +61,11 @@ const Capas=(()=>{
   }
 
   /* Backup: capas locais vão dentro do JSON como data URL */
-  const blobParaDataUrl=b=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=()=>no(r.error);r.readAsDataURL(b)});
   const exportar=()=>{
     const usadas=[...new Set(S.posts.map(p=>p.cover).filter(c=>(c||'').startsWith('idb:')).map(c=>c.slice(4)))];
     return Promise.all(usadas.map(id=>ler(id).then(b=>b?blobParaDataUrl(b).then(d=>[id,d]):null))).then(a=>Object.fromEntries(a.filter(Boolean))).catch(()=>({}));
   };
-  const importar=mapa=>Promise.all(Object.entries(mapa||{}).map(([id,d])=>fetch(d).then(r=>r.blob()).then(b=>guardar(id,b)))).catch(()=>{});
+  const importar=mapa=>Promise.all(Object.entries(mapa||{}).map(([id,d])=>dataUrlParaBlob(d).then(b=>guardar(id,b)))).catch(()=>{});
 
   return {carregar,campo,enviar,limpar,exportar,importar,resolver};
 })();

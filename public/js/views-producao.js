@@ -17,7 +17,7 @@ VIEWS.write=()=>{
   const tip=p.funnel==='Topo'?'Conteúdo de topo: fale com quem acabou de chegar. Comece pelo básico e evite siglas.':p.funnel==='Fundo'?'Conteúdo de fundo: aprofunde, mostre o método e quebre uma objeção específica.':p.funnel==='Meio'?'Conteúdo de meio: conexão. Mostre a trajetória, a base e o topo da pirâmide.':'Defina o estágio de funil na ficha.';
   return head('Produção','Escrever','Escreva aqui. Tudo salva sozinho.')+
   `<div class="row" style="margin-bottom:18px"><select class="f" style="max-width:380px" data-act="writesel">${S.posts.map(x=>`<option value="${x.id}" ${x.id===p.id?'selected':''}>${esc(x.title||'Sem título')}</option>`).join('')}</select>
-   ${tag(p.format)}${tag(p.funnel)}${tag(p.structure)}<span class="spacer"></span><button class="btn sm" data-open="posts:${p.id}">Ficha completa</button></div>
+   ${tag(p.format)}${tag(p.funnel)}${tag(p.structure)}<span class="spacer"></span><button class="btn sm" data-ia="post:${p.id}">Revisar com IA</button><button class="btn sm" data-open="posts:${p.id}">Ficha completa</button></div>
   <div class="grid split" style="grid-template-columns:1.7fr 1fr;align-items:start">
    <div class="card">
     <label class="lab" style="margin-top:0">Gancho</label><input class="f" data-w="hook" value="${esc(p.hook)}" style="font-family:var(--display);font-size:18px">
