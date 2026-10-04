@@ -540,7 +540,7 @@ strong, b { font-weight: 700; }
 .sticky-cta .btn { padding: 12px 20px; font-size: .92rem; white-space: nowrap; }
 
 /* ---------- animação de entrada ---------- */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal { opacity: 1; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
 
 /* =========================================================
