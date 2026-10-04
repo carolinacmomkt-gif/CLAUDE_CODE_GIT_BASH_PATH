@@ -545,6 +545,7 @@ strong, b { font-weight: 700; }
 }
 .plan .btn { margin-top: auto; }
 .plan .pb-save, .plan-small { margin-bottom: 16px; }
+.plan-plus .pb-save { margin-bottom: 8px; }
 .plan-name { font: 500 1.3rem/1.2 var(--f-title); margin: 0 0 6px; }
 .plan-desc { font-size: .9rem; color: var(--brown-2); margin: 0 0 14px; }
 .plan .pb-was, .plan .pb-price, .plan .pb-save { text-align: left; }
@@ -562,6 +563,11 @@ strong, b { font-weight: 700; }
 .plan-list { list-style: none; margin: 0 0 6px; padding: 0; display: grid; gap: 7px; }
 .plan-list li { position: relative; padding-left: 22px; font-size: .88rem; color: var(--beige); line-height: 1.4; }
 .plan-list li::before { content: "✓"; position: absolute; left: 0; color: var(--caramel-soft); font-weight: 700; }
+.plan-plus .pb-was { color: var(--beige); }
+.plan-plus .pb-was s { text-decoration-color: var(--caramel-soft); }
+.pb-save-dark { background: rgba(219, 237, 219, .16); color: #CFE6D0; }
+.price-note { font: 400 .8rem/1 var(--f-text); color: var(--brown-2); }
+.addon .price-link { margin-top: 10px; font-size: .9rem !important; }
 .plan-small { font-size: .78rem; color: var(--caramel-soft); margin: 0; }
 .btn.is-pending { opacity: .6; cursor: not-allowed; animation: none; }
 .price-box > .pb-note { margin: 18px 0 0; }

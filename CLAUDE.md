@@ -30,7 +30,8 @@ Tom de voz: direto, acolhedor, de social media para social media. Frases curtas,
 | Central Organiza SM (+ bônus mensagens prontas) | produto principal | R$ 56,99 no lançamento (depois R$ 357) | oferta e todos os CTAs |
 | Documentação de agência | order bump | R$ 12,99 | complementos + checkout Cakto |
 | Banco de 100 ganchos | order bump | R$ 9,90 | complementos + checkout Cakto |
-| Central + Planilha financeira | segunda opção na oferta (combo) | R$ 97 | caixa de preço, card da planilha nos complementos, FAQ |
+| Planilha financeira | upsell pós-compra | R$ 49,99 sozinha | complementos |
+| Central + Planilha financeira | segunda opção na oferta (combo) | R$ 97 (separados: R$ 106,98, economia de R$ 9,98) | caixa de preço, card da planilha nos complementos, FAQ |
 | Scripts que fecham (ebook, 33 scripts) | compra futura | a definir | complementos ("em breve") |
 
 Checkout: **Cakto**. Os order bumps são configurados dentro do produto na Cakto. A página tem dois links: `CONFIG.checkout.central` (R$ 56,99) e `CONFIG.checkout.combo` (Central + Planilha, R$ 97). O CTA final e a barra fixa levam para a escolha (#oferta), não direto ao checkout.
