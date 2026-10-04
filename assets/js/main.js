@@ -9,7 +9,7 @@ const CONFIG = {
     // Exemplo: "https://pay.cakto.com.br/XXXXXXX"
     central: "https://pay.cakto.com.br/3895dea_1166626",
     // Link da oferta Central + Planilha financeira (R$ 97) na Cakto
-    combo: "",
+    combo: "https://pay.cakto.com.br/3fzs5dq_1171305",
   },
   precos: {
     // Quando o ebook "Scripts que fecham" tiver preço, preencha aqui (ex.: "R$ 27,00").

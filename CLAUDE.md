@@ -48,7 +48,7 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [x] Prints reais em `assets/img/` (central, briefing, banco-info, documentacao), na seção "Prints reais" e no card da Documentação
 - [x] Fim do lançamento: 11/10/2026 às 23h59 (Brasília) em `CONFIG.lancamento.fim`. Depois dessa data o contador some sozinho, mas o texto de lançamento continua: trocar o preço para R$ 357 ou estender a data
 - [ ] Prints com clientes de exemplo preenchidos (calendário com posts, funil com leads) deixariam a vitrine mais forte
-- [ ] Link da Cakto do combo Central + Planilha em `CONFIG.checkout.combo` (sem ele o botão mostra "Link de pagamento em breve")
+- [x] Link da Cakto do combo Central + Planilha em `CONFIG.checkout.combo`: https://pay.cakto.com.br/3fzs5dq_1171305
 - [ ] Imagem para Planilha financeira e Scripts que fecham nos complementos
 - [ ] `og:image` 1200x630
 - [ ] Confirmar que a central funciona no plano gratuito do Notion (o FAQ afirma isso)
