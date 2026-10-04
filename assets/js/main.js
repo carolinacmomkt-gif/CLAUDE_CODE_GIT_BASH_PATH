@@ -13,6 +13,12 @@ const CONFIG = {
     // Quando o ebook "Scripts que fecham" tiver preço, preencha aqui (ex.: "R$ 27,00").
     scripts: "",
   },
+  lancamento: {
+    // Data e hora em que o preço de lançamento termina (horário de Brasília).
+    // Exemplo: "2026-10-31T23:59:00-03:00". Vazio = sem contador na página.
+    // Use uma data real: o contador não reinicia.
+    fim: "",
+  },
   demo: {
     // Tempo (ms) que cada setor fica na tela na demonstração do topo.
     duracao: 5500,
@@ -48,6 +54,32 @@ const CONFIG = {
   /* ---------- ano no rodapé ---------- */
   const ano = document.getElementById("ano");
   if (ano) ano.textContent = new Date().getFullYear();
+
+  /* ---------- contador do lançamento ---------- */
+  const fim = CONFIG.lancamento.fim ? new Date(CONFIG.lancamento.fim).getTime() : NaN;
+  const cdBoxes = document.querySelectorAll("[data-countdown]");
+  const cdInline = document.querySelectorAll("[data-countdown-inline]");
+  if (!isNaN(fim) && fim > Date.now()) {
+    const pad = (n) => String(n).padStart(2, "0");
+    const tick = () => {
+      const left = Math.max(0, fim - Date.now());
+      const d = Math.floor(left / 864e5), h = Math.floor(left / 36e5) % 24,
+            m = Math.floor(left / 6e4) % 60, sec = Math.floor(left / 1e3) % 60;
+      cdBoxes.forEach((box) => {
+        box.querySelector('[data-cd="d"]').textContent = pad(d);
+        box.querySelector('[data-cd="h"]').textContent = pad(h);
+        box.querySelector('[data-cd="m"]').textContent = pad(m);
+        box.querySelector('[data-cd="s"]').textContent = pad(sec);
+      });
+      cdInline.forEach((el) => {
+        el.querySelector("[data-cd-text]").textContent = (d ? d + "d " : "") + pad(h) + "h" + pad(m) + "m";
+      });
+      if (left === 0) { clearInterval(iv); [...cdBoxes, ...cdInline].forEach((el) => (el.hidden = true)); }
+    };
+    [...cdBoxes, ...cdInline].forEach((el) => (el.hidden = false));
+    tick();
+    const iv = setInterval(tick, 1000);
+  }
 
   /* ---------- demonstração da central (abas que trocam sozinhas) ---------- */
   const demo = document.getElementById("demo");

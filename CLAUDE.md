@@ -27,7 +27,7 @@ Tom de voz: direto, acolhedor, de social media para social media. Frases curtas,
 ## A oferta
 | Produto | Papel | Preço | Onde aparece |
 |---|---|---|---|
-| Central Organiza SM (+ bônus mensagens prontas) | produto principal | R$ 56,99 | oferta e todos os CTAs |
+| Central Organiza SM (+ bônus mensagens prontas) | produto principal | R$ 56,99 no lançamento (depois R$ 357) | oferta e todos os CTAs |
 | Documentação de agência | order bump | R$ 12,99 | complementos + checkout Cakto |
 | Banco de 100 ganchos | order bump | R$ 9,90 | complementos + checkout Cakto |
 | Planilha financeira | upsell pós-compra | R$ 39,99 | complementos |
@@ -44,7 +44,8 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [ ] Colar o link do checkout da Cakto em `CONFIG.checkout.central` (`assets/js/main.js`)
 - [x] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124, recortada em 4:5)
 - [x] Texto "Quem criou": +20 clientes ao mesmo tempo e hoje tem uma agência (sem citar o nome da agência)
-- [ ] Prints reais do Notion (opcional, a demonstração já mostra a central): descomentar a seção `showcase` em "Por dentro"
+- [x] Prints reais em `assets/img/` (central, briefing, banco-info, documentacao), na seção "Prints reais" e no card da Documentação
+- [ ] Definir a data de fim do lançamento em `CONFIG.lancamento.fim` (`assets/js/main.js`). Sem data, a página mostra a oferta sem contador
 - [ ] Prints com clientes de exemplo preenchidos (calendário com posts, funil com leads) deixariam a vitrine mais forte
 - [ ] Imagem para Planilha financeira e Scripts que fecham nos complementos
 - [ ] `og:image` 1200x630
@@ -57,7 +58,8 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 
 ## Regras
 - Nunca inventar depoimentos, números de vendas, alunas ou resultados.
-- Nunca usar preço "de" inflado ou contador de urgência falso.
+- Oferta de lançamento: "de R$ 357 por R$ 56,99" só vale porque R$ 357 é o preço depois do lançamento (está no FAQ). Se isso mudar, ajuste o texto.
+- Contador só com data real de fim (`CONFIG.lancamento.fim`). Nunca contador que reinicia.
 - Manter mobile-first: testar em 375px de largura.
 - Acessibilidade: contraste AA, `alt` em todas as imagens, respeitar `prefers-reduced-motion`.
 

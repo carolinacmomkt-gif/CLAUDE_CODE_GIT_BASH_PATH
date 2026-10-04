@@ -17,7 +17,7 @@
 <body>
 
 <!-- ============ BARRA DE AVISO ============ -->
-<div class="topbar">Pagamento único de R$ 56,99 · sem mensalidade · acesso em minutos</div>
+<a class="topbar" href="#oferta"><b>Oferta de lançamento</b> · de <s>R$ 357</s> por R$ 56,99<span class="topbar-timer" data-countdown-inline hidden> · termina em <span data-cd-text></span></span></a>
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="topo">
@@ -34,7 +34,7 @@
         <p class="lead">A central no Notion que coloca clientes, calendário, leads, tarefas e equipe no mesmo lugar. Você duplica hoje e amanhã já abre o computador sabendo <strong>o que entregar, para quem e quando</strong>.</p>
         <div class="hero-cta">
           <a class="btn btn-cta" href="#oferta">Quero minha central por R$ 56,99 <span aria-hidden="true">→</span></a>
-          <p class="micro">pagamento único · Pix ou cartão · garantia de 7 dias</p>
+          <p class="micro"><span class="was">de <s>R$ 357</s></span> preço de lançamento · pagamento único · garantia de 7 dias</p>
         </div>
         <div class="byline">
           <img src="assets/img/carol.jpg" alt="" width="44" height="55">
@@ -61,22 +61,16 @@
 
           <!-- CENTRAL -->
           <section class="view is-active" id="view-central" role="tabpanel" aria-labelledby="tab-central">
-            <div class="n-cover"></div>
+            <div class="n-cover n-cover-brand"><span>Organiza <b>SM</b></span><em>seu escritório</em></div>
             <div class="n-body">
               <h3 class="n-title">CENTRAL</h3>
+              <div class="mini-board">
+                <div><span class="tag red">Demanda</span><p><b>Legendas da semana</b><small>Loja Flor · 🔴 Urgência alta</small></p></div>
+                <div><span class="tag">Em andamento</span><p><b>Calendário de novembro</b><small>Clínica Sorriso</small></p></div>
+                <div><span class="tag yellow">Em aprovação</span><p><b>Roteiro reels bastidor</b><small>Café Bom Dia</small></p></div>
+              </div>
               <p class="n-db">SETORES</p>
-              <ul class="n-list">
-                <li><b>| CLIENTES</b><span class="tag green">Ativo</span></li>
-                <li><b>| SETOR DE CONTEÚDO</b><span class="tag green">Ativo</span></li>
-                <li><b>| AQUISIÇÃO</b><span class="tag green">Ativo</span></li>
-                <li><b>| EQUIPE</b><span class="tag green">Ativo</span></li>
-                <li><b>| REUNIÕES</b><span class="tag green">Ativo</span></li>
-              </ul>
-              <p class="n-db">GESTÃO DE TAREFAS · hoje</p>
-              <ul class="n-list">
-                <li><b>Calendário de novembro · Loja Flor</b><span class="tag yellow">Em aprovação</span></li>
-                <li><b>Roteiro reels bastidor · Café Bom Dia</b><span class="tag red">Demanda</span></li>
-              </ul>
+              <div class="n-sectors"><span>clientes</span><span>equipe</span><span>conteúdos</span><span>reuniões</span><span>aquisição</span></div>
             </div>
           </section>
 
@@ -318,11 +312,27 @@
       <article class="mini bonus"><div class="s-tag">bônus</div><h3>Mensagens prontas para clientes.</h3><p>Boas-vindas, envio de calendário, cobrança de aprovação, lembrete de pagamento e mais.</p></article>
     </div>
 
-    <!-- PRINTS REAIS: descomente quando tiver os arquivos em assets/img/
-    <div class="showcase">
-      <figure class="shot"><img src="assets/img/briefing.jpg" alt="Ficha do cliente com o briefing dividido em 5 fases" loading="lazy" width="620" height="750"><figcaption><b>Briefing em 5 fases</b>...</figcaption></figure>
+    <!-- PRINTS REAIS -->
+    <div class="prints">
+      <div class="center prints-head">
+        <div class="kicker">prints reais</div>
+        <h3>Nada de promessa. <em>Isso é o que você recebe.</em></h3>
+      </div>
+      <figure class="shot shot-wide">
+        <div class="shot-frame"><span class="win-bar"><i></i><i></i><i></i></span><img src="assets/img/central.jpg" alt="Página inicial da central Organiza SM no Notion, com o quadro de tarefas por status e os setores clientes, equipe, conteúdos, reuniões e aquisição" loading="lazy" width="1440" height="755"></div>
+        <figcaption><b>A central</b>Tarefas por status no topo e os setores logo abaixo. É a primeira tela que você abre todo dia.</figcaption>
+      </figure>
+      <div class="shot-pair">
+        <figure class="shot">
+          <div class="shot-frame"><img src="assets/img/briefing.jpg" alt="Pesquisa de briefing com a fase 1, dados, visão e história, aberta" loading="lazy" width="620" height="750"></div>
+          <figcaption><b>Briefing em 5 fases</b>Você conduz a reunião de onboarding com o roteiro na tela, ou manda o link para o cliente responder.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="assets/img/banco-info.jpg" alt="Banco de informações do cliente com documentos, acessos, identidade visual, manual de comunicação, estratégia e referências" loading="lazy" width="620" height="800"></div>
+          <figcaption><b>Banco de informações</b>Acessos, tom de voz, identidade visual e estratégia de cada cliente. Tudo que hoje está perdido no WhatsApp.</figcaption>
+        </figure>
+      </div>
     </div>
-    -->
 
     <div class="center mt"><a class="btn btn-cta" href="#oferta">Quero essa central <span aria-hidden="true">→</span></a></div>
   </div>
@@ -407,7 +417,7 @@
 <section class="sec" id="oferta">
   <div class="wrap narrow">
     <div class="offer">
-      <div class="ribbon">acesso imediato</div>
+      <div class="ribbon">oferta de lançamento</div>
       <div class="kicker center">sua central organiza sm</div>
       <h2 class="center">Tudo o que você precisa para organizar a carteira inteira.</h2>
       <ul class="stack">
@@ -424,9 +434,19 @@
         <div><small>com a Organiza SM</small><b>10 minutos para duplicar</b></div>
       </div>
       <div class="price-box">
-        <div class="pb-label">pagamento único</div>
+        <div class="launch">
+          <span class="launch-tag">preço de lançamento · por tempo limitado</span>
+          <div class="countdown" data-countdown hidden>
+            <div><b data-cd="d">00</b><small>dias</small></div>
+            <div><b data-cd="h">00</b><small>horas</small></div>
+            <div><b data-cd="m">00</b><small>min</small></div>
+            <div><b data-cd="s">00</b><small>seg</small></div>
+          </div>
+        </div>
+        <div class="pb-was">de <s>R$ 357</s> por</div>
         <div class="pb-price"><small>R$</small>56<small>,99</small></div>
-        <div class="pb-note">sem mensalidade · o equivalente a <strong>R$ 4,75 por mês</strong> no primeiro ano</div>
+        <div class="pb-save">você economiza R$ 300,01</div>
+        <div class="pb-note">pagamento único, sem mensalidade · o equivalente a <strong>R$ 4,75 por mês</strong> no primeiro ano</div>
         <a class="btn btn-cta btn-block pulse" data-checkout="central" href="#">Quero minha central agora <span aria-hidden="true">→</span></a>
         <div class="pb-seals"><span>compra segura</span><span>acesso em minutos</span><span>7 dias de garantia</span></div>
       </div>
@@ -444,12 +464,10 @@
     </div>
     <div class="addons">
       <article class="addon">
-        <div class="addon-ui" aria-hidden="true">
-          <span><i class="tag blue">POP</i> Comercial</span><span><i class="tag blue">POP</i> Onboarding</span><span><i class="tag blue">POP</i> Produção mensal</span><span><i class="tag purple">EXT</i> Contrato</span><span><i class="tag purple">EXT</i> Proposta comercial</span>
-        </div>
+        <div class="addon-img"><img src="assets/img/documentacao.jpg" alt="Banco de POPs e documentos: POPs de comercial a offboarding, referências e modelos de contrato, proposta e indicação" loading="lazy" width="677" height="650"></div>
         <div class="tag-line">no checkout</div>
         <h3>Documentação de agência</h3>
-        <p>POPs de comercial, onboarding, produção, gestão de clientes e offboarding, mais modelos de contrato, proposta comercial e programa de indicação.</p>
+        <p>6 POPs (de comercial a offboarding), 4 documentos de referência e modelos de contrato, proposta comercial e programa de indicação.</p>
         <div class="price">+ R$ 12,99</div>
       </article>
       <article class="addon">
@@ -517,6 +535,7 @@
       <details><summary>Preciso saber usar o Notion?</summary><p>Não precisa ser especialista. A central já vem montada, com instruções dentro de cada setor. Se você sabe preencher um formulário, consegue usar.</p></details>
       <details><summary>Funciona no celular?</summary><p>Sim. Pelo aplicativo do Notion você consulta e atualiza tudo pelo celular. Para a primeira configuração, o computador é mais confortável.</p></details>
       <details><summary>Posso personalizar?</summary><p>Pode e deve. Depois de duplicada, a central é sua: dá para mudar cores, nomes, campos e setores do jeito que preferir.</p></details>
+      <details><summary>O preço vai subir depois do lançamento?</summary><p>Sim. R$ 56,99 é o preço de lançamento. Quando o lançamento terminar, a central passa a custar R$ 357. Quem comprar agora paga R$ 56,99 uma única vez e não paga a diferença depois.</p></details>
       <details><summary>É mensalidade?</summary><p>Não. Você paga R$ 56,99 uma única vez e a central é sua para sempre.</p></details>
       <details><summary>Serve para quem trabalha com equipe?</summary><p>Sim. Você pode convidar colaboradores para o seu Notion e usar o setor de Equipe para organizar freelas, valores e demandas.</p></details>
       <details><summary>Os complementos são obrigatórios?</summary><p>Não. A central funciona completa sozinha. Documentação, ganchos e planilha são opcionais para quem quer ir além.</p></details>
@@ -530,7 +549,7 @@
   <div class="wrap narrow center">
     <div class="kicker">a decisão é sua</div>
     <h2>Daqui a 30 dias você pode estar com a mesma bagunça de hoje.<br><em>Ou com a carteira inteira organizada.</em></h2>
-    <p class="final-p">A diferença entre as duas custa R$ 56,99, uma única vez.</p>
+    <p class="final-p">No lançamento, a diferença entre as duas custa <s>R$ 357</s> R$ 56,99, uma única vez.</p>
     <a class="btn btn-light btn-big" data-checkout="central" href="#">Quero organizar minha carteira <span aria-hidden="true">→</span></a>
     <p class="micro light">acesso em minutos · garantia de 7 dias</p>
   </div>
@@ -546,7 +565,7 @@
 
 <!-- barra fixa no celular -->
 <div class="sticky-cta" id="sticky">
-  <div><b>Organiza SM</b><small>R$ 56,99 · pagamento único</small></div>
+  <div><b>Organiza SM</b><small><s>R$ 357</s> R$ 56,99 · lançamento</small></div>
   <a class="btn btn-cta" data-checkout="central" href="#">Quero agora</a>
 </div>
 
