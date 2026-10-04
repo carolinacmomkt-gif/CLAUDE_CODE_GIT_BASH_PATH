@@ -13,6 +13,10 @@ const CONFIG = {
     // Quando o ebook "Scripts que fecham" tiver preço, preencha aqui (ex.: "R$ 27,00").
     scripts: "",
   },
+  demo: {
+    // Tempo (ms) que cada setor fica na tela na demonstração do topo.
+    duracao: 5500,
+  },
 };
 
 (function () {
@@ -45,6 +49,98 @@ const CONFIG = {
   const ano = document.getElementById("ano");
   if (ano) ano.textContent = new Date().getFullYear();
 
+  /* ---------- demonstração da central (abas que trocam sozinhas) ---------- */
+  const demo = document.getElementById("demo");
+  if (demo) {
+    const tabs = Array.from(demo.querySelectorAll('[role="tab"]'));
+    const path = demo.querySelector("[data-path]");
+    const bar = demo.querySelector(".win-progress");
+    const paths = {
+      "view-central": "organiza sm · central",
+      "view-cliente": "central · clientes · Clínica Sorriso",
+      "view-conteudo": "central · conteúdo · calendário",
+      "view-leads": "central · aquisição · falar hoje",
+      "view-tarefas": "central · gestão de tarefas",
+    };
+    let current = 0;
+    let timer = null;
+    let paused = false;
+
+    const show = (i, focus) => {
+      current = (i + tabs.length) % tabs.length;
+      tabs.forEach((tab, n) => {
+        const on = n === current;
+        tab.setAttribute("aria-selected", on);
+        tab.tabIndex = on ? 0 : -1;
+        const view = document.getElementById(tab.getAttribute("aria-controls"));
+        view.hidden = !on;
+        // reinicia as animações internas da aba ativa
+        view.classList.remove("is-active");
+        if (on) { void view.offsetWidth; view.classList.add("is-active"); }
+      });
+      if (path) path.textContent = paths[tabs[current].getAttribute("aria-controls")] || "";
+      if (focus) tabs[current].focus();
+      // Rola a aba ativa para dentro da faixa no celular, sem mexer na página
+      const strip = tabs[current].parentElement;
+      strip.scrollTo({ left: tabs[current].offsetLeft - strip.offsetLeft - 16, behavior: reduceMotion ? "auto" : "smooth" });
+      restart();
+    };
+
+    const restart = () => {
+      clearTimeout(timer);
+      if (bar) { bar.classList.remove("run"); void bar.offsetWidth; }
+      if (reduceMotion || paused) return;
+      if (bar) { bar.style.setProperty("--dur", CONFIG.demo.duracao + "ms"); bar.classList.add("run"); }
+      timer = setTimeout(() => show(current + 1), CONFIG.demo.duracao);
+    };
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => show(i));
+      tab.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1, true); }
+        if (e.key === "ArrowLeft") { e.preventDefault(); show(current - 1, true); }
+      });
+    });
+
+    // Pausa quando a pessoa está olhando de perto ou navegando pelo teclado
+    const pause = () => { paused = true; restart(); };
+    const resume = () => { paused = false; restart(); };
+    demo.addEventListener("mouseenter", pause);
+    demo.addEventListener("mouseleave", resume);
+    demo.addEventListener("focusin", pause);
+    demo.addEventListener("focusout", (e) => { if (!demo.contains(e.relatedTarget)) resume(); });
+
+    // Só roda enquanto estiver na tela
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) { if (!paused) restart(); }
+        else { clearTimeout(timer); }
+      }, { threshold: 0.2 }).observe(demo);
+    }
+
+    show(0);
+  }
+
+  /* ---------- lista de dores: marcar e contar ---------- */
+  const pain = document.getElementById("pain");
+  const result = document.getElementById("pain-result");
+  if (pain && result) {
+    const original = result.innerHTML;
+    const buttons = Array.from(pain.querySelectorAll("button"));
+    const update = () => {
+      const n = buttons.filter((b) => b.getAttribute("aria-pressed") === "true").length;
+      if (n === 0) { result.innerHTML = original; return; }
+      const label = n === 1 ? "1 de 6 marcada." : n + " de 6 marcadas.";
+      result.innerHTML = n >= 2
+        ? '<span class="count">' + label + "</span>O problema não é você. <strong>Você está fazendo trabalho de agência sem o sistema de uma agência.</strong>"
+        : '<span class="count">' + label + "</span>Já é um sinal. Uma por mês vira doze por ano.";
+    };
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true");
+      update();
+    }));
+  }
+
   /* ---------- barra fixa no celular ---------- */
   // Aparece depois do hero e some quando a oferta ou o CTA final estão na tela.
   const sticky = document.getElementById("sticky");
@@ -71,7 +167,7 @@ const CONFIG = {
   /* ---------- animação de entrada ---------- */
   if (!reduceMotion && "IntersectionObserver" in window) {
     const targets = document.querySelectorAll(
-      ".sec h2, .pain li, .turn, .cost, .cmp-col, .sector, .shot, .mock, .day li, .step, .card-yes, .card-no, .offer, .addon, .faq details"
+      ".sec h2, .pain li, .cost, .cmp-col, .deep-ui, .mini, .day li, .step, .card-yes, .card-no, .offer, .addon, .faq details"
     );
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -83,7 +179,6 @@ const CONFIG = {
     }, { rootMargin: "0px 0px -8% 0px" });
 
     targets.forEach((el) => {
-      // Escalona levemente itens irmãos em grade
       const i = Array.prototype.indexOf.call(el.parentElement.children, el);
       el.style.transitionDelay = Math.min(i, 6) * 60 + "ms";
       el.classList.add("reveal");

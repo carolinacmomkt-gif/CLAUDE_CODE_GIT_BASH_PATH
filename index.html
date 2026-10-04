@@ -8,10 +8,10 @@
   <meta property="og:title" content="Organiza SM · trabalhe como agência">
   <meta property="og:description" content="A central no Notion para social medias com carteira de clientes. Pagamento único de R$ 56,99.">
   <meta property="og:type" content="website">
-  <!-- TODO: og:image com print do produto (1200x630) -->
+  <!-- TODO: og:image 1200x630 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -21,50 +21,167 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="topo">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <div class="brand">ORGANIZA SM</div>
-      <div class="hero-kicker">para social medias que já têm clientes</div>
-      <h1>Pare de gerenciar clientes pelo WhatsApp. <em>Comece a trabalhar como agência.</em></h1>
-      <p class="lead">A central no Notion que coloca clientes, calendário, leads, tarefas e equipe no mesmo lugar. Você duplica hoje e amanhã já abre o computador sabendo <strong>o que entregar, para quem e quando</strong>.</p>
-      <div class="hero-cta">
-        <a class="btn btn-cta" href="#oferta">Quero minha central por R$ 56,99 <span>→</span></a>
-        <p class="micro">pagamento único · Pix ou cartão · garantia de 7 dias</p>
-      </div>
-    </div>
+  <div class="wrap">
+    <nav class="nav">
+      <span class="brand">ORGANIZA SM</span>
+      <a class="nav-cta" href="#oferta">Quero a central</a>
+    </nav>
 
-    <!-- print real da central + notificações flutuando -->
-    <div class="hero-visual">
-      <div class="chip chip-1" aria-hidden="true">✓ Calendário aprovado · Loja Flor</div>
-      <div class="chip chip-2" aria-hidden="true">● Lead novo · Café Bom Dia</div>
-      <div class="chip chip-3" aria-hidden="true">✓ Briefing salvo · Clínica Sorriso</div>
-      <div class="hero-shot"><img src="assets/img/central.jpg" alt="Página inicial da central Organiza SM no Notion, com gestão de tarefas e setores" width="722" height="766"></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-kicker">para social medias que já têm clientes</div>
+        <h1>Pare de gerenciar clientes pelo WhatsApp. <em>Comece a trabalhar como agência.</em></h1>
+        <p class="lead">A central no Notion que coloca clientes, calendário, leads, tarefas e equipe no mesmo lugar. Você duplica hoje e amanhã já abre o computador sabendo <strong>o que entregar, para quem e quando</strong>.</p>
+        <div class="hero-cta">
+          <a class="btn btn-cta" href="#oferta">Quero minha central por R$ 56,99 <span aria-hidden="true">→</span></a>
+          <p class="micro">pagamento único · Pix ou cartão · garantia de 7 dias</p>
+        </div>
+        <div class="byline">
+          <img src="assets/img/carol.jpg" alt="" width="44" height="55">
+          <p>Criada por <b>Carol Lima</b>, que já cuidou de mais de 20 clientes ao mesmo tempo e hoje tem uma agência.</p>
+        </div>
+      </div>
+
+      <!-- ===== DEMO: janela da central (campos e status iguais aos do Notion) ===== -->
+      <div class="demo" id="demo">
+        <div class="demo-tabs" role="tablist" aria-label="Setores da central">
+          <button role="tab" id="tab-central" aria-controls="view-central" aria-selected="true">Central</button>
+          <button role="tab" id="tab-cliente" aria-controls="view-cliente" aria-selected="false" tabindex="-1">Cliente</button>
+          <button role="tab" id="tab-conteudo" aria-controls="view-conteudo" aria-selected="false" tabindex="-1">Conteúdo</button>
+          <button role="tab" id="tab-leads" aria-controls="view-leads" aria-selected="false" tabindex="-1">Aquisição</button>
+          <button role="tab" id="tab-tarefas" aria-controls="view-tarefas" aria-selected="false" tabindex="-1">Tarefas</button>
+        </div>
+
+        <div class="win">
+          <div class="win-bar">
+            <i></i><i></i><i></i>
+            <div class="win-path" data-path>organiza sm · central</div>
+          </div>
+          <div class="win-progress"><span></span></div>
+
+          <!-- CENTRAL -->
+          <section class="view is-active" id="view-central" role="tabpanel" aria-labelledby="tab-central">
+            <div class="n-cover"></div>
+            <div class="n-body">
+              <h3 class="n-title">CENTRAL</h3>
+              <p class="n-db">SETORES</p>
+              <ul class="n-list">
+                <li><b>| CLIENTES</b><span class="tag green">Ativo</span></li>
+                <li><b>| SETOR DE CONTEÚDO</b><span class="tag green">Ativo</span></li>
+                <li><b>| AQUISIÇÃO</b><span class="tag green">Ativo</span></li>
+                <li><b>| EQUIPE</b><span class="tag green">Ativo</span></li>
+                <li><b>| REUNIÕES</b><span class="tag green">Ativo</span></li>
+              </ul>
+              <p class="n-db">GESTÃO DE TAREFAS · hoje</p>
+              <ul class="n-list">
+                <li><b>Calendário de novembro · Loja Flor</b><span class="tag yellow">Em aprovação</span></li>
+                <li><b>Roteiro reels bastidor · Café Bom Dia</b><span class="tag red">Demanda</span></li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- CLIENTE -->
+          <section class="view" id="view-cliente" role="tabpanel" aria-labelledby="tab-cliente" hidden>
+            <div class="n-body">
+              <h3 class="n-title">Clínica Sorriso</h3>
+              <div class="n-props">
+                <span>Status</span><span class="tag green">ATIVO</span>
+                <span>Saúde da conta</span><span class="tag green">🟢 Saudável</span>
+                <span>Serviços</span><span><i class="tag brown">Conteúdo</i> <i class="tag blue">Relacionamento</i></span>
+                <span>Renovação em</span><span>42 dias</span>
+              </div>
+              <p class="n-db">Pesquisa | Briefing</p>
+              <ul class="n-toggle">
+                <li class="done">FASE 1 · Dados, visão e história</li>
+                <li class="done">FASE 2 · Audiência</li>
+                <li class="done">FASE 3 · Posicionamento e conteúdo</li>
+                <li class="now">FASE 4 · Vendas</li>
+                <li>FASE 5 · Acordos</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- CONTEÚDO -->
+          <section class="view" id="view-conteudo" role="tabpanel" aria-labelledby="tab-conteudo" hidden>
+            <div class="n-body">
+              <h3 class="n-title">Calendário de conteúdo</h3>
+              <div class="board">
+                <div class="col">
+                  <p class="col-h">Fazer design</p>
+                  <div class="card"><b>3 erros no clareamento</b><span class="tag blue">Carrossel</span><small>Pilar · Educação</small></div>
+                </div>
+                <div class="col">
+                  <p class="col-h">Cliente aprovar</p>
+                  <div class="card card-move"><b>Bastidor do atendimento</b><span class="tag yellow">Reels</span><small>Pilar · Conexão</small><span class="flip"><i class="tag yellow">Cliente aprovar</i><i class="tag green">Aprovado</i></span></div>
+                </div>
+                <div class="col">
+                  <p class="col-h">Agendado</p>
+                  <div class="card"><b>Antes e depois</b><span class="tag pink">Estático</span><small>Pilar · Prova social</small></div>
+                </div>
+              </div>
+              <p class="n-db">Dentro de cada post</p>
+              <div class="n-fields"><span>Objetivo</span><span>Pilar</span><span>Data de publicação</span><span>Entrega interna</span><span>Link da arte</span><span>Feedback do cliente</span></div>
+            </div>
+          </section>
+
+          <!-- AQUISIÇÃO -->
+          <section class="view" id="view-leads" role="tabpanel" aria-labelledby="tab-leads" hidden>
+            <div class="n-body">
+              <h3 class="n-title">Falar hoje</h3>
+              <ul class="n-list leads">
+                <li><b>Café Bom Dia</b><span class="tag red">4 · Proposta enviada</span><span class="fu" style="--v:3"><i></i></span></li>
+                <li><b>Studio Bella</b><span class="tag green">3 · Reunião marcada</span><span class="fu" style="--v:1"><i></i></span></li>
+                <li><b>Ótica Centro</b><span class="tag blue">2 · Em conversa</span><span class="fu" style="--v:0"><i></i></span></li>
+              </ul>
+              <p class="n-note">Follow-ups: D+1 · D+3 · D+5 · D+7 · D+10 · D+14</p>
+            </div>
+          </section>
+
+          <!-- TAREFAS -->
+          <section class="view" id="view-tarefas" role="tabpanel" aria-labelledby="tab-tarefas" hidden>
+            <div class="n-body">
+              <h3 class="n-title">GESTÃO DE TAREFAS</h3>
+              <ul class="n-list">
+                <li><b>Legendas da semana · Loja Flor</b><span class="tag">🔴 Urgência alta</span></li>
+                <li><b>Enviar briefing para designer</b><span class="tag">🟡 Urgência média</span></li>
+                <li><b>Relatório mensal · Clínica Sorriso</b><span class="tag">🟢 Urgência baixa</span></li>
+              </ul>
+              <div class="pipe"><span>Demanda</span><span>Em andamento</span><span>Em aprovação</span><span>Aprovação cliente</span><span>Concluído</span></div>
+            </div>
+          </section>
+        </div>
+        <p class="demo-note">Demonstração com clientes de exemplo. Os setores, campos e status são os mesmos da central no Notion.</p>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- ============ FAIXA ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>briefing em 5 fases</span><span>calendário por cliente</span><span>funil de leads</span><span>5 scripts de venda</span><span>gestão de tarefas</span><span>ficha de freela</span><span>mensagens prontas</span><span>registro de reuniões</span>
-    <span>briefing em 5 fases</span><span>calendário por cliente</span><span>funil de leads</span><span>5 scripts de venda</span><span>gestão de tarefas</span><span>ficha de freela</span><span>mensagens prontas</span><span>registro de reuniões</span>
+<!-- ============ NÚMEROS DO PRODUTO ============ -->
+<section class="facts" aria-label="O que tem na central">
+  <div class="wrap facts-grid">
+    <div><b>7</b><span>setores conectados</span></div>
+    <div><b>26</b><span>perguntas de briefing em 5 fases</span></div>
+    <div><b>14</b><span>status de produção por post</span></div>
+    <div><b>6</b><span>follow-ups programados por lead</span></div>
+    <div><b>10<small>min</small></b><span>para duplicar e começar</span></div>
   </div>
-</div>
+</section>
 
 <!-- ============ DOR ============ -->
 <section class="sec">
   <div class="wrap narrow">
     <div class="kicker">seja sincera</div>
     <h2>Quantas dessas aconteceram com você <em>só esse mês?</em></h2>
-    <ul class="pain">
-      <li>Você rolou o WhatsApp por 10 minutos procurando o briefing que o cliente mandou em áudio.</li>
-      <li>O calendário de um cliente está no Trello, o outro numa planilha e o terceiro na sua cabeça.</li>
-      <li>Você postou atrasado porque não lembrava se o cliente já tinha aprovado.</li>
-      <li>Um lead pediu proposta, você esqueceu do follow-up e ele fechou com outra pessoa.</li>
-      <li>Entrou cliente novo e você teve que montar toda a organização do zero de novo.</li>
-      <li>Você trabalhou até tarde, mas terminou o dia com a sensação de que esqueceu alguma coisa.</li>
+    <p class="hint">Toque nas que já aconteceram.</p>
+    <ul class="pain" id="pain">
+      <li><button type="button" aria-pressed="false">Você rolou o WhatsApp por 10 minutos procurando o briefing que o cliente mandou em áudio.</button></li>
+      <li><button type="button" aria-pressed="false">O calendário de um cliente está no Trello, o outro numa planilha e o terceiro na sua cabeça.</button></li>
+      <li><button type="button" aria-pressed="false">Você postou atrasado porque não lembrava se o cliente já tinha aprovado.</button></li>
+      <li><button type="button" aria-pressed="false">Um lead pediu proposta, você esqueceu do follow-up e ele fechou com outra pessoa.</button></li>
+      <li><button type="button" aria-pressed="false">Entrou cliente novo e você teve que montar toda a organização do zero de novo.</button></li>
+      <li><button type="button" aria-pressed="false">Você trabalhou até tarde, mas terminou o dia com a sensação de que esqueceu alguma coisa.</button></li>
     </ul>
-    <p class="turn">Se marcou duas ou mais, o problema não é você. <strong>Você está fazendo trabalho de agência sem o sistema de uma agência.</strong></p>
+    <p class="turn" id="pain-result" aria-live="polite">Se marcou duas ou mais, o problema não é você. <strong>Você está fazendo trabalho de agência sem o sistema de uma agência.</strong></p>
   </div>
 </section>
 
@@ -116,125 +233,103 @@
         </ul>
       </div>
     </div>
-    <div class="center mt"><a class="btn btn-cta" href="#oferta">Quero trabalhar assim <span>→</span></a></div>
   </div>
 </section>
 
-<!-- ============ PRODUTO ============ -->
+<!-- ============ POR DENTRO (setor a setor) ============ -->
 <section class="sec sec-beige" id="produto">
   <div class="wrap">
     <div class="center">
-      <div class="kicker">o que você recebe</div>
+      <div class="kicker">por dentro da central</div>
       <h2>7 setores conectados. <em>Um só lugar.</em></h2>
       <p class="sub">A mesma lógica de uma agência, simplificada para quem trabalha sozinha ou com equipe pequena. O cliente que você cadastra aparece no calendário, nas tarefas e nas reuniões.</p>
     </div>
 
-    <div class="sectors">
-      <article class="sector">
-        <div class="s-ico">01</div>
-        <div class="s-tag">Clientes</div>
+    <!-- 1. Clientes -->
+    <article class="deep">
+      <div class="deep-copy">
+        <div class="s-tag">01 · Clientes</div>
         <h3>Nunca mais procure briefing no WhatsApp.</h3>
-        <p>Ficha completa de cada cliente: dados, plano, redes, acessos e um <strong>briefing estruturado em 5 fases</strong>.</p>
-      </article>
-      <article class="sector">
-        <div class="s-ico">02</div>
-        <div class="s-tag">Conteúdo</div>
-        <h3>Um calendário para cada cliente, sem esforço.</h3>
-        <p>Visão por mês, semana e produção, e <strong>modelos prontos de carrossel e reels</strong> com estratégia, roteiro, legenda e checklist.</p>
-      </article>
-      <article class="sector">
-        <div class="s-ico">03</div>
-        <div class="s-tag">Aquisição</div>
-        <h3>Nenhum lead esquecido no meio do caminho.</h3>
-        <p>Funil do primeiro contato ao fechamento, com <strong>5 scripts de venda</strong>, mapa de cenários e banco de objeções.</p>
-      </article>
-      <article class="sector">
-        <div class="s-ico">04</div>
-        <div class="s-tag">Tarefas</div>
-        <h3>Abra a central e saiba o que fazer hoje.</h3>
-        <p>Gestão de tarefas ligada a cada cliente e setor, com o que vence hoje sempre em primeiro lugar.</p>
-      </article>
-      <article class="sector">
-        <div class="s-ico">05</div>
-        <div class="s-tag">Relacionamento e reuniões</div>
-        <h3>Chegue em toda conversa sabendo o que foi combinado.</h3>
-        <p>Registro de reuniões, alinhamentos e acompanhamento de cada cliente.</p>
-      </article>
-      <article class="sector">
-        <div class="s-ico">06</div>
-        <div class="s-tag">Equipe</div>
-        <h3>Delegue sem precisar explicar tudo de novo.</h3>
-        <p>Ficha de cada freela com portfólio, tabela de preços, regras, onboarding e histórico de pagamentos.</p>
-      </article>
-      <article class="sector">
-        <div class="s-ico">07</div>
-        <div class="s-tag">Trend radar</div>
-        <h3>A ideia boa não se perde mais.</h3>
-        <p>Um lugar para guardar trends, referências e ideias antes que elas sumam do seu feed.</p>
-      </article>
-      <article class="sector bonus">
-        <div class="s-ico">+</div>
-        <div class="s-tag">bônus</div>
-        <h3>Mensagens prontas para clientes.</h3>
-        <p>Boas-vindas, envio de calendário, cobrança de aprovação, lembrete de pagamento e mais. É copiar, ajustar e enviar.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ POR DENTRO (prints reais) ============ -->
-<section class="sec" id="por-dentro">
-  <div class="wrap">
-    <div class="center">
-      <div class="kicker">por dentro da central</div>
-      <h2>Nada de promessa. <em>Isso é o que você recebe.</em></h2>
-      <p class="sub">Prints reais da central no Notion. Tudo já vem montado, com instruções em cada página. Você só preenche com os seus clientes.</p>
-    </div>
-    <div class="showcase">
-      <figure class="shot"><img src="assets/img/briefing.jpg" alt="Ficha do cliente com o briefing dividido em 5 fases" loading="lazy" width="620" height="750"><figcaption><b>Briefing em 5 fases</b>Dados, audiência, posicionamento, vendas e acordos. Você conduz a reunião de onboarding com o roteiro na tela.</figcaption></figure>
-      <figure class="shot"><img src="assets/img/banco-info.jpg" alt="Banco de informações do cliente com documentos, acessos, tom de voz e estratégia" loading="lazy" width="620" height="800"><figcaption><b>Banco de informações do cliente</b>Acessos, tom de voz, identidade visual, referências e estratégia. Tudo que hoje está perdido no WhatsApp.</figcaption></figure>
-      <figure class="shot"><img src="assets/img/post.jpg" alt="Modelo de post de carrossel com estratégia, legenda, CTA e hashtags" loading="lazy" width="620" height="700"><figcaption><b>Modelo de post pronto</b>Cada conteúdo nasce com estratégia, legenda, CTA e status de produção. Carrossel, estático e reels.</figcaption></figure>
-      <figure class="shot"><img src="assets/img/freela.jpg" alt="Ficha de colaborador freela com função, modelo de contratação e prazo" loading="lazy" width="620" height="610"><figcaption><b>Ficha de cada freela</b>Função, modelo de contratação, prazo, portfólio e pagamentos. Delegar fica fácil.</figcaption></figure>
-    </div>
-    <div class="center mt"><a class="btn btn-cta" href="#oferta">Quero essa central <span>→</span></a></div>
-  </div>
-</section>
-
-<!-- ============ VITRINE CALENDÁRIO (mockup) ============ -->
-<section class="sec">
-  <div class="wrap split">
-    <div>
-      <div class="kicker">o coração do sistema</div>
-      <h2>Cadastrou o cliente, o calendário dele <em>já está lá.</em></h2>
-      <p>Cada cliente tem a própria página com o calendário de conteúdo. Você abre o card do post e encontra tudo: objetivo, pilar, roteiro, legenda, CTA, link da arte, status de produção e de aprovação.</p>
-      <ul class="checks">
-        <li>Visão do mês, da semana e da produção</li>
-        <li>Modelos de carrossel/estático e reels prontos</li>
-        <li>Status de formato e de aprovação do cliente</li>
-        <li>Feedback do cliente registrado no próprio post</li>
-      </ul>
-    </div>
-    <div class="mock mock-cal" aria-hidden="true">
-      <div class="mock-bar"><span></span><span></span><span></span><div class="mock-url">Calendário de conteúdo · Loja Flor</div></div>
-      <div class="cal">
-        <div class="cal-h">seg</div><div class="cal-h">ter</div><div class="cal-h">qua</div><div class="cal-h">qui</div><div class="cal-h">sex</div>
-        <div class="cal-d"><span>6</span><em class="t t1">Carrossel · 3 erros</em></div>
-        <div class="cal-d"><span>7</span></div>
-        <div class="cal-d"><span>8</span><em class="t t2">Reels · bastidor</em></div>
-        <div class="cal-d"><span>9</span></div>
-        <div class="cal-d"><span>10</span><em class="t t3">Estático · oferta</em></div>
-        <div class="cal-d"><span>13</span><em class="t t2">Reels · antes e depois</em></div>
-        <div class="cal-d"><span>14</span></div>
-        <div class="cal-d"><span>15</span><em class="t t1">Carrossel · guia</em></div>
-        <div class="cal-d"><span>16</span></div>
-        <div class="cal-d"><span>17</span><em class="t t4">Stories · enquete</em></div>
+        <p>Cada cliente tem uma ficha com dados, plano, contrato, <strong>saúde da conta</strong> (saudável, atenção ou risco de cancelamento) e a contagem de dias para a renovação.</p>
+        <p>Dentro dela, o <strong>briefing em 5 fases</strong> com 26 perguntas para conduzir a reunião de onboarding, e um banco de informações com acessos, identidade visual, tom de voz, estratégia e referências.</p>
       </div>
+      <div class="deep-ui ui-paper">
+        <p class="ui-h">Banco de informações</p>
+        <div class="ui-grid3">
+          <span>Documentos e links</span><span>Acessos</span><span>Identidade visual</span>
+          <span>Manual de comunicação</span><span>Estratégia de conteúdo</span><span>Referências</span>
+          <span>Acervo de histórias</span><span>Depoimentos e provas</span><span>Feedbacks do cliente</span>
+        </div>
+        <p class="ui-h">Pesquisa | Briefing</p>
+        <ol class="ui-phases">
+          <li><b>1</b>Dados, visão e história</li>
+          <li><b>2</b>Audiência</li>
+          <li><b>3</b>Posicionamento e conteúdo</li>
+          <li><b>4</b>Vendas</li>
+          <li><b>5</b>Acordos</li>
+        </ol>
+      </div>
+    </article>
+
+    <!-- 2. Conteúdo -->
+    <article class="deep flip-side">
+      <div class="deep-copy">
+        <div class="s-tag">02 · Conteúdo</div>
+        <h3>Um calendário para cada cliente, sem esforço.</h3>
+        <p>Cada post nasce com objetivo, pilar, data de publicação, entrega interna, link da arte e feedback do cliente. Modelos prontos de <strong>carrossel/estático e reels</strong>.</p>
+        <p>São 14 status de produção, da copy em desenvolvimento até o postado. Você bate o olho e sabe onde cada conteúdo parou.</p>
+      </div>
+      <div class="deep-ui ui-paper">
+        <p class="ui-h">Liberação</p>
+        <div class="chips">
+          <span class="tag gray">Copy em desenvolvimento</span><span class="tag red">Legenda pendente</span><span class="tag red">Cliente enviar material</span><span class="tag purple">Fazer design</span><span class="tag blue">Editar vídeo</span><span class="tag pink">Aprovação interna</span><span class="tag yellow">Cliente aprovar</span><span class="tag red">Ajuste</span><span class="tag green">Aprovado</span><span class="tag purple">Agendado</span><span class="tag gray">Postado</span>
+        </div>
+        <p class="ui-h">Pilar</p>
+        <div class="chips">
+          <span class="tag blue">Autoridade</span><span class="tag green">Educação</span><span class="tag yellow">Bastidores</span><span class="tag pink">Conexão</span><span class="tag purple">Prova social</span><span class="tag red">Venda</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. Aquisição -->
+    <article class="deep">
+      <div class="deep-copy">
+        <div class="s-tag">03 · Aquisição</div>
+        <h3>Nenhum lead esquecido no meio do caminho.</h3>
+        <p>Todo lead segue o mesmo caminho: conversa, reunião, proposta e fechamento. A aba <strong>Falar hoje</strong> mostra quem está atrasado, quem é para hoje e quem está sem data.</p>
+        <p>Junto vêm o <strong>playbook com 5 scripts</strong>, o mapa de cenários (o lead disse algo, você descobre qual script usar) e o banco de objeções.</p>
+      </div>
+      <div class="deep-ui ui-paper">
+        <p class="ui-h">Etapa</p>
+        <ol class="funnel">
+          <li>1 · Novo lead</li><li>2 · Em conversa</li><li>3 · Reunião marcada</li><li>4 · Proposta enviada</li><li>5 · Negociação</li><li class="won">Fechado</li>
+        </ol>
+        <p class="ui-h">Sumiu? 6 follow-ups</p>
+        <div class="cadence"><span>D+1</span><span>D+3</span><span>D+5</span><span>D+7</span><span>D+10</span><span>D+14</span></div>
+      </div>
+    </article>
+
+    <!-- 4. Tarefas, reuniões, equipe, trend radar -->
+    <div class="minis">
+      <article class="mini"><div class="s-tag">04 · Tarefas</div><h3>Abra a central e saiba o que fazer hoje.</h3><p>Cada demanda ligada ao cliente, com prioridade, responsável, supervisão e data de entrega.</p></article>
+      <article class="mini"><div class="s-tag">05 · Reuniões</div><h3>Chegue em toda conversa sabendo o que foi combinado.</h3><p>Registro de reuniões com clientes e equipe, com o histórico de cada alinhamento.</p></article>
+      <article class="mini"><div class="s-tag">06 · Equipe</div><h3>Delegue sem explicar tudo de novo.</h3><p>Ficha de cada designer, editor ou freela: função, contratação, prazo, portfólio e pagamentos.</p></article>
+      <article class="mini"><div class="s-tag">07 · Trend radar</div><h3>A ideia boa não se perde mais.</h3><p>Um lugar para guardar trends e referências antes que sumam do seu feed.</p></article>
+      <article class="mini bonus"><div class="s-tag">bônus</div><h3>Mensagens prontas para clientes.</h3><p>Boas-vindas, envio de calendário, cobrança de aprovação, lembrete de pagamento e mais.</p></article>
     </div>
+
+    <!-- PRINTS REAIS: descomente quando tiver os arquivos em assets/img/
+    <div class="showcase">
+      <figure class="shot"><img src="assets/img/briefing.jpg" alt="Ficha do cliente com o briefing dividido em 5 fases" loading="lazy" width="620" height="750"><figcaption><b>Briefing em 5 fases</b>...</figcaption></figure>
+    </div>
+    -->
+
+    <div class="center mt"><a class="btn btn-cta" href="#oferta">Quero essa central <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
 <!-- ============ IMAGINE ============ -->
-<section class="sec sec-beige">
+<section class="sec">
   <div class="wrap narrow">
     <div class="center">
       <div class="kicker">imagine a sua próxima segunda-feira</div>
@@ -245,7 +340,7 @@
       <li><b>9h</b><span>Abre o calendário da Loja Flor e vê que o carrossel de quarta foi aprovado ontem.</span></li>
       <li><b>11h</b><span>Envia o roteiro para o freela de edição. As regras e o prazo já estão na ficha dele.</span></li>
       <li><b>14h</b><span>A reunião com a Clínica Sorriso começa e você tem o histórico do último alinhamento na tela.</span></li>
-      <li><b>16h</b><span>O funil avisa que hoje é dia de follow-up do Café Bom Dia. Você usa o script e marca a reunião.</span></li>
+      <li><b>16h</b><span>A aba Falar hoje mostra o follow-up do Café Bom Dia. Você usa o script e marca a reunião.</span></li>
       <li><b>18h</b><span>Fecha o computador sabendo que nada ficou para trás.</span></li>
     </ol>
   </div>
@@ -289,8 +384,27 @@
   </div>
 </section>
 
+<!-- ============ QUEM CRIOU ============ -->
+<section class="sec sec-beige">
+  <div class="wrap split about">
+    <div class="photo"><img src="assets/img/carol.jpg" alt="Carol Lima, criadora do Organiza SM" loading="lazy" width="880" height="1100"></div>
+    <div>
+      <div class="kicker">quem criou</div>
+      <h2>Oi, eu sou a Carol.</h2>
+      <p>Eu já fui a social media que respondia cliente às 23h, perdia briefing em áudio e montava uma planilha nova a cada cliente que entrava. Cheguei a cuidar de <strong>mais de 20 clientes ao mesmo tempo</strong>, e aprendi do jeito difícil que trabalhar mais não resolve.</p>
+      <p>O que mudou o jogo foi ter um sistema. Cada cliente passou a seguir o mesmo processo, do primeiro contato à entrega. Foi esse sistema que me permitiu crescer e <strong>abrir a minha agência</strong>.</p>
+      <p>O Organiza SM é a versão simplificada do que eu uso todos os dias, feita para a social media que trabalha sozinha ou com equipe pequena. Tirei o que é coisa de agência grande e deixei o que muda a sua rotina já na primeira semana.</p>
+      <div class="about-facts">
+        <div><b>+20</b><span>clientes ao mesmo tempo</span></div>
+        <div><b>1</b><span>agência construída com esse sistema</span></div>
+      </div>
+      <p class="sign">Carol Lima</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ OFERTA ============ -->
-<section class="sec sec-beige" id="oferta">
+<section class="sec" id="oferta">
   <div class="wrap narrow">
     <div class="offer">
       <div class="ribbon">acesso imediato</div>
@@ -298,9 +412,9 @@
       <h2 class="center">Tudo o que você precisa para organizar a carteira inteira.</h2>
       <ul class="stack">
         <li><span>Central Organiza SM com 7 setores conectados</span></li>
-        <li><span>Ficha de cliente com briefing em 5 fases</span></li>
-        <li><span>Calendário de conteúdo por cliente + modelos de post</span></li>
-        <li><span>Funil de leads com 5 scripts de venda</span></li>
+        <li><span>Ficha de cliente com briefing em 5 fases (26 perguntas)</span></li>
+        <li><span>Calendário de conteúdo por cliente + modelos de carrossel e reels</span></li>
+        <li><span>Funil de leads com 5 scripts de venda, mapa de cenários e banco de objeções</span></li>
         <li><span>Gestão de tarefas, reuniões e equipe</span></li>
         <li><span>Bônus: mensagens prontas para clientes</span></li>
         <li><span>Atualizações futuras da central</span></li>
@@ -313,15 +427,15 @@
         <div class="pb-label">pagamento único</div>
         <div class="pb-price"><small>R$</small>56<small>,99</small></div>
         <div class="pb-note">sem mensalidade · o equivalente a <strong>R$ 4,75 por mês</strong> no primeiro ano</div>
-        <a class="btn btn-cta btn-block pulse" data-checkout="central" href="#">Quero minha central agora <span>→</span></a>
-        <div class="pb-seals"><span>🔒 compra segura</span><span>⚡ acesso em minutos</span><span>↩ 7 dias de garantia</span></div>
+        <a class="btn btn-cta btn-block pulse" data-checkout="central" href="#">Quero minha central agora <span aria-hidden="true">→</span></a>
+        <div class="pb-seals"><span>compra segura</span><span>acesso em minutos</span><span>7 dias de garantia</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ COMPLEMENTOS ============ -->
-<section class="sec" id="complementos">
+<section class="sec sec-beige" id="complementos">
   <div class="wrap">
     <div class="center">
       <div class="kicker">quer ir além?</div>
@@ -330,29 +444,39 @@
     </div>
     <div class="addons">
       <article class="addon">
-        <div class="addon-img"><img src="assets/img/documentacao.jpg" alt="Lista de POPs e documentos da Documentação de agência" loading="lazy" width="620" height="420"></div>
-        <div class="tag">no checkout</div>
+        <div class="addon-ui" aria-hidden="true">
+          <span><i class="tag blue">POP</i> Comercial</span><span><i class="tag blue">POP</i> Onboarding</span><span><i class="tag blue">POP</i> Produção mensal</span><span><i class="tag purple">EXT</i> Contrato</span><span><i class="tag purple">EXT</i> Proposta comercial</span>
+        </div>
+        <div class="tag-line">no checkout</div>
         <h3>Documentação de agência</h3>
         <p>POPs de comercial, onboarding, produção, gestão de clientes e offboarding, mais modelos de contrato, proposta comercial e programa de indicação.</p>
         <div class="price">+ R$ 12,99</div>
       </article>
       <article class="addon">
-        <div class="addon-img"><img src="assets/img/ganchos.jpg" alt="Banco de ganchos organizado por tipo no Notion" loading="lazy" width="620" height="420"></div>
-        <div class="tag">no checkout</div>
+        <div class="addon-ui" aria-hidden="true">
+          <span><i class="tag yellow">Curiosidade</i></span><span><i class="tag red">Erro comum</i></span><span><i class="tag purple">Quebra de crença</i></span><span><i class="tag green">Lista e número</i></span><span><i class="tag pink">Opinião forte</i></span>
+        </div>
+        <div class="tag-line">no checkout</div>
         <h3>Banco de 100 ganchos</h3>
-        <p>100 aberturas para reels, carrossel, stories e legenda, com modelo para preencher e exemplo pronto, organizadas por tipo e objetivo.</p>
+        <p>100 aberturas para reels, carrossel, stories e legenda, em 10 tipos, cada uma com modelo para preencher e exemplo pronto.</p>
         <div class="price">+ R$ 9,90</div>
       </article>
       <article class="addon">
-        <div class="tag">depois da compra</div>
+        <div class="addon-ui" aria-hidden="true">
+          <span>Carteira de clientes</span><span>Preço por pacote</span><span>Controle mensal</span><span>Distribuição do lucro</span><span>Dashboard anual</span>
+        </div>
+        <div class="tag-line">depois da compra</div>
         <h3>Planilha financeira</h3>
         <p>Carteira de clientes, calculadora de preço por pacote, controle mensal, distribuição do lucro e dashboard anual. Excel e Google Planilhas.</p>
         <div class="price">R$ 39,99</div>
       </article>
       <article class="addon" data-product="scripts">
-        <div class="tag">ebook</div>
+        <div class="addon-ui" aria-hidden="true">
+          <span>Abordagem</span><span>Descoberta</span><span>Reunião</span><span>Proposta</span><span>Follow-up e objeções</span>
+        </div>
+        <div class="tag-line">ebook</div>
         <h3>Scripts que fecham</h3>
-        <p>33 mensagens prontas para conquistar clientes, do primeiro direct ao contrato assinado: abordagem, descoberta, reunião, proposta, follow-up e objeções.</p>
+        <p>33 mensagens prontas para conquistar clientes, do primeiro direct ao contrato assinado.</p>
         <div class="price" data-price="scripts">em breve</div>
       </article>
     </div>
@@ -371,22 +495,6 @@
   </div>
 </section>
 
-<!-- ============ QUEM CRIOU ============ -->
-<!-- TODO Carol: revisar o texto (números entre colchetes) -->
-<section class="sec">
-  <div class="wrap split about">
-    <div class="photo"><img src="assets/img/carol.jpg" alt="Carol Lima, criadora do Organiza SM" loading="lazy" width="880" height="1100"></div>
-    <div>
-      <div class="kicker">quem criou</div>
-      <h2>Oi, eu sou a Carol.</h2>
-      <p>Eu já fui a social media que respondia cliente às 23h, perdia briefing em áudio e montava uma planilha nova a cada cliente que entrava. Trabalhava muito e mesmo assim sentia que estava sempre correndo atrás.</p>
-      <p>O que mudou o jogo não foi trabalhar mais. Foi ter um sistema. Hoje cuido de [X] clientes e de uma equipe, e tudo funciona porque cada cliente segue o mesmo processo, do primeiro contato à entrega.</p>
-      <p>O Organiza SM é a versão simplificada do sistema que eu uso todos os dias, feita para a social media que trabalha sozinha ou com equipe pequena. Eu tirei o que é coisa de agência grande e deixei o que muda a sua rotina já na primeira semana.</p>
-      <p class="sign">Carol Lima</p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ DEPOIMENTOS (escondido até ter depoimentos reais) ============ -->
 <!--
 <section class="sec sec-beige" id="depoimentos">
@@ -400,7 +508,7 @@
 -->
 
 <!-- ============ FAQ ============ -->
-<section class="sec sec-beige" id="faq">
+<section class="sec" id="faq">
   <div class="wrap narrow">
     <div class="center"><div class="kicker">dúvidas frequentes</div><h2>Ainda ficou alguma dúvida?</h2></div>
     <div class="faq">
@@ -423,7 +531,7 @@
     <div class="kicker">a decisão é sua</div>
     <h2>Daqui a 30 dias você pode estar com a mesma bagunça de hoje.<br><em>Ou com a carteira inteira organizada.</em></h2>
     <p class="final-p">A diferença entre as duas custa R$ 56,99, uma única vez.</p>
-    <a class="btn btn-light btn-big" data-checkout="central" href="#">Quero organizar minha carteira <span>→</span></a>
+    <a class="btn btn-light btn-big" data-checkout="central" href="#">Quero organizar minha carteira <span aria-hidden="true">→</span></a>
     <p class="micro light">acesso em minutos · garantia de 7 dias</p>
   </div>
 </section>

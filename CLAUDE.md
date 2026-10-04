@@ -9,8 +9,8 @@ Produto da Carol Lima. **Não tem relação com a Agência Essence**: nunca cita
 - Arquivos:
   - `index.html`: toda a página, seção por seção, com comentários `<!-- ===== SEÇÃO ===== -->`
   - `assets/css/style.css`: estilos. Cores e raios ficam nas variáveis do `:root`
-  - `assets/js/main.js`: **links de checkout** (objeto `CONFIG`), barra fixa no celular e animações
-  - `assets/img/`: foto da Carol e prints reais do Notion (tirados em ~737px de largura; para trocar, mantenha o mesmo nome de arquivo)
+  - `assets/js/main.js`: **links de checkout** (objeto `CONFIG`), demonstração da central no topo, lista de dores clicável, barra fixa no celular e animações
+  - `assets/img/`: foto da Carol. Prints do Notion entram aqui quando existirem (há uma seção `showcase` comentada em "Por dentro" pronta para eles)
 
 ## Identidade visual
 | token | cor | uso |
@@ -36,13 +36,15 @@ Tom de voz: direto, acolhedor, de social media para social media. Frases curtas,
 Checkout: **Cakto**. Os order bumps são configurados dentro do produto na Cakto; a página só aponta para o link do produto principal.
 
 ## Estrutura da página (ordem)
-1. Topbar · 2. Hero escuro com print real da central + notificações flutuando · 3. Faixa rolando · 4. Dor · 5. Custo da bagunça · 6. Antes x depois · 7. Setores · 8. Por dentro (prints reais) · 9. Calendário por cliente (mockup CSS) · 10. Um dia com a central · 11. Como funciona · 12. Para quem é / não é · 13. Oferta · 14. Complementos · 15. Garantia · 16. Quem criou · 17. Depoimentos (comentado) · 18. FAQ · 19. CTA final · 20. Rodapé · barra fixa no celular
+1. Topbar · 2. Hero escuro com a **demonstração da central** (5 abas que trocam sozinhas: Central, Cliente, Conteúdo, Aquisição, Tarefas; setores, campos e status copiados do Notion real, clientes de exemplo) · 3. Números do produto (7 setores, 26 perguntas, 14 status, 6 follow-ups, 10 min) · 4. Dor (clicável, com contador) · 5. Custo da bagunça · 6. Antes x depois · 7. Por dentro, setor a setor · 8. Um dia com a central · 9. Como funciona · 10. Para quem é / não é · 11. Quem criou · 12. Oferta · 13. Complementos · 14. Garantia · 15. Depoimentos (comentado) · 16. FAQ · 17. CTA final · 18. Rodapé · barra fixa no celular
+
+Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
 
 ## Pendências antes de publicar
 - [ ] Colar o link do checkout da Cakto em `CONFIG.checkout.central` (`assets/js/main.js`)
 - [x] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124, recortada em 4:5)
-- [ ] Revisar o texto "Quem criou" (trocar os `[X]`)
-- [ ] Prints reais do Notion em `assets/img/` (central, briefing, banco-info, post, freela, ganchos, documentacao) · **hoje são placeholders com o nome do arquivo; substituir mantendo o nome**
+- [x] Texto "Quem criou": +20 clientes ao mesmo tempo e hoje tem uma agência (sem citar o nome da agência)
+- [ ] Prints reais do Notion (opcional, a demonstração já mostra a central): descomentar a seção `showcase` em "Por dentro"
 - [ ] Prints com clientes de exemplo preenchidos (calendário com posts, funil com leads) deixariam a vitrine mais forte
 - [ ] Imagem para Planilha financeira e Scripts que fecham nos complementos
 - [ ] `og:image` 1200x630
