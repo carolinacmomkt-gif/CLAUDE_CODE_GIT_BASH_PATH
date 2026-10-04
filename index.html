@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carol Lima — Sistema de Conteúdo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%234a3426%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27%23efe5d8%27 font-family=%27Georgia%27%3ECL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside id="side">
+    <div class="brand">Carol Lima<small>Sistema de conteúdo</small></div>
+    <div id="nav"></div>
+    <div class="progress-mini" id="pmini"></div>
+    <div class="sidefoot">
+      <div class="nav" data-act="theme"><span data-ic="moon"></span><span id="themeLbl">Modo escuro</span></div>
+    </div>
+  </aside>
+  <main>
+    <div class="top">
+      <div class="row"><button class="btn ghost menu-btn" data-act="menu">Menu</button><span class="crumb" id="crumb"></span></div>
+      <div class="row"><button class="btn ghost" data-act="export"><span data-ic="down"></span>Exportar</button><button class="btn ghost" data-act="import"><span data-ic="up"></span>Importar</button><input type="file" id="fileIn" accept=".json,application/json" hidden><button class="btn pri" data-act="newpost"><span data-ic="plus"></span>Novo conteúdo</button></div>
+    </div>
+    <div class="page" id="page"></div>
+  </main>
+</div>
+<div class="overlay" id="ov" data-act="close"></div>
+<div class="drawer" id="drawer"><div class="inner" id="drawerIn"></div></div>
+<div class="toast" id="toast"></div>
+<div class="lb" id="lb"><button data-lbnav="-1">‹</button><img id="lbimg" alt=""><button data-lbnav="1">›</button></div>
+
+
+<script src="js/icones.js"></script>
+<script src="js/dados-tecnicas.js"></script>
+<script src="js/estado.js"></script>
+<script src="js/capas.js"></script>
+<script src="js/persistencia.js"></script>
+<script src="js/guia.js"></script>
+<script src="js/dados-conhecimento.js"></script>
+<script src="js/dados-referencias.js"></script>
+<script src="js/views-base.js"></script>
+<script src="js/views-producao.js"></script>
+<script src="js/views-estrategia.js"></script>
+<script src="js/views-conhecimento.js"></script>
+<script src="js/ficha.js"></script>
+<script src="js/eventos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
