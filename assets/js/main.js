@@ -7,7 +7,7 @@ const CONFIG = {
   checkout: {
     // Link do produto principal na Cakto (os order bumps ficam configurados lá dentro).
     // Exemplo: "https://pay.cakto.com.br/XXXXXXX"
-    central: "",
+    central: "https://pay.cakto.com.br/3895dea_1166626",
   },
   precos: {
     // Quando o ebook "Scripts que fecham" tiver preço, preencha aqui (ex.: "R$ 27,00").
@@ -17,7 +17,7 @@ const CONFIG = {
     // Data e hora em que o preço de lançamento termina (horário de Brasília).
     // Exemplo: "2026-10-31T23:59:00-03:00". Vazio = sem contador na página.
     // Use uma data real: o contador não reinicia.
-    fim: "",
+    fim: "2026-10-11T23:59:00-03:00",
   },
   demo: {
     // Tempo (ms) que cada setor fica na tela na demonstração do topo.

@@ -41,18 +41,19 @@ Checkout: **Cakto**. Os order bumps são configurados dentro do produto na Cakto
 Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
 
 ## Pendências antes de publicar
-- [ ] Colar o link do checkout da Cakto em `CONFIG.checkout.central` (`assets/js/main.js`)
+- [x] Link do checkout da Cakto em `CONFIG.checkout.central`
 - [x] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124, recortada em 4:5)
 - [x] Texto "Quem criou": +20 clientes ao mesmo tempo e hoje tem uma agência (sem citar o nome da agência)
 - [x] Prints reais em `assets/img/` (central, briefing, banco-info, documentacao), na seção "Prints reais" e no card da Documentação
-- [ ] Definir a data de fim do lançamento em `CONFIG.lancamento.fim` (`assets/js/main.js`). Sem data, a página mostra a oferta sem contador
+- [x] Fim do lançamento: 11/10/2026 às 23h59 (Brasília) em `CONFIG.lancamento.fim`. Depois dessa data o contador some sozinho, mas o texto de lançamento continua: trocar o preço para R$ 357 ou estender a data
 - [ ] Prints com clientes de exemplo preenchidos (calendário com posts, funil com leads) deixariam a vitrine mais forte
 - [ ] Imagem para Planilha financeira e Scripts que fecham nos complementos
 - [ ] `og:image` 1200x630
 - [ ] Confirmar que a central funciona no plano gratuito do Notion (o FAQ afirma isso)
 - [ ] Confirmar se vai manter a promessa "Atualizações futuras da central" na oferta
 - [ ] Confirmar que o bônus "mensagens prontas" está na central entregue
-- [ ] E-mail de contato, termos de uso e política de privacidade no rodapé
+- [x] E-mail de suporte no rodapé: suporteorganizasm@gmail.com
+- [ ] Termos de uso e política de privacidade (links removidos do rodapé até as páginas existirem)
 - [ ] Pixel da Meta / Google Analytics no `<head>`, se for rodar anúncio
 - [ ] Depoimentos: só descomentar a seção quando houver depoimentos **reais** e autorizados
 
