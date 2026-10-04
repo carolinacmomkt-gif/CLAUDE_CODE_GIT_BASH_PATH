@@ -54,7 +54,8 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [ ] Confirmar que o bônus "mensagens prontas" está na central entregue
 - [x] E-mail de suporte no rodapé: suporteorganizasm@gmail.com
 - [ ] Termos de uso e política de privacidade (links removidos do rodapé até as páginas existirem)
-- [ ] Pixel da Meta / Google Analytics no `<head>`, se for rodar anúncio
+- [ ] Rastreamento: colar os IDs em `CONFIG.rastreamento` (`assets/js/main.js`): Pixel da Meta, GA4 e TikTok. A página já dispara PageView, ViewContent (oferta na tela) e InitiateCheckout (clique em comprar) e repassa UTMs/fbclid/gclid/ttclid para o link da Cakto. A compra (Purchase) é registrada pela Cakto: configurar o mesmo pixel no produto lá
+- [ ] Banner de cookies (LGPD) se os pixels forem ativados
 - [ ] Depoimentos: só descomentar a seção quando houver depoimentos **reais** e autorizados
 
 ## Regras

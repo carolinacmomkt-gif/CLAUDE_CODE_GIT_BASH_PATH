@@ -19,6 +19,13 @@ const CONFIG = {
     // Use uma data real: o contador não reinicia.
     fim: "2026-10-11T23:59:00-03:00",
   },
+  rastreamento: {
+    // Cole só os IDs. Vazio = não carrega nada.
+    metaPixel: "",        // Pixel da Meta (Facebook/Instagram). Ex.: "123456789012345"
+    googleAnalytics: "",  // Google Analytics 4. Ex.: "G-XXXXXXXXXX"
+    tiktokPixel: "",      // Pixel do TikTok. Ex.: "CXXXXXXXXXXXXXXXXXXX"
+    valor: 56.99,         // valor enviado nos eventos de início de checkout
+  },
   demo: {
     // Tempo (ms) que cada setor fica na tela na demonstração do topo.
     duracao: 5500,
@@ -30,12 +37,63 @@ const CONFIG = {
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---------- rastreamento (pixels) ---------- */
+  const R = CONFIG.rastreamento;
+  const loadScript = (src) => { const el = document.createElement("script"); el.async = true; el.src = src; document.head.appendChild(el); };
+
+  if (R.metaPixel) {
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; }(window, document);
+    loadScript("https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", R.metaPixel);
+    window.fbq("track", "PageView");
+  }
+  if (R.googleAnalytics) {
+    loadScript("https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(R.googleAnalytics));
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", R.googleAnalytics);
+  }
+  if (R.tiktokPixel) {
+    !function (w, d, t) { w.TiktokAnalyticsObject = t; const ttq = w[t] = w[t] || []; ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"]; ttq.setAndDefer = function (o, m) { o[m] = function () { o.push([m].concat([].slice.call(arguments, 0))); }; }; ttq.methods.forEach((m) => ttq.setAndDefer(ttq, m)); ttq.load = function (id) { const u = "https://analytics.tiktok.com/i18n/pixel/events.js"; ttq._i = ttq._i || {}; ttq._i[id] = []; ttq._i[id]._u = u; ttq._t = ttq._t || {}; ttq._t[id] = +new Date(); ttq._o = ttq._o || {}; ttq._o[id] = {}; loadScript(u + "?sdkid=" + id + "&lib=" + t); }; ttq.load(R.tiktokPixel); ttq.page(); }(window, document, "ttq");
+  }
+
+  // Envia o mesmo evento para todos os pixels ativos
+  const track = (meta, ga, tiktok, extra) => {
+    const data = Object.assign({ value: R.valor, currency: "BRL" }, extra || {});
+    if (window.fbq) window.fbq("track", meta, data);
+    if (window.gtag) window.gtag("event", ga, Object.assign({ items: [{ item_name: "Central Organiza SM", price: R.valor }] }, data));
+    if (window.ttq) window.ttq.track(tiktok, Object.assign({ content_name: "Central Organiza SM" }, data));
+  };
+
+  // ViewContent: quando a oferta aparece na tela (uma vez)
+  const offerEl = document.getElementById("oferta");
+  if (offerEl && "IntersectionObserver" in window && (R.metaPixel || R.googleAnalytics || R.tiktokPixel)) {
+    const vo = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { track("ViewContent", "view_item", "ViewContent"); vo.disconnect(); }
+    }, { threshold: 0.3 });
+    vo.observe(offerEl);
+  }
+
+  // Leva UTMs e IDs de clique do anúncio até o checkout (a Cakto registra a origem da venda)
+  const withTracking = (url) => {
+    try {
+      const out = new URL(url);
+      new URLSearchParams(location.search).forEach((v, k) => {
+        if (/^(utm_|fbclid$|gclid$|ttclid$|src$|sck$)/.test(k) && !out.searchParams.has(k)) out.searchParams.set(k, v);
+      });
+      return out.toString();
+    } catch (e) { return url; }
+  };
+
   /* ---------- links de checkout ---------- */
   document.querySelectorAll("[data-checkout]").forEach((link) => {
     const url = CONFIG.checkout[link.dataset.checkout];
     if (url) {
-      link.href = url;
+      link.href = withTracking(url);
       link.rel = "noopener";
+      // InitiateCheckout: clique em qualquer botão de compra
+      link.addEventListener("click", () => track("InitiateCheckout", "begin_checkout", "InitiateCheckout"));
     } else {
       // Sem link configurado: leva para a oferta em vez de um "#" morto.
       link.href = "#oferta";
