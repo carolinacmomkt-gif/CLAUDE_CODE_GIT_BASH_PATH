@@ -21,7 +21,7 @@ const CONFIG = {
   },
   rastreamento: {
     // Cole só os IDs. Vazio = não carrega nada.
-    metaPixel: "",        // Pixel da Meta (Facebook/Instagram). Ex.: "123456789012345"
+    metaPixel: "1615387966657882", // Pixel da Meta (Facebook/Instagram)
     googleAnalytics: "",  // Google Analytics 4. Ex.: "G-XXXXXXXXXX"
     tiktokPixel: "",      // Pixel do TikTok. Ex.: "CXXXXXXXXXXXXXXXXXXX"
     valor: 56.99,         // valor enviado nos eventos de início de checkout
