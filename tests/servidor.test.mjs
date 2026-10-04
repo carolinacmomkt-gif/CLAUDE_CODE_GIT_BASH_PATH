@@ -1,7 +1,6 @@
-/* Testes do login e do assistente. Rodar com: npm run test:servidor */
+/* Testes do login. Rodar com: npm run test:servidor */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import http from 'node:http';
 
 const SENHA = 'senha-de-teste-123';
 const AMB = { SITE_PASSWORD: SENHA };
@@ -9,7 +8,6 @@ globalThis.Netlify = { env: { get: k => AMB[k] } };
 
 const sessao = await import('../netlify/lib/sessao.js');
 const auth = (await import('../netlify/edge-functions/auth.js')).default;
-process.env.SITE_PASSWORD = SENHA;   // a função da IA lê process.env
 const env = k => AMB[k];
 const ctx = () => { let chamou = false; return { next: async () => { chamou = true; return new Response('conteudo protegido'); }, get chamou() { return chamou; } }; };
 const req = (path, init = {}) => new Request('https://site.test' + path, init);
@@ -92,55 +90,3 @@ test('cookie de outra senha não vale', async () => {
   assert.equal(r.status, 401);
 });
 
-/* ---------- Assistente (IA) com um servidor falso no lugar da API ---------- */
-let recebido;
-const falso = http.createServer((rq, rs) => {
-  let b = ''; rq.on('data', d => b += d); rq.on('end', () => {
-    recebido = { headers: rq.headers, corpo: JSON.parse(b), url: rq.url };
-    rs.writeHead(200, { 'content-type': 'text/event-stream' });
-    const ev = (t, d) => rs.write(`event: ${t}\ndata: ${JSON.stringify(d)}\n\n`);
-    ev('message_start', { type: 'message_start', message: { id: 'msg_1', type: 'message', role: 'assistant', model: 'm', content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 1, output_tokens: 1 } } });
-    ev('content_block_start', { type: 'content_block_start', index: 0, content_block: { type: 'text', text: '' } });
-    for (const t of ['## Revisão\n', '- gancho ', 'fraco']) ev('content_block_delta', { type: 'content_block_delta', index: 0, delta: { type: 'text_delta', text: t } });
-    ev('content_block_stop', { type: 'content_block_stop', index: 0 });
-    ev('message_delta', { type: 'message_delta', delta: { stop_reason: 'end_turn', stop_sequence: null }, usage: { output_tokens: 5 } });
-    ev('message_stop', { type: 'message_stop' });
-    rs.end();
-  });
-});
-await new Promise(r => falso.listen(0, r));
-process.env.ANTHROPIC_BASE_URL = `http://127.0.0.1:${falso.address().port}`;
-const ia = (await import('../netlify/functions/ia.mjs')).default;
-const cookieOk = async () => `${sessao.COOKIE}=${await sessao.criarToken(SENHA, 600)}`;
-const pedido = async (corpo, cookie) => new Request('https://site.test/api/ia', { method: 'POST', headers: { 'content-type': 'application/json', ...(cookie === undefined ? { cookie: await cookieOk() } : cookie ? { cookie } : {}) }, body: JSON.stringify(corpo) });
-const BOM = { messages: [{ role: 'user', content: 'Revise' }], metodos: '## IHC\nIdentificação, história, conteúdo.', conteudo: { titulo: 'Meu reel', gancho: 'Oi gente' } };
-
-test('IA: exige sessão', async () => {
-  process.env.ANTHROPIC_API_KEY = 'sk-teste';
-  assert.equal((await ia(await pedido(BOM, ''))).status, 401);
-});
-test('IA: sem chave configurada avisa', async () => {
-  delete process.env.ANTHROPIC_API_KEY;
-  const r = await ia(await pedido(BOM));
-  assert.equal(r.status, 503); assert.match((await r.json()).erro, /ANTHROPIC_API_KEY/);
-});
-test('IA: valida o pedido', async () => {
-  process.env.ANTHROPIC_API_KEY = 'sk-teste';
-  for (const ruim of [{}, { ...BOM, messages: [] }, { ...BOM, messages: [{ role: 'assistant', content: 'x' }] }, { ...BOM, metodos: 5 }, { ...BOM, messages: [{ role: 'system', content: 'x' }] }])
-    assert.equal((await ia(await pedido(ruim))).status, 400);
-});
-test('IA: responde em fluxo, com métodos em cache e conteúdo no contexto', async () => {
-  process.env.ANTHROPIC_API_KEY = 'sk-teste';
-  const r = await ia(await pedido(BOM));
-  assert.equal(r.status, 200);
-  assert.equal(await r.text(), '## Revisão\n- gancho fraco');
-  const c = recebido.corpo;
-  assert.equal(c.model, 'claude-opus-5-5');
-  assert.equal(c.stream, true);
-  assert.match(c.system[0].text, /IHC/); assert.deepEqual(c.system[0].cache_control, { type: 'ephemeral' });
-  assert.match(c.system[1].text, /Oi gente/);
-  assert.equal(recebido.headers['x-api-key'], 'sk-teste');
-  assert.deepEqual(c.messages, [{ role: 'user', content: 'Revise' }]);
-});
-
-test.after(() => falso.close());

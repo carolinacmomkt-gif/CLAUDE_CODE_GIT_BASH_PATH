@@ -1,8 +1,4 @@
 [build]
   publish = "public"
-  functions = "netlify/functions"
-
-[functions]
-  node_bundler = "esbuild"
 
 # O porteiro (login) está em netlify/edge-functions/auth.js e se declara com config.path = "/*".

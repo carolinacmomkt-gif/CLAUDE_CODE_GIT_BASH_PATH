@@ -12,7 +12,7 @@ function openItem(col,id){
    return `<label>${l}</label>${inp}`};
   let extra='';
   if(col==='posts'){const m=x.metrics||{};
-   extra=`<div class="row" style="margin-top:20px"><h2 style="margin:0">Texto</h2><span class="spacer"></span><button class="btn sm" data-ia="post:${x.id}">Revisar com IA</button><button class="btn sm" data-go2write="${x.id}">Abrir no modo foco</button></div>
+   extra=`<div class="row" style="margin-top:20px"><h2 style="margin:0">Texto</h2><span class="spacer"></span><button class="btn sm" data-go2write="${x.id}">Abrir no modo foco</button></div>
    <label class="lab">Gancho</label><input class="f" data-f="hook" value="${esc(x.hook)}">
    <label class="lab">Roteiro</label><textarea class="f" data-f="script" style="min-height:180px">${esc(x.script)}</textarea>
    <label class="lab">Legenda</label><textarea class="f" data-f="caption">${esc(x.caption)}</textarea>

@@ -7,8 +7,5 @@
     "start": "npx --yes serve public -l 3000",
     "dev": "npx --yes netlify-cli dev",
     "test:servidor": "node --experimental-default-type=module --test tests/servidor.test.mjs"
-  },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.131.0"
   }
 }

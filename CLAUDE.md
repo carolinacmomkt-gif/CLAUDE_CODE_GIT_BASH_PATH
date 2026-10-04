@@ -5,9 +5,9 @@ Sistema de gestão de conteúdo para o perfil pessoal da Carol. HTML, CSS e Java
 ## Como rodar
 
 ```
-npm start              # servidor simples da pasta public/  → http://localhost:3000 (sem login e sem IA)
-npm run dev            # Netlify Dev: roda também o login e o assistente (precisa das variáveis abaixo num arquivo .env)
-npm run test:servidor  # testes do login e da função da IA
+npm start              # servidor simples da pasta public/  → http://localhost:3000 (sem login)
+npm run dev            # Netlify Dev: roda também o login (precisa de SITE_PASSWORD num arquivo .env)
+npm run test:servidor  # testes do login
 ```
 
 Precisa de servidor (não abrir o `index.html` direto pelo arquivo) para as imagens e o IndexedDB funcionarem.
@@ -16,7 +16,7 @@ Precisa de servidor (não abrir o `index.html` direto pelo arquivo) para as imag
 
 ```
 public/                 tudo o que o Netlify publica
-  index.html            casca da página (menu, topo, gaveta, assistente, lightbox) e a ordem dos scripts
+  index.html            casca da página (menu, topo, gaveta, lightbox) e a ordem dos scripts
   css/styles.css        visual, modo claro e escuro (variáveis em :root)
   js/                   scripts clássicos (não são módulos ES): compartilham variáveis globais,
                         então a ORDEM em index.html importa
@@ -33,7 +33,6 @@ public/                 tudo o que o Netlify publica
     views-*.js          páginas (base, produção, estratégia, conhecimento)
     ficha.js            gaveta de edição (openItem, newItem, closeDrawer)
     eventos.js          click, input, change, teclado, tema
-    assistente.js       Chat: conversa com a IA (usa KB como "métodos")
     sessao.js           botão Sair (só aparece com o login do Netlify)
     main.js             inicialização (carrega capas, render, backup semanal)
   assets/exemplos/      59 imagens de @luanacarolinastories (nome: <código>_<n>.jpg)
@@ -41,11 +40,10 @@ public/                 tudo o que o Netlify publica
   fonts/                opcional: Neue Montreal (.otf)
 netlify/
   edge-functions/auth.js  login: nada é entregue sem sessão (página, JS, imagens)
-  functions/ia.mjs        assistente de IA (SDK da Anthropic, resposta em fluxo)
   lib/                    sessao.js (cookie assinado) e login-html.js (tela de login)
-tests/servidor.test.mjs   testes do login e da IA (com API falsa)
+tests/servidor.test.mjs   testes do login
 scripts/baixar_referencias.py  baixa as fotos de referência em qualidade maior
-netlify.toml            publica public/ e aponta a pasta de funções
+netlify.toml            publica public/
 ```
 
 ## Dados e persistência
@@ -56,18 +54,16 @@ netlify.toml            publica public/ e aponta a pasta de funções
 - Links e anexos: na ficha do conteúdo, `post.links` ([{t,u}], só http/https) e `post.anexos` ([{id,nome,tipo,tam}], arquivo no IndexedDB, até 50 MB). Entram no backup (`_anexos`).
 - Capas: o campo "Capa" do conteúdo aceita arrastar imagem (reduzida a 1080 px, guardada no IndexedDB `carol-sistema-capas`, referência `idb:<id>` em `post.cover`) ou URL. Imagens sem uso são apagadas do IndexedDB (`Capas.limpar()`).
 
-## Login e IA no Netlify
+## Login no Netlify
 
-Publicar pelo Git (Netlify conectado ao repositório, branch `claude-sistema`); arrastar pasta não leva as funções. Variáveis em Site configuration, Environment variables:
+Publicar pelo Git (Netlify conectado ao repositório, branch `claude-sistema`); arrastar pasta não leva a função de login. Variáveis em Site configuration, Environment variables:
 
 - `SITE_PASSWORD` (obrigatória): senha de entrada. Sem ela o site fica fechado e mostra o aviso.
 - `AUTH_SECRET` (opcional): segredo que assina o cookie. Se faltar, usa a senha (trocar a senha desloga todo mundo).
-- `ANTHROPIC_API_KEY`: chave da API para o assistente. A chave nunca vai para o navegador.
-- `ANTHROPIC_MODEL` (opcional, padrão `claude-opus-5-5`) e `IA_FALLBACK=0` (desliga o fallback automático em caso de recusa).
 
 Login: cookie `carol_sessao` (HttpOnly, assinado, 30 dias se marcar "Manter acesso", senão até fechar o navegador) e `carol_logado` (sem segredo, só para mostrar o botão Sair). Os dados do sistema continuam no navegador (localStorage e IndexedDB), o login protege o acesso ao site, não cifra esses dados.
 
-Assistente: `Chat` envia a conversa, o texto de `KB` (métodos) e a versão atual do conteúdo para `/api/ia`. O prompt dos métodos é cacheado no servidor. O servidor valida sessão e tamanho dos pedidos.
+Sem serviços pagos: o projeto não usa API de IA. Revisões de conteúdo são feitas conversando com o Claude fora do sistema.
 
 ## Referências em qualidade maior
 
