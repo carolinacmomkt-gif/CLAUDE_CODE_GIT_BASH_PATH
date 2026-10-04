@@ -8,6 +8,8 @@ const CONFIG = {
     // Link do produto principal na Cakto (os order bumps ficam configurados lá dentro).
     // Exemplo: "https://pay.cakto.com.br/XXXXXXX"
     central: "https://pay.cakto.com.br/3895dea_1166626",
+    // Link da oferta Central + Planilha financeira (R$ 97) na Cakto
+    combo: "",
   },
   precos: {
     // Quando o ebook "Scripts que fecham" tiver preço, preencha aqui (ex.: "R$ 27,00").
@@ -59,11 +61,13 @@ const CONFIG = {
   }
 
   // Envia o mesmo evento para todos os pixels ativos
-  const track = (meta, ga, tiktok, extra) => {
-    const data = Object.assign({ value: R.valor, currency: "BRL" }, extra || {});
-    if (window.fbq) window.fbq("track", meta, data);
-    if (window.gtag) window.gtag("event", ga, Object.assign({ items: [{ item_name: "Central Organiza SM", price: R.valor }] }, data));
-    if (window.ttq) window.ttq.track(tiktok, Object.assign({ content_name: "Central Organiza SM" }, data));
+  const track = (meta, ga, tiktok, valor, item) => {
+    valor = valor || R.valor;
+    item = item || "Central Organiza SM";
+    const data = { value: valor, currency: "BRL" };
+    if (window.fbq) window.fbq("track", meta, Object.assign({ content_name: item }, data));
+    if (window.gtag) window.gtag("event", ga, Object.assign({ items: [{ item_name: item, price: valor }] }, data));
+    if (window.ttq) window.ttq.track(tiktok, Object.assign({ content_name: item }, data));
   };
 
   // ViewContent: quando a oferta aparece na tela (uma vez)
@@ -93,15 +97,22 @@ const CONFIG = {
       link.href = withTracking(url);
       link.rel = "noopener";
       // InitiateCheckout: clique em qualquer botão de compra
-      link.addEventListener("click", () => track("InitiateCheckout", "begin_checkout", "InitiateCheckout"));
+      link.addEventListener("click", () => track("InitiateCheckout", "begin_checkout", "InitiateCheckout",
+        parseFloat(link.dataset.valor) || R.valor, link.dataset.item));
     } else {
       // Sem link configurado: leva para a oferta em vez de um "#" morto.
       link.href = "#oferta";
+      if (link.closest(".plans")) {
+        // Botão da própria oferta sem link: deixa claro que falta configurar
+        link.setAttribute("aria-disabled", "true");
+        link.classList.add("is-pending");
+        link.textContent = "Link de pagamento em breve";
+      }
     }
   });
-  if (!CONFIG.checkout.central) {
-    console.warn("[Organiza SM] Falta colar o link da Cakto em CONFIG.checkout.central (assets/js/main.js).");
-  }
+  Object.keys(CONFIG.checkout).forEach((k) => {
+    if (!CONFIG.checkout[k]) console.warn("[Organiza SM] Falta o link da Cakto em CONFIG.checkout." + k + " (assets/js/main.js).");
+  });
 
   /* ---------- preço do ebook ---------- */
   if (CONFIG.precos.scripts) {
