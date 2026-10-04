@@ -40,7 +40,7 @@ Checkout: **Cakto**. Os order bumps são configurados dentro do produto na Cakto
 
 ## Pendências antes de publicar
 - [ ] Colar o link do checkout da Cakto em `CONFIG.checkout.central` (`assets/js/main.js`)
-- [ ] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124) · **hoje é placeholder**
+- [x] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124, recortada em 4:5)
 - [ ] Revisar o texto "Quem criou" (trocar os `[X]`)
 - [ ] Prints reais do Notion em `assets/img/` (central, briefing, banco-info, post, freela, ganchos, documentacao) · **hoje são placeholders com o nome do arquivo; substituir mantendo o nome**
 - [ ] Prints com clientes de exemplo preenchidos (calendário com posts, funil com leads) deixariam a vitrine mais forte
