@@ -77,7 +77,9 @@ strong, b { font-weight: 700; }
 .mt { margin-top: 44px; }
 
 /* ---------- seções ---------- */
-.sec { padding-block: 76px; }
+.sec { padding-block: 76px; position: relative; }
+.facts { position: relative; }
+.swipe-hint { display: none; }
 .sec-beige { background: var(--beige-2); }
 .sec-dark { background: var(--brown); color: var(--cream); }
 .sec-dark h2 em { color: var(--caramel-soft); }
@@ -419,7 +421,7 @@ strong, b { font-weight: 700; }
 .mini.bonus p { color: var(--beige); }
 
 /* prints reais */
-.prints { margin-top: 88px; }
+.prints { margin-top: 44px; }
 .prints-head h3 { font: 300 clamp(1.6rem, 5vw, 2.4rem)/1.15 var(--f-title); }
 .prints-head h3 em { font-style: italic; color: var(--caramel-ink); }
 .shot-frame { background: var(--white); border: 1px solid var(--beige); border-radius: var(--r); box-shadow: var(--shadow-lg); overflow: hidden; }
@@ -619,6 +621,81 @@ strong, b { font-weight: 700; }
 /* ---------- animação de entrada (parte de um estado visível) ---------- */
 .reveal { transform: translateY(14px); transition: transform .6s ease; }
 .reveal.in { transform: none; }
+
+/* =========================================================
+   Só celular (até 639px)
+   ========================================================= */
+@media (max-width: 639px) {
+  .sec { padding-block: 64px; }
+  .hide-sm { display: none; }
+  .topbar { font-size: .78rem; padding-block: 8px; }
+  .btn { padding-inline: 20px; font-size: .95rem; }
+  .btn-big { padding: 18px 22px; font-size: 1rem; }
+
+  /* hero */
+  .nav { margin-bottom: 28px; }
+  .hero-kicker { margin-bottom: 16px; font-size: .78rem; }
+  .lead { font-size: 1.02rem; }
+  .byline { margin-top: 24px; padding-top: 18px; }
+  .hero-grid { gap: 40px; }
+  .win { min-height: 0; }
+  .n-body { padding: 16px 14px 18px; }
+  .n-title { font-size: 1.15rem; margin-bottom: 12px; }
+  .mini-board { gap: 6px; }
+  .mini-board .tag { font-size: .62rem; padding: 2px 5px; }
+  .mini-board p { padding: 6px; }
+  .mini-board b { font-size: .7rem; }
+  .n-sectors { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .n-sectors span { aspect-ratio: auto; padding: 14px 4px; font-size: .72rem; }
+
+  /* custo e passos mais compactos */
+  .costs { gap: 12px; margin: 32px 0 28px; }
+  .cost { padding: 20px; display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: baseline; }
+  .cost-n { font-size: 2.4rem; margin: 0; grid-row: span 2; min-width: 2ch; }
+  .cost h3 { margin-bottom: 4px; }
+  .steps { gap: 12px; }
+  .step { padding: 20px; display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; }
+  .step > span { width: 40px; height: 40px; margin: 0; grid-row: span 2; }
+  .step h3 { margin-bottom: 4px; align-self: center; }
+
+  /* por dentro */
+  .deep { margin-top: 52px; }
+  .ui-paper { padding: 18px 16px; }
+  .shot-scroll { overflow-x: auto; scrollbar-width: thin; }
+  .shot-scroll img { width: 760px; max-width: none; }
+  .swipe-hint { display: block; font-size: .78rem; color: var(--caramel-ink); margin: 10px 2px 0; }
+  .swipe-hint-cards { margin: 48px 0 0; }
+  .shot-pair .shot-frame { max-height: 440px; }
+
+  /* carrosséis de cartões */
+  .minis, .addons {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 82%;
+    grid-template-columns: none;
+    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-inline: calc(var(--gutter) * -1); padding: 4px var(--gutter) 16px;
+    scroll-padding-inline: var(--gutter);
+  }
+  .minis::-webkit-scrollbar, .addons::-webkit-scrollbar { display: none; }
+  .minis > *, .addons > * { scroll-snap-align: start; }
+  .minis { margin-top: 12px; }
+  .addons { margin-top: 12px; }
+  .addon-ui span { padding: 5px 8px; }
+
+  /* quem criou */
+  .about .photo { max-width: 280px; }
+  .about .photo::before { inset: 14px -10px -10px 14px; }
+
+  /* oferta */
+  .offer { padding: 40px 14px 18px; }
+  .stack li { padding: 11px 0; font-size: .95rem; }
+  .price-box { padding: 22px 14px; }
+  .launch { margin: -22px -14px 20px; padding: 16px 12px; }
+  .launch-tag { font-size: .68rem; text-align: center; }
+  .pb-price { font-size: 4.2rem; }
+
+  .faq summary { padding: 16px 52px 16px 18px; }
+  .final { padding-block: 76px; }
+}
 
 /* =========================================================
    Telas maiores
