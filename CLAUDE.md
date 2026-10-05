@@ -70,6 +70,8 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - Acessibilidade: contraste AA, `alt` em todas as imagens, respeitar `prefers-reduced-motion`.
 
 ## Publicar
+O site está publicado na **Netlify direto do repositório** (branch `claude`). O `netlify.toml` define a pasta publicada e esconde `CLAUDE.md`, `README.md`, `netlify.toml`, `.git/` e `.claude/` (respondem 404 com a página `404.html`). Arquivo interno novo na raiz precisa de uma regra igual no `netlify.toml`.
+
 Qualquer hospedagem estática serve:
 - **Vercel**: `npx vercel` na pasta do projeto
 - **Netlify**: arrastar a pasta em app.netlify.com/drop
