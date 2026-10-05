@@ -252,6 +252,15 @@ strong, b { font-weight: 700; }
 .mini-board p { margin: 0; background: var(--white); border: 1px solid var(--t-line); border-radius: 6px; box-shadow: 0 1px 3px rgba(55, 48, 43, .1); padding: 8px; display: grid; gap: 3px; }
 .mini-board b { font-size: .76rem; font-weight: 500; line-height: 1.3; }
 .mini-board small { font-size: .64rem; color: var(--t-muted); }
+.n-quote { font: italic 400 .8rem/1.3 var(--f-title); color: var(--t-muted); margin: -6px 0 12px; }
+.n-hero { font: 400 1.25rem/1.2 var(--f-title); color: var(--t-ink); margin: 0 0 10px; letter-spacing: -.01em; }
+.n-hero em { font-style: italic; color: var(--caramel-ink); }
+.n-callouts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.n-callouts span { display: flex; gap: 6px; align-items: center; font-size: .74rem; color: var(--t-muted); background: var(--t-gray); border-radius: 6px; padding: 7px 8px; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.n-callouts span.c-brown { background: var(--t-brown); }
+.n-callouts b { color: var(--t-ink); font-weight: 700; }
+.n-callouts i { font-style: normal; font-size: .7rem; }
+.n-callouts small { font-size: inherit; overflow: hidden; text-overflow: ellipsis; }
 .n-sectors { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
 .n-sectors span {
   background: #43230F; color: #F3E6D6; border-radius: 6px;
@@ -683,6 +692,8 @@ strong, b { font-weight: 700; }
   .mini-board p { padding: 6px; }
   .mini-board b { font-size: .7rem; }
   .n-sectors { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .n-callouts .c-sub { display: none; }
+  .n-hero { font-size: 1.1rem; }
   .n-sectors span { aspect-ratio: auto; padding: 14px 4px; font-size: .72rem; }
 
   /* custo e passos mais compactos */
