@@ -46,7 +46,7 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [x] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124, recortada em 4:5)
 - [x] Texto "Quem criou": +20 clientes ao mesmo tempo e hoje tem uma agência (sem citar o nome da agência)
 - [x] Prints reais em `assets/img/` (briefing, banco-info, documentacao), na seção "Prints reais" e no card da Documentação
-- [ ] Print novo da página inicial da central (layout com "comece aqui", "Sua carteira inteira, em um só lugar" e atalhos). O print antigo foi retirado; há um comentário no lugar em "Prints reais"
+- [x] Print da página inicial em `assets/img/central.jpg` (versão CENTRAL COMBO, modo escuro, com atalho financeiro; a legenda avisa que o financeiro vem na opção com a planilha)
 - [x] Fim do lançamento: 11/10/2026 às 23h59 (Brasília) em `CONFIG.lancamento.fim`. Depois dessa data o contador some sozinho, mas o texto de lançamento continua: trocar o preço para R$ 357 ou estender a data
 - [ ] Prints com clientes de exemplo preenchidos (calendário com posts, funil com leads) deixariam a vitrine mais forte
 - [x] Link da Cakto do combo Central + Planilha em `CONFIG.checkout.combo`: https://pay.cakto.com.br/3fzs5dq_1171305
