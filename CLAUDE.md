@@ -57,7 +57,7 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [ ] Confirmar que o bônus "mensagens prontas" está na central entregue
 - [x] E-mail de suporte no rodapé: suporteorganizasm@gmail.com
 - [ ] Termos de uso e política de privacidade (links removidos do rodapé até as páginas existirem)
-- [x] Pixel da Meta ativo: 1615387966657882 (em `CONFIG.rastreamento.metaPixel` e no `<noscript>` do `index.html`)
+- [x] Pixel da Meta ativo: 1615387966657882. O código oficial está no `<head>` do `index.html` (PageView). O `main.js` usa o mesmo ID em `CONFIG.rastreamento.metaPixel` para ViewContent e InitiateCheckout e só carrega o pixel sozinho se o código do `<head>` for removido. Trocar o ID nos dois lugares
 - [ ] Rastreamento restante: colar os IDs em `CONFIG.rastreamento` (`assets/js/main.js`): Pixel da Meta, GA4 e TikTok. A página já dispara PageView, ViewContent (oferta na tela) e InitiateCheckout (clique em comprar) e repassa UTMs/fbclid/gclid/ttclid para o link da Cakto. A compra (Purchase) é registrada pela Cakto: configurar o mesmo pixel no produto lá
 - [ ] Banner de cookies (LGPD) se os pixels forem ativados
 - [ ] Depoimentos: só descomentar a seção quando houver depoimentos **reais** e autorizados

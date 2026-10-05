@@ -43,7 +43,9 @@ const CONFIG = {
   const R = CONFIG.rastreamento;
   const loadScript = (src) => { const el = document.createElement("script"); el.async = true; el.src = src; document.head.appendChild(el); };
 
-  if (R.metaPixel) {
+  // O código oficial do Pixel da Meta fica no <head> do index.html (PageView sai de lá).
+  // Este bloco só carrega o pixel se o código do <head> for removido.
+  if (R.metaPixel && !window.fbq) {
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; }(window, document);
     loadScript("https://connect.facebook.net/en_US/fbevents.js");
     window.fbq("init", R.metaPixel);
