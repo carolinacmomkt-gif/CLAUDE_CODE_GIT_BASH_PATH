@@ -8,7 +8,7 @@ const CONFIG = {
     // Link do produto principal na Cakto (os order bumps ficam configurados lá dentro).
     // Exemplo: "https://pay.cakto.com.br/XXXXXXX"
     central: "https://pay.cakto.com.br/3895dea_1166626",
-    // Link da oferta Central + Planilha financeira (R$ 97) na Cakto
+    // Link da oferta Central + Planilha financeira (R$ 49,90) na Cakto
     combo: "https://pay.cakto.com.br/3fzs5dq_1171305",
   },
   precos: {
@@ -26,7 +26,7 @@ const CONFIG = {
     metaPixel: "1615387966657882", // Pixel da Meta (Facebook/Instagram)
     googleAnalytics: "",  // Google Analytics 4. Ex.: "G-XXXXXXXXXX"
     tiktokPixel: "",      // Pixel do TikTok. Ex.: "CXXXXXXXXXXXXXXXXXXX"
-    valor: 56.99,         // valor enviado nos eventos de início de checkout
+    valor: 29.90,         // valor enviado nos eventos de início de checkout
   },
   demo: {
     // Tempo (ms) que cada setor fica na tela na demonstração do topo.

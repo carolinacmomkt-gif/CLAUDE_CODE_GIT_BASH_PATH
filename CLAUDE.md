@@ -27,14 +27,14 @@ Tom de voz: direto, acolhedor, de social media para social media. Frases curtas,
 ## A oferta
 | Produto | Papel | Preço | Onde aparece |
 |---|---|---|---|
-| Central Organiza SM (+ bônus mensagens prontas) | produto principal | R$ 56,99 no lançamento (depois R$ 357) | oferta e todos os CTAs |
+| Central Organiza SM (+ bônus mensagens prontas) | produto principal | R$ 29,90 no lançamento (depois R$ 357) | oferta e todos os CTAs |
 | Documentação de agência | order bump | R$ 12,99 | complementos + checkout Cakto |
-| Banco de 100 ganchos | order bump | R$ 9,90 | complementos + checkout Cakto |
-| Planilha financeira | upsell pós-compra | R$ 49,99 sozinha | complementos |
-| Central + Planilha financeira | segunda opção na oferta (combo) | R$ 97 (separados: R$ 106,98, economia de R$ 9,98) | caixa de preço, card da planilha nos complementos, FAQ |
+| Banco de 100 ganchos | order bump | R$ 9,99 | complementos + checkout Cakto |
+| Planilha financeira | upsell pós-compra | R$ 25,50 sozinha | complementos |
+| Central + Planilha financeira | segunda opção na oferta (combo) | R$ 49,90 (separados: R$ 55,40, economia de R$ 5,50) | caixa de preço, card da planilha nos complementos, FAQ |
 | Scripts que fecham (ebook, 33 scripts) | compra futura | a definir | complementos ("em breve") |
 
-Checkout: **Cakto**. Os order bumps são configurados dentro do produto na Cakto. A página tem dois links: `CONFIG.checkout.central` (R$ 56,99) e `CONFIG.checkout.combo` (Central + Planilha, R$ 97). O CTA final e a barra fixa levam para a escolha (#oferta), não direto ao checkout.
+Checkout: **Cakto**. Os order bumps são configurados dentro do produto na Cakto. A página tem dois links: `CONFIG.checkout.central` (R$ 29,90) e `CONFIG.checkout.combo` (Central + Planilha, R$ 49,90). O CTA final e a barra fixa levam para a escolha (#oferta), não direto ao checkout.
 
 ## Estrutura da página (ordem)
 1. Topbar · 2. Hero escuro com a **demonstração da central** (5 abas que trocam sozinhas: Central, Cliente, Conteúdo, Aquisição, Tarefas; setores, campos e status copiados do Notion real, clientes de exemplo) · 3. Números do produto (7 setores, 26 perguntas, 14 status, 6 follow-ups, 10 min) · 4. Dor (clicável, com contador) · 5. Custo da bagunça · 6. Antes x depois · 7. Por dentro, setor a setor · 8. Um dia com a central · 9. Como funciona · 10. Para quem é / não é · 11. Quem criou · 12. Oferta · 13. Complementos · 14. Garantia · 15. Depoimentos (comentado) · 16. FAQ · 17. CTA final · 18. Rodapé · barra fixa no celular
@@ -64,7 +64,7 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 
 ## Regras
 - Nunca inventar depoimentos, números de vendas, alunas ou resultados.
-- Oferta de lançamento: "de R$ 357 por R$ 56,99" só vale porque R$ 357 é o preço depois do lançamento (está no FAQ). Se isso mudar, ajuste o texto.
+- Oferta de lançamento: "de R$ 357 por R$ 29,90" só vale porque R$ 357 é o preço depois do lançamento (está no FAQ). Se isso mudar, ajuste o texto.
 - Contador só com data real de fim (`CONFIG.lancamento.fim`). Nunca contador que reinicia.
 - Manter mobile-first: testar em 375px de largura.
 - Acessibilidade: contraste AA, `alt` em todas as imagens, respeitar `prefers-reduced-motion`.
