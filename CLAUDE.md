@@ -39,6 +39,8 @@ Checkout: **Hub.la**. Todos os links ficam em `CONFIG.checkout` (`assets/js/main
 ## Estrutura da página (ordem)
 1. Topbar · 2. Hero escuro com a **demonstração da central** (5 abas que trocam sozinhas: Central, Cliente, Conteúdo, Aquisição, Tarefas; setores, campos e status copiados do Notion real, clientes de exemplo) · 3. Números do produto (7 setores, 26 perguntas, 14 status, 6 follow-ups, 10 min) · 4. Dor (clicável, com contador) · 5. Custo da bagunça · 6. Antes x depois · 7. Por dentro, setor a setor · 8. Um dia com a central · 9. Como funciona · 10. Para quem é / não é · 11. Quem criou · 12. Oferta · 13. Complementos · 14. Garantia · 15. Depoimentos (comentado) · 16. FAQ · 17. CTA final · 18. Rodapé · barra fixa no celular
 
+Chamadas para a oferta (#oferta) ao longo da página, sempre depois de um momento de decisão: dor, custo, antes x depois (faixa `.cta-strip` com preço e contador), por dentro, um dia com a central, quem criou, garantia, FAQ e CTA final. Padrão: `<div class="cta">` com `.btn.btn-go` (seta em círculo e brilho) e `.cta-note` com preço âncora ou garantia. Em seção escura use `.btn-caramel`. Não colocar duas chamadas seguidas sem conteúdo entre elas.
+
 Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
 
 ## Pendências antes de publicar
