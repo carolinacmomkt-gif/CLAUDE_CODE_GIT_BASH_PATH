@@ -5,11 +5,12 @@
 /* ---------- CONFIGURAÇÃO: edite só aqui ---------- */
 const CONFIG = {
   checkout: {
-    // Link do produto principal na Cakto (os order bumps ficam configurados lá dentro).
-    // Exemplo: "https://pay.cakto.com.br/XXXXXXX"
-    central: "https://pay.cakto.com.br/3895dea_1166626",
-    // Link da oferta Central + Planilha financeira (R$ 49,90) na Cakto
-    combo: "https://pay.cakto.com.br/3fzs5dq_1171305",
+    // Links de pagamento na Hub.la. Cada botão da página usa data-checkout="<nome>".
+    central: "https://hub.la/g/pzpbXu2Rgy1Jjki4Hj7Q",     // Organiza SM (R$ 29,90)
+    combo: "https://hub.la/g/Z31VtTvN6YhrGbSagzjr",       // Central + Planilha financeira (R$ 39,90)
+    planilha: "https://hub.la/g/UY2DPF8MhVABJSf7cl5f",    // Planilha financeira sozinha (R$ 17,00)
+    ganchos: "https://hub.la/g/HMsYaEguRCByUM3Qkn7j",     // Banco de 100 ganchos (R$ 9,99)
+    documentacao: "https://hub.la/g/39kx7Twy2nnGIc9V8auD", // Documentação de agência (R$ 12,99)
   },
   precos: {
     // Quando o ebook "Scripts que fecham" tiver preço, preencha aqui (ex.: "R$ 27,00").
@@ -81,7 +82,7 @@ const CONFIG = {
     vo.observe(offerEl);
   }
 
-  // Leva UTMs e IDs de clique do anúncio até o checkout (a Cakto registra a origem da venda)
+  // Leva UTMs e IDs de clique do anúncio até o checkout (a Hub.la registra a origem da venda)
   const withTracking = (url) => {
     try {
       const out = new URL(url);
@@ -113,7 +114,7 @@ const CONFIG = {
     }
   });
   Object.keys(CONFIG.checkout).forEach((k) => {
-    if (!CONFIG.checkout[k]) console.warn("[Organiza SM] Falta o link da Cakto em CONFIG.checkout." + k + " (assets/js/main.js).");
+    if (!CONFIG.checkout[k]) console.warn("[Organiza SM] Falta o link de pagamento em CONFIG.checkout." + k + " (assets/js/main.js).");
   });
 
   /* ---------- preço do ebook ---------- */
