@@ -43,9 +43,11 @@ Complementos (aparecem dentro do checkout da Hubla, sem botão na página): Apre
 Checkout: **Hubla**. O link fica em `CONFIG.checkout.central` (`assets/js/main.js`) e o botão da oferta usa `data-checkout="central"`. O script de rastreamento da Hubla (`data.hub.la/hub.min.js`) fica no `<head>` do `index.html`. O link de dúvidas no WhatsApp fica em `CONFIG.contato.whatsapp` (vazio = o link não aparece). Todos os outros botões levam para a oferta (#oferta).
 
 ## Estrutura da página (ordem)
-1. Topbar · 2. Hero escuro com a **demonstração da central** (5 abas que trocam sozinhas: Central, Cliente, Conteúdo, Aquisição, Tarefas; setores, campos e status copiados do Notion real, clientes de exemplo) · 3. Números do produto (7 setores, 26 perguntas, 14 status, 6 follow-ups, 10 min) · 4. Dor (clicável, com contador de marcadas) · 5. Custo da bagunça · 6. Antes x depois · 7. Depoimentos (prints reais em `assets/img/depoimentos/`; grade no computador, carrossel no celular) · 8. Por dentro, setor a setor, com "Junto com a central, você leva..." (scripts, ganchos, prompts, relatório) e o bônus de mensagens · 9. Um dia com a central · 10. Como funciona · 11. Para quem é / não é · 12. Quem criou · 13. Oferta (lista do que vem, valor de cada parte, preço, Pix/cartão, WhatsApp) · 14. Complementos · 15. Garantia · 16. FAQ · 17. CTA final · 18. Rodapé · barra fixa no celular
+1. Topbar · 2. Hero escuro com a **demonstração da central** (5 abas que trocam sozinhas: Central, Cliente, Conteúdo, Aquisição, Tarefas; setores, campos e status copiados do Notion real, clientes de exemplo) · 3. Números do produto (7 setores, 26 perguntas, 14 status, 6 follow-ups, 10 min) · 4. Dor (clicável, com contador de marcadas) · 5. Custo da bagunça · 6. Antes x depois · 7. Depoimentos (prints reais em `assets/img/depoimentos/`; no computador 3 em cima e 2 centralizados embaixo, no tablet 2 por linha, no celular carrossel) · 8. Por dentro: print da página inicial, setores 01 Clientes, 02 Conteúdo e 03 Aquisição, "Junto com a central, você leva..." (scripts, ganchos, prompts, relatório) e o bônus de mensagens · 9. Quem criou · 10. Oferta (lista do que vem, valor de cada parte, preço, Pix/cartão, WhatsApp) · 11. Complementos · 12. Garantia · 13. FAQ · 14. CTA final · 15. Rodapé · barra fixa no celular
 
-Chamadas para a oferta (#oferta) ao longo da página, sempre depois de um momento de decisão: dor, custo, antes x depois (faixa `.cta-strip`), por dentro, um dia com a central, quem criou, garantia, FAQ e CTA final. Padrão: `<div class="cta">` com `.btn.btn-go` (seta em círculo e brilho) e `.cta-note` com preço ou garantia. Em seção escura use `.btn-caramel`. Não colocar duas chamadas seguidas sem conteúdo entre elas.
+Saíram a pedido da Carol: Um dia com a central, Como funciona, Para quem é / não é, os prints de briefing e banco de informações e os cards dos setores 04 a 07.
+
+Chamadas para a oferta (#oferta) ao longo da página, sempre depois de um momento de decisão: dor, custo, antes x depois (faixa `.cta-strip`), por dentro, quem criou, garantia, FAQ e CTA final. Padrão: `<div class="cta">` com `.btn.btn-go` (seta em círculo e brilho) e `.cta-note` com preço ou garantia. Em seção escura use `.btn-caramel`. Não colocar duas chamadas seguidas sem conteúdo entre elas.
 
 Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
 
@@ -53,7 +55,7 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [x] Checkout da Hubla em `CONFIG.checkout.central`
 - [x] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124, recortada em 4:5)
 - [x] Texto "Quem criou": +20 clientes ao mesmo tempo, hoje tem uma agência que atende clientes da área da saúde (sem citar o nome da agência)
-- [x] Prints reais em `assets/img/` (central, briefing, banco-info, documentacao)
+- [x] Prints reais em `assets/img/` (central e documentacao)
 - [x] Depoimentos: 5 prints de mensagens enviados pela Carol em `assets/img/depoimentos/`
 - [ ] Link do WhatsApp em `CONFIG.contato.whatsapp` (o link "Ficou com dúvida?" só aparece quando estiver preenchido)
 - [ ] O print da página inicial (`central.jpg`) mostra o atalho "financeiro", que não faz mais parte do produto: trocar por um print sem ele
