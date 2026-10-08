@@ -8,6 +8,7 @@ const CONFIG = {
     // Links de pagamento na Hubla. Cada botão usa data-checkout="<nome>".
     central: "https://hub.la/g/pzpbXu2Rgy1Jjki4Hj7Q", // Organiza SM completa (R$ 29,90)
     ganchos: "https://hub.la/g/HMsYaEguRCByUM3Qkn7j", // Banco de 100 ganchos, complemento (R$ 9,99)
+    documentacao: "https://hub.la/g/39kx7Twy2nnGIc9V8auD", // Documentação de agência, complemento (R$ 17,00)
   },
   contato: {
     // Link do WhatsApp para dúvidas, perto do botão de compra. Vazio = o link não aparece.
