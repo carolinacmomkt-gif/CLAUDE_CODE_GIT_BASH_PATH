@@ -25,7 +25,7 @@ Produto da Carol Lima. **Não tem relação com a Agência Essence**: nunca cita
 Tom de voz: direto, acolhedor, de social media para social media. Frases curtas, sem exagero, sem promessas de faturamento.
 
 ## A oferta
-Um produto só, a **Organiza SM completa**, por **R$ 29,90** no lançamento (pagamento único). Não existe mais "de R$ 357" nem combo com planilha.
+Um produto só, a **Organiza SM completa**, por **R$ 29,90** no lançamento (pagamento único). Não existe mais "de R$ 357" nem combo: a planilha financeira vem junto no produto.
 
 | O que vem | Valor mostrado na oferta |
 |---|---|
@@ -36,14 +36,15 @@ Um produto só, a **Organiza SM completa**, por **R$ 29,90** no lançamento (pag
 | Modelo de relatório mensal para cliente | R$ 17 |
 | Guia Comece Aqui + tutorial em vídeo | R$ 17 |
 | Mensagens prontas para clientes | R$ 17 |
-| **Total** | **R$ 249 · hoje por R$ 29,90** |
+| Planilha financeira (Google Planilhas) | ~~R$ 37~~ (riscado na página) |
+| **Total** | **R$ 286 · hoje por R$ 29,90** |
 
 Complementos (aparecem dentro do checkout da Hubla, sem botão na página): Apresentação de estratégia + relatório no Canva (R$ 14,90) e Documentação de agência (R$ 17,00).
 
 Checkout: **Hubla**. O link fica em `CONFIG.checkout.central` (`assets/js/main.js`) e o botão da oferta usa `data-checkout="central"`. O script de rastreamento da Hubla (`data.hub.la/hub.min.js`) fica no `<head>` do `index.html`. O link de dúvidas no WhatsApp fica em `CONFIG.contato.whatsapp` (vazio = o link não aparece). Todos os outros botões levam para a oferta (#oferta).
 
 ## Estrutura da página (ordem)
-1. Topbar · 2. Hero escuro com a **demonstração da central** (5 abas que trocam sozinhas: Central, Cliente, Conteúdo, Aquisição, Tarefas; setores, campos e status copiados do Notion real, clientes de exemplo) · 3. Números do produto (7 setores, 26 perguntas, 14 status, 6 follow-ups, 10 min) · 4. Dor (clicável, com contador de marcadas) · 5. Custo da bagunça · 6. Antes x depois · 7. Depoimentos (prints reais em `assets/img/depoimentos/`; no computador 3 em cima e 2 centralizados embaixo, no tablet 2 por linha, no celular carrossel) · 8. Por dentro: print da página inicial, setores 01 Clientes, 02 Conteúdo e 03 Aquisição, "Junto com a central, você leva..." (scripts, ganchos, prompts, relatório) e o bônus de mensagens · 9. Quem criou · 10. Oferta (lista do que vem, valor de cada parte, preço, Pix/cartão, WhatsApp) · 11. Complementos · 12. Garantia · 13. FAQ · 14. CTA final · 15. Rodapé · barra fixa no celular
+1. Topbar · 2. Hero escuro com a **demonstração da central** (5 abas que trocam sozinhas: Central, Cliente, Conteúdo, Aquisição, Tarefas; setores, campos e status copiados do Notion real, clientes de exemplo) · 3. Números do produto (7 setores, 26 perguntas, 14 status, 6 follow-ups, 10 min) · 4. Dor (clicável, com contador de marcadas) · 5. Custo da bagunça · 6. Antes x depois · 7. Depoimentos (prints reais em `assets/img/depoimentos/`; no computador 3 em cima e 2 centralizados embaixo, no tablet 2 por linha, no celular carrossel) · 8. Por dentro: print da página inicial, setores 01 Clientes, 02 Conteúdo e 03 Aquisição, "Junto com a central, você leva..." (scripts, ganchos, prompts, relatório e planilha financeira; 3 em cima e 2 centralizados no computador) e o bônus de mensagens · 9. Quem criou · 10. Oferta (lista do que vem, valor de cada parte, preço, Pix/cartão, WhatsApp) · 11. Complementos · 12. Garantia · 13. FAQ · 14. CTA final · 15. Rodapé · barra fixa no celular
 
 Saíram a pedido da Carol: Um dia com a central, Como funciona, Para quem é / não é, os prints de briefing e banco de informações e os cards dos setores 04 a 07.
 
@@ -58,7 +59,6 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [x] Prints reais em `assets/img/` (central e documentacao)
 - [x] Depoimentos: 5 prints de mensagens enviados pela Carol em `assets/img/depoimentos/`
 - [ ] Link do WhatsApp em `CONFIG.contato.whatsapp` (o link "Ficou com dúvida?" só aparece quando estiver preenchido)
-- [ ] O print da página inicial (`central.jpg`) mostra o atalho "financeiro", que não faz mais parte do produto: trocar por um print sem ele
 - [ ] Confirmar a quantidade de ganchos (a oferta usa +200 em todo lugar; a lista de valores original dizia +100)
 - [ ] Imagem para o card "Apresentação de estratégia + relatório no Canva"
 - [ ] `og:image` 1200x630
@@ -71,7 +71,7 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 
 ## Regras
 - Nunca inventar depoimentos, números de vendas, alunas ou resultados. Depoimento só com print real enviado pela Carol.
-- Sem "de R$ 357" e sem contador regressivo: a ancoragem é o valor de cada parte (R$ 249) contra o preço (R$ 29,90).
+- Sem "de R$ 357" e sem contador regressivo: a ancoragem é o valor de cada parte (R$ 286) contra o preço (R$ 29,90).
 - Texto: português do Brasil, tom de conversa, sem travessão, sem emoji, sem "não é sobre X, é sobre Y", "isso muda tudo", "tem gente que", "ninguém percebe", "sem perceber".
 - Manter mobile-first: testar em 375px de largura.
 - Acessibilidade: contraste AA, `alt` em todas as imagens (nos depoimentos, o texto da mensagem), respeitar `prefers-reduced-motion`.
