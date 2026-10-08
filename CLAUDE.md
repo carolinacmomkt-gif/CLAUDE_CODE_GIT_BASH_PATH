@@ -36,7 +36,7 @@ Um produto só, a **Organiza SM completa**, por **R$ 29,90** no lançamento (pag
 | Modelo de relatório mensal para cliente | R$ 17 |
 | Guia Comece Aqui + tutorial em vídeo | R$ 17 |
 | Mensagens prontas para clientes | R$ 17 |
-| Planilha financeira (Google Planilhas) | ~~R$ 37~~ (riscado na página) |
+| Planilha financeira (Google Planilhas) | R$ 37 |
 | **Total** | **R$ 286 · hoje por R$ 29,90** |
 
 Complementos (aparecem dentro do checkout da Hubla, sem botão na página): Apresentação de estratégia + relatório no Canva (R$ 14,90) e Documentação de agência (R$ 17,00).

@@ -677,7 +677,6 @@ strong, b { font-weight: 700; }
 /* ---------- materiais que vêm junto ---------- */
 .extras-head { margin-top: 72px; }
 .minis-5 { margin-top: 28px; }
-.value-list li b s { text-decoration-thickness: 2px; text-decoration-color: #B4543C; }
 .minis-bonus { margin-top: 14px; grid-template-columns: 1fr !important; }
 .minis-bonus .mini { display: grid; gap: 4px 28px; }
 
