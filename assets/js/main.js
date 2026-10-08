@@ -5,9 +5,9 @@
 /* ---------- CONFIGURAÇÃO: edite só aqui ---------- */
 const CONFIG = {
   checkout: {
-    // Link de pagamento na Hubla. O botão da oferta usa data-checkout="central".
-    // Os complementos (apresentação no Canva e documentação) aparecem dentro do checkout.
+    // Links de pagamento na Hubla. Cada botão usa data-checkout="<nome>".
     central: "https://hub.la/g/pzpbXu2Rgy1Jjki4Hj7Q", // Organiza SM completa (R$ 29,90)
+    ganchos: "https://hub.la/g/HMsYaEguRCByUM3Qkn7j", // Banco de 100 ganchos, complemento (R$ 9,99)
   },
   contato: {
     // Link do WhatsApp para dúvidas, perto do botão de compra. Vazio = o link não aparece.
