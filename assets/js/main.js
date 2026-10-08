@@ -5,22 +5,14 @@
 /* ---------- CONFIGURAÇÃO: edite só aqui ---------- */
 const CONFIG = {
   checkout: {
-    // Links de pagamento na Hub.la. Cada botão da página usa data-checkout="<nome>".
-    central: "https://hub.la/g/pzpbXu2Rgy1Jjki4Hj7Q",     // Organiza SM (R$ 29,90)
-    combo: "https://hub.la/g/Z31VtTvN6YhrGbSagzjr",       // Central + Planilha financeira (R$ 39,90)
-    planilha: "https://hub.la/g/UY2DPF8MhVABJSf7cl5f",    // Planilha financeira sozinha (R$ 17,00)
-    ganchos: "https://hub.la/g/HMsYaEguRCByUM3Qkn7j",     // Banco de 100 ganchos (R$ 9,99)
-    documentacao: "https://hub.la/g/39kx7Twy2nnGIc9V8auD", // Documentação de agência (R$ 12,99)
+    // Link de pagamento na Hubla. O botão da oferta usa data-checkout="central".
+    // Os complementos (apresentação no Canva e documentação) aparecem dentro do checkout.
+    central: "https://hub.la/g/pzpbXu2Rgy1Jjki4Hj7Q", // Organiza SM completa (R$ 29,90)
   },
-  precos: {
-    // Quando o ebook "Scripts que fecham" tiver preço, preencha aqui (ex.: "R$ 27,00").
-    scripts: "",
-  },
-  lancamento: {
-    // Data e hora em que o preço de lançamento termina (horário de Brasília).
-    // Exemplo: "2026-10-31T23:59:00-03:00". Vazio = sem contador na página.
-    // Use uma data real: o contador não reinicia.
-    fim: "2026-10-11T23:59:00-03:00",
+  contato: {
+    // Link do WhatsApp para dúvidas, perto do botão de compra. Vazio = o link não aparece.
+    // Exemplo: "https://wa.me/5511999999999"
+    whatsapp: "",
   },
   rastreamento: {
     // Cole só os IDs. Vazio = não carrega nada.
@@ -82,7 +74,7 @@ const CONFIG = {
     vo.observe(offerEl);
   }
 
-  // Leva UTMs e IDs de clique do anúncio até o checkout (a Hub.la registra a origem da venda)
+  // Leva UTMs e IDs de clique do anúncio até o checkout (a Hubla registra a origem da venda)
   const withTracking = (url) => {
     try {
       const out = new URL(url);
@@ -105,7 +97,7 @@ const CONFIG = {
     } else {
       // Sem link configurado: leva para a oferta em vez de um "#" morto.
       link.href = "#oferta";
-      if (link.closest(".plans")) {
+      if (link.closest(".price-box")) {
         // Botão da própria oferta sem link: deixa claro que falta configurar
         link.setAttribute("aria-disabled", "true");
         link.classList.add("is-pending");
@@ -117,41 +109,15 @@ const CONFIG = {
     if (!CONFIG.checkout[k]) console.warn("[Organiza SM] Falta o link de pagamento em CONFIG.checkout." + k + " (assets/js/main.js).");
   });
 
-  /* ---------- preço do ebook ---------- */
-  if (CONFIG.precos.scripts) {
-    const el = document.querySelector('[data-price="scripts"]');
-    if (el) el.textContent = CONFIG.precos.scripts;
-  }
+  /* ---------- WhatsApp para dúvidas ---------- */
+  const wa = CONFIG.contato.whatsapp;
+  document.querySelectorAll("[data-whatsapp]").forEach((a) => {
+    if (wa) { a.href = wa; a.hidden = false; }
+  });
 
   /* ---------- ano no rodapé ---------- */
   const ano = document.getElementById("ano");
   if (ano) ano.textContent = new Date().getFullYear();
-
-  /* ---------- contador do lançamento ---------- */
-  const fim = CONFIG.lancamento.fim ? new Date(CONFIG.lancamento.fim).getTime() : NaN;
-  const cdBoxes = document.querySelectorAll("[data-countdown]");
-  const cdInline = document.querySelectorAll("[data-countdown-inline]");
-  if (!isNaN(fim) && fim > Date.now()) {
-    const pad = (n) => String(n).padStart(2, "0");
-    const tick = () => {
-      const left = Math.max(0, fim - Date.now());
-      const d = Math.floor(left / 864e5), h = Math.floor(left / 36e5) % 24,
-            m = Math.floor(left / 6e4) % 60, sec = Math.floor(left / 1e3) % 60;
-      cdBoxes.forEach((box) => {
-        box.querySelector('[data-cd="d"]').textContent = pad(d);
-        box.querySelector('[data-cd="h"]').textContent = pad(h);
-        box.querySelector('[data-cd="m"]').textContent = pad(m);
-        box.querySelector('[data-cd="s"]').textContent = pad(sec);
-      });
-      cdInline.forEach((el) => {
-        el.querySelector("[data-cd-text]").textContent = (d ? d + "d " : "") + pad(h) + "h" + pad(m) + "m";
-      });
-      if (left === 0) { clearInterval(iv); [...cdBoxes, ...cdInline].forEach((el) => (el.hidden = true)); }
-    };
-    [...cdBoxes, ...cdInline].forEach((el) => (el.hidden = false));
-    tick();
-    const iv = setInterval(tick, 1000);
-  }
 
   /* ---------- demonstração da central (abas que trocam sozinhas) ---------- */
   const demo = document.getElementById("demo");
