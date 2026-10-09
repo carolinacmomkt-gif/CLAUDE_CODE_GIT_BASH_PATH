@@ -902,6 +902,17 @@ strong, b { font-weight: 700; }
   .footer { padding-bottom: 36px; }
 }
 
+/* computador grande: vídeo da central maior no topo */
+@media (min-width: 1100px) {
+  .hero > .wrap { max-width: 1340px; }
+  .hero-grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.45fr); column-gap: 52px; }
+  .hero h1 { font-size: clamp(2.8rem, 3.7vw, 3.7rem); }
+  .hero-shot .shot-frame { box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .7), 0 0 0 1px rgba(230, 216, 195, .14); }
+}
+@media (min-width: 1600px) {
+  .hero > .wrap { max-width: 1540px; }
+}
+
 /* =========================================================
    Acessibilidade: menos movimento
    ========================================================= */

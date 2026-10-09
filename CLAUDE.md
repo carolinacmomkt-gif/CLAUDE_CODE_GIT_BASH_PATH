@@ -40,7 +40,7 @@ Um produto só, a **Organiza SM completa**, por **R$ 29,90** no lançamento (pag
 | Planilha financeira (Google Planilhas) | R$ 37 |
 | **Total** | **R$ 286 · hoje por R$ 29,90** |
 
-Complementos, dentro da seção da oferta: **Banco de 100 ganchos** (R$ 9,99, `CONFIG.checkout.ganchos`, botão "Quero só os ganchos", para quem veio só por eles) e **Documentação de agência** (R$ 17,00, `CONFIG.checkout.documentacao`), cada um com botão e link próprio na Hubla. Embaixo dos cards: "Você também pode escolhê-los no checkout, junto com a Organiza SM." A apresentação no Canva saiu da página.
+Complementos, dentro da seção da oferta: **Banco de 200 ganchos** (R$ 9,99, `CONFIG.checkout.ganchos`, botão "Quero só os ganchos", para quem veio só por eles) e **Documentação de agência** (R$ 17,00, `CONFIG.checkout.documentacao`), cada um com botão e link próprio na Hubla. Embaixo dos cards: "Você também pode escolhê-los no checkout, junto com a Organiza SM." A apresentação no Canva saiu da página.
 
 Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): `central` (botão da oferta), `ganchos` e `documentacao` (cards dos complementos). Cada botão usa `data-checkout="<nome>"`. O script de rastreamento da Hubla (`data.hub.la/hub.min.js`) fica no `<head>` do `index.html`. O link de dúvidas no WhatsApp fica em `CONFIG.contato.whatsapp`: https://wa.me/message/NFKQBSU3F4QRB1. Todos os outros botões levam para a oferta (#oferta).
 
@@ -73,7 +73,7 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [x] Link do WhatsApp em `CONFIG.contato.whatsapp`
 - [ ] Garantia: a página usa 7 dias em todo lugar. O pedido da reformulação citava 30 dias na letra miúda; se a Hubla estiver configurada para 30, trocar em todos os lugares de uma vez
 - [ ] Depois de 27 de novembro: trocar o preço ou o prazo (topbar, oferta e FAQ)
-- [ ] Confirmar a quantidade de ganchos (a oferta usa +200 em todo lugar; a lista de valores original dizia +100)
+- [x] Ganchos: são 200, no produto e no banco avulso
 - [ ] `og:image` 1200x630
 - [ ] Confirmar que a central funciona no plano gratuito do Notion (o FAQ afirma isso)
 - [x] E-mail de suporte no rodapé: suporteorganizasm@gmail.com
