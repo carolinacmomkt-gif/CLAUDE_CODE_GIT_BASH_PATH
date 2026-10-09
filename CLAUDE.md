@@ -39,16 +39,25 @@ Um produto só, a **Organiza SM completa**, por **R$ 29,90** no lançamento (pag
 | Planilha financeira (Google Planilhas) | R$ 37 |
 | **Total** | **R$ 286 · hoje por R$ 29,90** |
 
-Complementos: **Banco de 100 ganchos** (R$ 9,99, `CONFIG.checkout.ganchos`) e **Documentação de agência** (R$ 17,00, `CONFIG.checkout.documentacao`), cada um com botão e link próprio na Hubla. Embaixo dos cards: "Você também pode escolhê-los no checkout, junto com a Organiza SM." A apresentação no Canva saiu da página.
+Complementos, dentro da seção da oferta: **Banco de 100 ganchos** (R$ 9,99, `CONFIG.checkout.ganchos`, botão "Quero só os ganchos", para quem veio só por eles) e **Documentação de agência** (R$ 17,00, `CONFIG.checkout.documentacao`), cada um com botão e link próprio na Hubla. Embaixo dos cards: "Você também pode escolhê-los no checkout, junto com a Organiza SM." A apresentação no Canva saiu da página.
 
-Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): `central` (botão da oferta), `ganchos` e `documentacao` (cards dos complementos). Cada botão usa `data-checkout="<nome>"`. O script de rastreamento da Hubla (`data.hub.la/hub.min.js`) fica no `<head>` do `index.html`. O link de dúvidas no WhatsApp fica em `CONFIG.contato.whatsapp` (vazio = o link não aparece). Todos os outros botões levam para a oferta (#oferta).
+Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): `central` (botão da oferta), `ganchos` e `documentacao` (cards dos complementos). Cada botão usa `data-checkout="<nome>"`. O script de rastreamento da Hubla (`data.hub.la/hub.min.js`) fica no `<head>` do `index.html`. O link de dúvidas no WhatsApp fica em `CONFIG.contato.whatsapp`: https://wa.me/message/NFKQBSU3F4QRB1. Todos os outros botões levam para a oferta (#oferta).
 
-## Estrutura da página (ordem)
-1. Topbar · 2. Hero escuro com a **demonstração da central** (5 abas que trocam sozinhas: Central, Cliente, Conteúdo, Aquisição, Tarefas; setores, campos e status copiados do Notion real, clientes de exemplo) · 3. Números do produto (7 setores, 26 perguntas, 14 status, 6 follow-ups, 10 min) · 4. Dor (clicável, com contador de marcadas) · 5. Custo da bagunça · 6. Antes x depois · 7. Depoimentos (prints reais em `assets/img/depoimentos/`; no computador 3 em cima e 2 centralizados embaixo, no tablet 2 por linha, no celular carrossel) · 8. Por dentro: print da página inicial, setores 01 Clientes, 02 Conteúdo e 03 Aquisição, "Junto com a central, você leva..." (scripts, ganchos, prompts, relatório e planilha financeira; 3 em cima e 2 centralizados no computador) e o bônus de mensagens · 9. Quem criou · 10. Oferta (lista do que vem, valor de cada parte, preço, Pix/cartão, WhatsApp) · 11. Complementos (banco de ganchos e documentação) · 12. Garantia · 13. FAQ · 14. CTA final · 15. Rodapé · barra fixa no celular
+## Estrutura da página (8 seções)
+Topbar ("Oferta de lançamento até 27 de novembro", sem preço) e depois:
 
-Saíram a pedido da Carol: Um dia com a central, Como funciona, Para quem é / não é, os prints de briefing e banco de informações e os cards dos setores 04 a 07.
+1. **Hero**: título em uma frase ("Pare de gerenciar clientes pelo WhatsApp."), subtítulo "Comece a trabalhar como agência.", print real da página inicial (`central.jpg`), botão com o preço (a única vez que o preço aparece na primeira dobra), âncora "R$ 286 se você montasse por fora", letra miúda "pagamento único · 7 dias de garantia" e a frase da Carol. No celular de 375px, promessa, print e botão aparecem sem rolar.
+2. **Depoimentos**: prints reais em `assets/img/depoimentos/` (computador 3 + 2, tablet 2 por linha, celular carrossel)
+3. **O que tem dentro**: demonstração da central (5 abas que trocam sozinhas, clientes de exemplo), os 7 setores com uma linha cada e "e vem junto" (scripts, ganchos, prompts, relatório, planilha, mensagens)
+4. **Antes x depois**
+5. **Oferta**: prazo (27 de novembro), três blocos sem preço por item, R$ 286 riscado, preço, botão, Pix/cartão, WhatsApp, e embaixo os complementos
+6. **Garantia**
+7. **FAQ** com 5 perguntas: pagar pelo Notion, saber usar o Notion, celular, preço depois do lançamento, e se eu não gostar
+8. **Fechamento**
 
-Chamadas para a oferta (#oferta) ao longo da página, sempre depois de um momento de decisão: dor, custo, antes x depois (faixa `.cta-strip`), por dentro, quem criou, garantia, FAQ e CTA final. Padrão: `<div class="cta">` com `.btn.btn-go` (seta em círculo e brilho) e `.cta-note` com preço ou garantia. Em seção escura use `.btn-caramel`. Não colocar duas chamadas seguidas sem conteúdo entre elas.
+Rodapé e barra fixa no celular continuam. Saíram: lista de dores, custo da bagunça, números do produto, artigos longos dos setores, quem criou, um dia com a central, como funciona, para quem é.
+
+Chamadas para a oferta: hero, o que tem dentro, garantia e fechamento. Padrão: `<div class="cta">` com `.btn.btn-go` e `.cta-note`. Em seção escura use `.btn-caramel`. Não colocar duas chamadas seguidas sem conteúdo entre elas.
 
 Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
 
@@ -59,7 +68,9 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [x] Prints reais em `assets/img/` (central e documentacao)
 - [ ] Confirmar na Hubla que o link da documentação (39kx7Twy2nnGIc9V8auD) cobra R$ 17,00 (era R$ 12,99) e que os dois complementos estão como adicionais no checkout da Organiza SM
 - [x] Depoimentos: 5 prints de mensagens enviados pela Carol em `assets/img/depoimentos/`
-- [ ] Link do WhatsApp em `CONFIG.contato.whatsapp` (o link "Ficou com dúvida?" só aparece quando estiver preenchido)
+- [x] Link do WhatsApp em `CONFIG.contato.whatsapp`
+- [ ] Garantia: a página usa 7 dias em todo lugar. O pedido da reformulação citava 30 dias na letra miúda; se a Hubla estiver configurada para 30, trocar em todos os lugares de uma vez
+- [ ] Depois de 27 de novembro: trocar o preço ou o prazo (topbar, oferta e FAQ)
 - [ ] Confirmar a quantidade de ganchos (a oferta usa +200 em todo lugar; a lista de valores original dizia +100)
 - [ ] `og:image` 1200x630
 - [ ] Confirmar que a central funciona no plano gratuito do Notion (o FAQ afirma isso)
@@ -71,8 +82,8 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 
 ## Regras
 - Nunca inventar depoimentos, números de vendas, alunas ou resultados. Depoimento só com print real enviado pela Carol.
-- Sem "de R$ 357" e sem contador regressivo: a ancoragem é o valor de cada parte (R$ 286) contra o preço (R$ 29,90).
-- Texto: português do Brasil, tom de conversa, sem travessão, sem emoji, sem "não é sobre X, é sobre Y", "isso muda tudo", "tem gente que", "ninguém percebe", "sem perceber".
+- Sem "de R$ 357" e sem contador regressivo. A ancoragem é R$ 286 (o que custaria montar por fora) contra R$ 29,90, e o prazo é uma data escrita: 27 de novembro.
+- Texto: português do Brasil, tom de conversa, segunda pessoa, frases curtas, sem emoji em título. Proibido: travessão; negação seguida de revelação ("não é sobre X, é sobre Y"); "isso muda tudo"; sujeito vago ("ninguém", "todo mundo", "pouca gente", "tem gente que"); "sem perceber", "nem percebeu"; caminhada, aprofundamento, clareza, às vezes, na prática, "real" como reforço; estrangeirismo quando há palavra em português (exceto nomes de campos do Notion); promessa de vantagem por entender antes dos outros; "porque" encadeado.
 - Manter mobile-first: testar em 375px de largura.
 - Acessibilidade: contraste AA, `alt` em todas as imagens (nos depoimentos, o texto da mensagem), respeitar `prefers-reduced-motion`.
 

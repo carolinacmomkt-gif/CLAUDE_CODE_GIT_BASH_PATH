@@ -36,9 +36,9 @@
 <body>
 
 <!-- ============ BARRA DE AVISO ============ -->
-<a class="topbar" href="#oferta"><b><span class="hide-sm">Oferta de </span>lançamento</b> · <span class="hide-sm">central, scripts, ganchos e prompts </span>por R$ 29,90</a>
+<a class="topbar" href="#oferta"><b>Oferta de lançamento</b> até 27 de novembro</a>
 
-<!-- ============ HERO ============ -->
+<!-- ============ 1. HERO: promessa, print da central e botão ============ -->
 <header class="hero" id="topo">
   <div class="wrap">
     <nav class="nav">
@@ -48,20 +48,56 @@
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <div class="hero-kicker">para social medias que já têm clientes</div>
-        <h1>Pare de gerenciar clientes pelo WhatsApp. <em>Comece a trabalhar como agência.</em></h1>
-        <p class="lead">A central no Notion que coloca clientes, calendário, leads, tarefas e equipe no mesmo lugar. Você duplica hoje e amanhã já abre o computador sabendo <strong>o que entregar, para quem e quando</strong>.</p>
-        <div class="hero-cta">
-          <a class="btn btn-cta btn-go" href="#oferta">Quero a central por R$ 29,90 <span class="go" aria-hidden="true">→</span></a>
-          <p class="micro">preço de lançamento · pagamento único · garantia de 7 dias</p>
+        <h1>Pare de gerenciar clientes pelo WhatsApp.</h1>
+        <p class="hero-sub">Comece a trabalhar como agência.</p>
+      </div>
+      <figure class="hero-shot">
+        <div class="shot-frame"><span class="win-bar"><i></i><i></i><i></i></span><img src="assets/img/central.jpg" alt="Página inicial da central Organiza SM no Notion: guia para duplicar, título Sua carteira inteira em um só lugar e atalhos para aquisição, conteúdo, clientes e financeiro" width="1440" height="960" fetchpriority="high"></div>
+      </figure>
+      <div class="hero-cta">
+        <a class="btn btn-cta btn-go" href="#oferta">Quero a central por R$ 29,90 <span class="go" aria-hidden="true">→</span></a>
+        <div class="hero-anchor">
+          <p><s>R$ 286</s> se você montasse por fora</p>
+          <p><b>aqui, você leva tudo pelo valor do botão</b></p>
         </div>
+        <p class="micro">pagamento único · 7 dias de garantia</p>
         <div class="byline">
-          <img src="assets/img/carol.jpg" alt="" width="44" height="55">
-          <p>Criada por <b>Carol Lima</b>, que já cuidou de mais de 20 clientes ao mesmo tempo e hoje tem uma agência.</p>
+          <img src="assets/img/carol.jpg" alt="Carol Lima" width="44" height="55">
+          <p>“Eu montei isso porque eu também já procurei senha de cliente às 23h. Hoje rodo minha agência com essa mesma central.” <b>Carol Lima</b></p>
         </div>
       </div>
+    </div>
+  </div>
+</header>
 
-      <!-- ===== DEMO: janela da central (campos e status iguais aos do Notion) ===== -->
+<!-- ============ 2. DEPOIMENTOS (prints reais enviados pelas clientes) ============ -->
+<section class="sec sec-beige" id="depoimentos">
+  <div class="wrap">
+    <div class="center">
+      <div class="kicker">quem já usa</div>
+      <h2>O que as social medias <em>estão me mandando.</em></h2>
+      <p class="sub">Mensagens de quem já está com a carteira dentro da central.</p>
+    </div>
+    <p class="swipe-hint swipe-hint-cards" aria-hidden="true">deslize para ver mais →</p>
+    <div class="proofs">
+      <figure class="proof"><img src="assets/img/depoimentos/depoimento-1.jpg" alt="Mensagem de uma cliente: Eu vivia procurando senha de cliente no WhatsApp às 11 da noite, agora tá tudo na página de cada um. Parece bobo, mas mudou minha noite." loading="lazy" width="1040" height="284"></figure>
+      <figure class="proof"><img src="assets/img/depoimentos/depoimento-2.jpg" alt="Mensagem de uma cliente: Gente do céu, a cliente veio dizer que não tinha aprovado o post e eu só mandei o print da aprovação. Acabou a discussão em 2 segundos. Melhor R$ 29,90 que eu já gastei." loading="lazy" width="1290" height="399"></figure>
+      <figure class="proof"><img src="assets/img/depoimentos/depoimento-3.jpg" alt="Mensagem de uma cliente: Retomei um orçamento que eu tinha esquecido há 3 semanas e FECHEI. O Organiza já se pagou umas dez vezes." loading="lazy" width="1082" height="319"></figure>
+      <figure class="proof"><img src="assets/img/depoimentos/depoimento-4.jpg" alt="Mensagem de uma cliente: Eu não sabia NADA de Notion e tava morrendo de medo de não conseguir. Em uma tarde cadastrei meus 4 clientes. Tô me sentindo dona de agência." loading="lazy" width="1089" height="394"></figure>
+      <figure class="proof"><img src="assets/img/depoimentos/depoimento-5.jpg" alt="Mensagem de uma cliente: Carol, sério, que alívio. Eu achava que o problema era eu, que eu era desorganizada. Era só falta de um lugar pra colocar as coisas." loading="lazy" width="1078" height="406"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE TEM DENTRO ============ -->
+<section class="sec sec-dark" id="produto">
+  <div class="wrap">
+    <div class="center">
+      <div class="kicker">o que tem dentro</div>
+      <h2>7 setores conectados. <em>Um lugar só.</em></h2>
+      <p class="sub light">O cliente que você cadastra aparece no calendário, nas tarefas e nas reuniões.</p>
+    </div>
+    <div class="inside">
       <div class="demo" id="demo">
         <div class="demo-tabs" role="tablist" aria-label="Setores da central">
           <button role="tab" id="tab-central" aria-controls="view-central" aria-selected="true">Central</button>
@@ -172,65 +208,35 @@
         </div>
         <p class="demo-note">Demonstração com clientes de exemplo. Os setores, campos e status são os mesmos da central no Notion.</p>
       </div>
+      <ol class="sectors">
+        <li><b>01 · Clientes</b><span>Ficha, briefing em 5 fases e banco de informações de cada cliente.</span></li>
+        <li><b>02 · Conteúdo</b><span>Calendário por cliente, com 14 status da copy ao postado.</span></li>
+        <li><b>03 · Aquisição</b><span>Funil de leads, aba Falar hoje e playbook com +100 scripts.</span></li>
+        <li><b>04 · Tarefas</b><span>O que vence hoje e de qual cliente, com prioridade e responsável.</span></li>
+        <li><b>05 · Reuniões</b><span>O histórico de cada alinhamento com cliente e equipe.</span></li>
+        <li><b>06 · Equipe</b><span>A ficha de cada freela, com função, prazo e pagamento.</span></li>
+        <li><b>07 · Trend radar</b><span>Tendências e referências guardadas antes que se percam.</span></li>
+      </ol>
     </div>
-  </div>
-</header>
-
-<!-- ============ NÚMEROS DO PRODUTO ============ -->
-<section class="facts" aria-label="O que tem na central">
-  <div class="wrap facts-grid">
-    <div><b>7</b><span>setores conectados</span></div>
-    <div><b>26</b><span>perguntas de briefing em 5 fases</span></div>
-    <div><b>14</b><span>status de produção por post</span></div>
-    <div><b>6</b><span>follow-ups programados por lead</span></div>
-    <div><b>10<small>min</small></b><span>para duplicar e começar</span></div>
-  </div>
-</section>
-
-<!-- ============ DOR ============ -->
-<section class="sec">
-  <div class="wrap narrow">
-    <div class="kicker">seja sincera</div>
-    <h2>Quantas dessas aconteceram com você <em>só esse mês?</em></h2>
-    <p class="hint">Toque nas que já aconteceram.</p>
-    <ul class="pain" id="pain">
-      <li><button type="button" aria-pressed="false">Você rolou o WhatsApp por 10 minutos procurando o briefing que o cliente mandou em áudio.</button></li>
-      <li><button type="button" aria-pressed="false">O calendário de um cliente está no Trello, o outro numa planilha e o terceiro na sua cabeça.</button></li>
-      <li><button type="button" aria-pressed="false">Você postou atrasado porque não lembrava se o cliente já tinha aprovado.</button></li>
-      <li><button type="button" aria-pressed="false">Um lead pediu proposta, você esqueceu do follow-up e ele fechou com outra pessoa.</button></li>
-      <li><button type="button" aria-pressed="false">Entrou cliente novo e você teve que montar toda a organização do zero de novo.</button></li>
-      <li><button type="button" aria-pressed="false">Você trabalhou até tarde, mas terminou o dia com a sensação de que esqueceu alguma coisa.</button></li>
-    </ul>
-    <p class="turn" id="pain-result" aria-live="polite">Se marcou duas ou mais, o problema não é você. <strong>Você está fazendo trabalho de agência sem o sistema de uma agência.</strong></p>
+    <div class="extras">
+      <p class="extras-title">e vem junto</p>
+      <ul class="extras-list">
+        <li><b>+100 scripts que fecham</b><span>do primeiro direct à renovação do contrato</span></li>
+        <li><b>+200 ganchos</b><span>para reels, carrossel e stories</span></li>
+        <li><b>Prompts de IA</b><span>no método que eu uso com os meus clientes</span></li>
+        <li><b>Relatório mensal</b><span>para mostrar o resultado do mês ao cliente</span></li>
+        <li><b>Planilha financeira</b><span>faturamento, preço dos pacotes e lucro</span></li>
+        <li><b>Mensagens prontas</b><span>boas-vindas, aprovação, cobrança e mais</span></li>
+      </ul>
+    </div>
     <div class="cta">
-      <a class="btn btn-cta btn-go" href="#oferta">Quero sair dessa bagunça <span class="go" aria-hidden="true">→</span></a>
-      <p class="cta-note"><b>R$ 29,90</b> · pagamento único · 7 dias de garantia</p>
+      <a class="btn btn-caramel btn-go" href="#oferta">Quero essa central <span class="go" aria-hidden="true">→</span></a>
+      <p class="cta-note"><b>R$ 29,90</b> · pagamento único · acesso imediato</p>
     </div>
   </div>
 </section>
 
-<!-- ============ CUSTO DA BAGUNÇA ============ -->
-<section class="sec sec-dark">
-  <div class="wrap">
-    <div class="center">
-      <div class="kicker">a conta que ninguém faz</div>
-      <h2>A desorganização já está te custando caro.</h2>
-      <p class="sub light">Ela não aparece na fatura do cartão, mas aparece no fim do mês.</p>
-    </div>
-    <div class="costs">
-      <div class="cost"><div class="cost-n">1</div><h3>cliente que cancela</h3><p>por atraso, esquecimento ou falta de alinhamento leva embora uma mensalidade inteira, todo mês.</p></div>
-      <div class="cost"><div class="cost-n">1</div><h3>lead sem follow-up</h3><p>vira um contrato que outra social media fecha no seu lugar.</p></div>
-      <div class="cost"><div class="cost-n">104h</div><h3>por ano</h3><p>é o que somam só 2 horas por semana procurando informação, refazendo planilha e conferindo o que já foi feito.</p></div>
-    </div>
-    <p class="cost-close">A Organiza SM custa <strong>R$ 29,90, uma única vez.</strong> Se ela evitar um único cancelamento, já se pagou muitas vezes.</p>
-    <div class="cta">
-      <a class="btn btn-caramel btn-go" href="#oferta">Quero a central por R$ 29,90 <span class="go" aria-hidden="true">→</span></a>
-      <p class="cta-note">acesso em minutos · 7 dias de garantia</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ANTES x DEPOIS ============ -->
+<!-- ============ 4. ANTES x DEPOIS ============ -->
 <section class="sec">
   <div class="wrap">
     <div class="center">
@@ -261,214 +267,32 @@
         </ul>
       </div>
     </div>
-    <aside class="cta-strip" aria-label="Oferta de lançamento">
-      <div class="cs-text">
-        <div class="cs-kicker">oferta de lançamento</div>
-        <p class="cs-price">Tudo por <b>R$ 29,90</b></p>
-        <p class="cs-meta">central no Notion, +100 scripts, +200 ganchos e prompts de IA · pagamento único</p>
-      </div>
-      <a class="btn btn-caramel btn-go" href="#oferta">Quero essa rotina <span class="go" aria-hidden="true">→</span></a>
-    </aside>
   </div>
 </section>
 
-<!-- ============ DEPOIMENTOS (prints reais enviados pelas clientes) ============ -->
-<section class="sec sec-dark" id="depoimentos">
-  <div class="wrap">
-    <div class="center">
-      <div class="kicker">quem já usa</div>
-      <h2>O que as social medias <em>estão me mandando.</em></h2>
-      <p class="sub light">Mensagens de quem já está com a carteira dentro da central.</p>
-    </div>
-    <p class="swipe-hint swipe-hint-cards" aria-hidden="true">deslize para ver mais →</p>
-    <div class="proofs">
-      <figure class="proof"><img src="assets/img/depoimentos/depoimento-1.jpg" alt="Mensagem de uma cliente: Eu vivia procurando senha de cliente no WhatsApp às 11 da noite, agora tá tudo na página de cada um. Parece bobo, mas mudou minha noite." loading="lazy" width="1040" height="284"></figure>
-      <figure class="proof"><img src="assets/img/depoimentos/depoimento-2.jpg" alt="Mensagem de uma cliente: Gente do céu, a cliente veio dizer que não tinha aprovado o post e eu só mandei o print da aprovação. Acabou a discussão em 2 segundos. Melhor R$ 29,90 que eu já gastei." loading="lazy" width="1290" height="399"></figure>
-      <figure class="proof"><img src="assets/img/depoimentos/depoimento-3.jpg" alt="Mensagem de uma cliente: Retomei um orçamento que eu tinha esquecido há 3 semanas e FECHEI. O Organiza já se pagou umas dez vezes." loading="lazy" width="1082" height="319"></figure>
-      <figure class="proof"><img src="assets/img/depoimentos/depoimento-4.jpg" alt="Mensagem de uma cliente: Eu não sabia NADA de Notion e tava morrendo de medo de não conseguir. Em uma tarde cadastrei meus 4 clientes. Tô me sentindo dona de agência." loading="lazy" width="1089" height="394"></figure>
-      <figure class="proof"><img src="assets/img/depoimentos/depoimento-5.jpg" alt="Mensagem de uma cliente: Carol, sério, que alívio. Eu achava que o problema era eu, que eu era desorganizada. Era só falta de um lugar pra colocar as coisas." loading="lazy" width="1078" height="406"></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ POR DENTRO (setor a setor) ============ -->
-<section class="sec sec-beige" id="produto">
-  <div class="wrap">
-    <div class="center">
-      <div class="kicker">por dentro da central</div>
-      <h2>7 setores conectados. <em>Um só lugar.</em></h2>
-      <p class="sub">A mesma lógica de uma agência, simplificada para quem trabalha sozinha ou com equipe pequena. O cliente que você cadastra aparece no calendário, nas tarefas e nas reuniões.</p>
-    </div>
-
-    <!-- PRINTS REAIS -->
-    <div class="prints">
-      <div class="center prints-head">
-        <div class="kicker">prints reais</div>
-        <h3>Nada de promessa. <em>Isso é o que você recebe.</em></h3>
-      </div>
-      <figure class="shot shot-wide">
-        <div class="shot-frame shot-scroll" tabindex="0" aria-label="Print da central, deslize para ver a tela inteira"><span class="win-bar"><i></i><i></i><i></i></span><img src="assets/img/central.jpg" alt="Página inicial da central Organiza SM no Notion: guia para duplicar, título Sua carteira inteira em um só lugar e atalhos para aquisição, conteúdo, clientes e financeiro" loading="lazy" width="1440" height="960"></div>
-        <p class="swipe-hint" aria-hidden="true">deslize para ver a tela inteira →</p>
-        <figcaption><b>A página inicial</b>O guia para duplicar, os atalhos para cada setor e, logo abaixo, as suas tarefas. O atalho financeiro leva para a planilha financeira, que vem junto.</figcaption>
-      </figure>
-    </div>
-
-    <!-- 1. Clientes -->
-    <article class="deep">
-      <div class="deep-copy">
-        <div class="s-tag">01 · Clientes</div>
-        <h3>Nunca mais procure briefing no WhatsApp.</h3>
-        <p>Cada cliente tem uma ficha com dados, plano, contrato, <strong>saúde da conta</strong> (saudável, atenção ou risco de cancelamento) e a contagem de dias para a renovação.</p>
-        <p>Dentro dela, o <strong>briefing em 5 fases</strong> com 26 perguntas para conduzir a reunião de onboarding, e um banco de informações com acessos, identidade visual, tom de voz, estratégia e referências.</p>
-      </div>
-      <div class="deep-ui ui-paper">
-        <p class="ui-h">Banco de informações</p>
-        <div class="ui-grid3">
-          <span>Documentos e links</span><span>Acessos</span><span>Identidade visual</span>
-          <span>Manual de comunicação</span><span>Estratégia de conteúdo</span><span>Referências</span>
-          <span>Acervo de histórias</span><span>Depoimentos e provas</span><span>Feedbacks do cliente</span>
-        </div>
-        <p class="ui-h">Pesquisa | Briefing</p>
-        <ol class="ui-phases">
-          <li><b>1</b>Dados, visão e história</li>
-          <li><b>2</b>Audiência</li>
-          <li><b>3</b>Posicionamento e conteúdo</li>
-          <li><b>4</b>Vendas</li>
-          <li><b>5</b>Acordos</li>
-        </ol>
-      </div>
-    </article>
-
-    <!-- 2. Conteúdo -->
-    <article class="deep flip-side">
-      <div class="deep-copy">
-        <div class="s-tag">02 · Conteúdo</div>
-        <h3>Um calendário para cada cliente, sem esforço.</h3>
-        <p>Cada post nasce com objetivo, pilar, data de publicação, entrega interna, link da arte e feedback do cliente. Modelos prontos de <strong>carrossel/estático e reels</strong>.</p>
-        <p>São 14 status de produção, da copy em desenvolvimento até o postado. Você bate o olho e sabe onde cada conteúdo parou.</p>
-      </div>
-      <div class="deep-ui ui-paper">
-        <p class="ui-h">Liberação</p>
-        <div class="chips">
-          <span class="tag gray">Copy em desenvolvimento</span><span class="tag red">Legenda pendente</span><span class="tag red">Cliente enviar material</span><span class="tag purple">Fazer design</span><span class="tag blue">Editar vídeo</span><span class="tag pink">Aprovação interna</span><span class="tag yellow">Cliente aprovar</span><span class="tag red">Ajuste</span><span class="tag green">Aprovado</span><span class="tag purple">Agendado</span><span class="tag gray">Postado</span>
-        </div>
-        <p class="ui-h">Pilar</p>
-        <div class="chips">
-          <span class="tag blue">Autoridade</span><span class="tag green">Educação</span><span class="tag yellow">Bastidores</span><span class="tag pink">Conexão</span><span class="tag purple">Prova social</span><span class="tag red">Venda</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 3. Aquisição -->
-    <article class="deep">
-      <div class="deep-copy">
-        <div class="s-tag">03 · Aquisição</div>
-        <h3>Nenhum lead esquecido no meio do caminho.</h3>
-        <p>Todo lead segue o mesmo caminho: conversa, reunião, proposta e fechamento. A aba <strong>Falar hoje</strong> mostra quem está atrasado, quem é para hoje e quem está sem data.</p>
-        <p>Junto vêm o <strong>playbook com +100 scripts</strong>, o mapa de cenários (o lead disse algo, você descobre qual script usar) e o banco de objeções.</p>
-      </div>
-      <div class="deep-ui ui-paper">
-        <p class="ui-h">Etapa</p>
-        <ol class="funnel">
-          <li>1 · Novo lead</li><li>2 · Em conversa</li><li>3 · Reunião marcada</li><li>4 · Proposta enviada</li><li>5 · Negociação</li><li class="won">Fechado</li>
-        </ol>
-        <p class="ui-h">Sumiu? 6 follow-ups</p>
-        <div class="cadence"><span>D+1</span><span>D+3</span><span>D+5</span><span>D+7</span><span>D+10</span><span>D+14</span></div>
-      </div>
-    </article>
-
-    <!-- materiais que vêm junto com a central -->
-    <div class="center prints-head extras-head">
-      <div class="kicker">vem junto</div>
-      <h3>Junto com a central, você leva <em>o que eu uso para vender e produzir.</em></h3>
-    </div>
-    <p class="swipe-hint swipe-hint-cards" aria-hidden="true">deslize para ver os materiais →</p>
-    <div class="minis minis-5">
-      <article class="mini"><div class="s-tag">incluso · vendas</div><h3>+100 scripts que fecham</h3><p>Mensagens prontas para conquistar, fechar e manter clientes. Cada script diz quando usar, o que escrever e o que fazer quando o lead responde.</p></article>
-      <article class="mini"><div class="s-tag">incluso · conteúdo</div><h3>+200 ganchos</h3><p>Aberturas para os primeiros segundos do reels, a capa do carrossel e a primeira linha da legenda, com modelo para preencher.</p></article>
-      <article class="mini"><div class="s-tag">incluso · produção</div><h3>Prompts de IA</h3><p>O prompt mestre que ensina a IA a escrever do jeito certo, mais prompts de pauta, gancho, roteiro, carrossel, legenda, stories de venda e revisão.</p></article>
-      <article class="mini"><div class="s-tag">incluso · retenção</div><h3>Relatório mensal para cliente</h3><p>Modelo pronto para mostrar o resultado do mês e o plano do próximo. É o que faz o cliente renovar.</p></article>
-      <article class="mini"><div class="s-tag">incluso · financeiro</div><h3>Planilha financeira</h3><p>Quanto cada cliente rende, o preço dos seus pacotes, o controle de cada mês e o dashboard anual com faturamento, lucro e margem. No Google Planilhas.</p></article>
-    </div>
-
-    <div class="minis minis-bonus">
-      <article class="mini bonus"><div class="s-tag">bônus</div><h3>Mensagens prontas para clientes.</h3><p>Boas-vindas, envio de calendário, cobrança de aprovação, lembrete de pagamento e mais.</p></article>
-    </div>
-
-    
-
-    <div class="cta">
-      <a class="btn btn-cta btn-go" href="#oferta">Quero essa central <span class="go" aria-hidden="true">→</span></a>
-      <p class="cta-note"><b>R$ 29,90</b> · pagamento único · acesso imediato</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ QUEM CRIOU ============ -->
-<section class="sec sec-beige">
-  <div class="wrap split about">
-    <div class="photo"><img src="assets/img/carol.jpg" alt="Carol Lima, criadora do Organiza SM" loading="lazy" width="880" height="1100"></div>
-    <div>
-      <div class="kicker">quem criou</div>
-      <h2>Oi, eu sou a Carol.</h2>
-      <p>Eu já fui a social media que respondia cliente às 23h, perdia briefing em áudio e montava uma planilha nova a cada cliente que entrava. Cheguei a cuidar de <strong>mais de 20 clientes ao mesmo tempo</strong>, e aprendi do jeito difícil que trabalhar mais não resolve.</p>
-      <p>O que mudou o jogo foi ter um sistema. Cada cliente passou a seguir o mesmo processo, do primeiro contato à entrega. Foi esse sistema que me permitiu crescer e <strong>abrir a minha agência</strong>.</p>
-      <p>Esse é o mesmo sistema que roda a minha agência hoje, atendendo clientes da área da saúde.</p>
-      <p>O Organiza SM é a versão simplificada do que eu uso todos os dias, feita para a social media que trabalha sozinha ou com equipe pequena. Tirei o que é coisa de agência grande e deixei o que muda a sua rotina já na primeira semana.</p>
-      <div class="about-facts">
-        <div><b>+20</b><span>clientes ao mesmo tempo</span></div>
-        <div><b>1</b><span>agência construída com esse sistema</span></div>
-      </div>
-      <p class="sign">Carol Lima</p>
-      <div class="cta cta-left">
-        <a class="btn btn-cta btn-go" href="#oferta">Quero o sistema da Carol <span class="go" aria-hidden="true">→</span></a>
-        <p class="cta-note"><b>R$ 29,90</b> · pagamento único · acesso imediato</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OFERTA ============ -->
-<section class="sec" id="oferta">
+<!-- ============ 5. OFERTA ============ -->
+<section class="sec sec-beige" id="oferta">
   <div class="wrap narrow">
     <div class="offer">
       <div class="ribbon">oferta de lançamento</div>
       <div class="kicker center">organiza sm completa</div>
       <h2 class="center">Tudo o que você precisa para organizar a carteira inteira.</h2>
-      <p class="stack-title">O que você recebe</p>
-      <ul class="stack">
-        <li><span>Central Organiza SM com 7 setores conectados</span></li>
-        <li><span>+100 scripts que fecham, do primeiro direct à renovação do contrato</span></li>
-        <li><span>+200 ganchos para reels, carrossel e stories</span></li>
-        <li><span>Prompts de IA no método que eu uso com os meus clientes</span></li>
-        <li><span>Modelo de relatório mensal para cliente</span></li>
-        <li><span>Mensagens prontas para clientes</span></li>
-        <li><span>Planilha financeira para controlar faturamento, preço dos pacotes e lucro</span></li>
-        <li><span>Atualizações futuras</span></li>
-      </ul>
-      <p class="stack-note">pagamento único · acesso imediato a tudo · 7 dias de garantia</p>
-      <div class="anchor">
-        <div><small>montar isso do zero</small><b>semanas de tentativa e erro</b></div>
-        <div><small>com a Organiza SM</small><b>10 minutos para duplicar</b></div>
+      <p class="deadline"><b>Preço de lançamento até 27 de novembro.</b> Depois disso, o valor sobe.</p>
+
+      <div class="bundle">
+        <div class="bundle-item"><span class="bundle-n">1</span><div><b>A central</b><p>7 setores conectados, briefing em 5 fases, calendário com status, funil de leads</p></div></div>
+        <div class="bundle-item"><span class="bundle-n">2</span><div><b>Para vender e produzir</b><p>+100 scripts, +200 ganchos, prompts de IA, mensagens prontas</p></div></div>
+        <div class="bundle-item"><span class="bundle-n">3</span><div><b>Para mostrar resultado e cuidar do dinheiro</b><p>planilha financeira, modelo de relatório mensal</p></div></div>
       </div>
+      <p class="bundle-more">E ainda: guia Comece Aqui com tutorial em vídeo e atualizações futuras.</p>
 
       <!-- card único de compra -->
       <div class="price-box">
-        <p class="plans-title">Quanto vale cada parte</p>
-        <ul class="value-list">
-          <li><span>Central Organiza SM com 7 setores</span><b>R$ 97</b></li>
-          <li><span>+100 scripts que fecham</span><b>R$ 47</b></li>
-          <li><span>+200 ganchos de conteúdo</span><b>R$ 27</b></li>
-          <li><span>Prompts de IA no meu método</span><b>R$ 27</b></li>
-          <li><span>Modelo de relatório mensal para cliente</span><b>R$ 17</b></li>
-          <li><span>Guia Comece Aqui + tutorial em vídeo</span><b>R$ 17</b></li>
-          <li><span>Mensagens prontas para clientes</span><b>R$ 17</b></li>
-          <li><span>Planilha financeira</span><b>R$ 37</b></li>
-          <li class="value-total"><span>Total</span><b><s>R$ 286</s></b></li>
-        </ul>
+        <p class="pb-anchor"><s>R$ 286</s> se você montasse por fora</p>
         <div class="pb-was">hoje por</div>
         <div class="pb-price"><small>R$</small>29<small>,90</small></div>
         <a class="btn btn-cta btn-block btn-big btn-go" data-checkout="central" data-valor="29.90" data-item="Organiza SM completa" href="#">Quero a Organiza SM completa <span class="go" aria-hidden="true">→</span></a>
+        <p class="pb-note">pagamento único · acesso imediato a tudo · 7 dias de garantia</p>
         <div class="pay">
           <span class="pay-ico"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2.5 21.5 12 12 21.5 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12h7M12 8.5v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Pix</span>
           <span class="pay-ico"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 10h19M6.5 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Cartão</span>
@@ -477,27 +301,20 @@
         <a class="wa-link" data-whatsapp href="#" target="_blank" rel="noopener" hidden>Ficou com dúvida? <b>Fala comigo no WhatsApp</b></a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ COMPLEMENTOS (banco de ganchos e documentação; também aparecem no checkout) ============ -->
-<section class="sec sec-beige" id="complementos">
-  <div class="wrap">
-    <div class="center">
-      <div class="kicker">quer ir além?</div>
-      <h2>Monte o seu kit completo.</h2>
-      <p class="sub">A central já vem completa. Se quiser ir além, estes complementos são opcionais.</p>
-    </div>
+    <!-- complementos (também aparecem no checkout da Hubla) -->
+    <div class="more">
+      <p class="more-title">quer ir além?</p>
     <div class="addons">
       <article class="addon">
         <div class="addon-ui" aria-hidden="true">
           <span><i class="tag yellow">Curiosidade</i></span><span><i class="tag red">Erro comum</i></span><span><i class="tag purple">Quebra de crença</i></span><span><i class="tag green">Lista e número</i></span><span><i class="tag pink">Opinião forte</i></span>
         </div>
-        <div class="tag-line">complemento</div>
+        <div class="tag-line">avulso</div>
         <h3>Banco de 100 ganchos</h3>
         <p>100 aberturas para reels, carrossel, stories e legenda, em 10 tipos, cada uma com modelo para preencher e exemplo pronto.</p>
         <div class="price">R$ 9,99</div>
-        <a class="btn btn-cta btn-block btn-go addon-btn" data-checkout="ganchos" data-valor="9.99" data-item="Banco de 100 ganchos" href="#">Quero o banco de ganchos <span class="go" aria-hidden="true">→</span></a>
+        <a class="btn btn-cta btn-block btn-go addon-btn" data-checkout="ganchos" data-valor="9.99" data-item="Banco de 100 ganchos" href="#">Quero só os ganchos <span class="go" aria-hidden="true">→</span></a>
       </article>
       <article class="addon">
         <div class="addon-img"><img src="assets/img/documentacao.jpg" alt="Banco de POPs e documentos: POPs de comercial a offboarding, referências e modelos de contrato, proposta e indicação" loading="lazy" width="677" height="650"></div>
@@ -508,11 +325,12 @@
         <a class="btn btn-cta btn-block btn-go addon-btn" data-checkout="documentacao" data-valor="17.00" data-item="Documentação de agência" href="#">Quero a documentação <span class="go" aria-hidden="true">→</span></a>
       </article>
     </div>
-    <p class="addons-note">Você também pode escolhê-los no checkout, junto com a Organiza SM.</p>
+      <p class="addons-note">Você também pode escolhê-los no checkout, junto com a Organiza SM.</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ GARANTIA ============ -->
+<!-- ============ 6. GARANTIA ============ -->
 <section class="sec sec-dark">
   <div class="wrap narrow guarantee">
     <div class="seal">7<br><small>dias</small></div>
@@ -530,41 +348,21 @@
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
+<!-- ============ 7. FAQ ============ -->
 <section class="sec" id="faq">
   <div class="wrap narrow">
     <div class="center"><div class="kicker">dúvidas frequentes</div><h2>Ainda ficou alguma dúvida?</h2></div>
     <div class="faq">
       <details><summary>Preciso pagar pelo Notion?</summary><p>Não. A central foi feita para funcionar no plano gratuito do Notion para uso individual. Você só precisa criar uma conta gratuita, se ainda não tiver.</p></details>
-      <details><summary>Como eu recebo o acesso?</summary><p>Assim que o pagamento é confirmado, você recebe por e-mail o link da central. É só abrir, clicar em "Duplicar" e ela vai para a sua conta do Notion.</p></details>
-      <details><summary>Recebo tudo na hora?</summary><p>Sim. Assim que o pagamento é confirmado, você recebe por e-mail o acesso à central e a todos os materiais.</p></details>
       <details><summary>Preciso saber usar o Notion?</summary><p>Não precisa ser especialista. A central já vem montada, com instruções dentro de cada setor. Se você sabe preencher um formulário, consegue usar. E você ainda tem o guia Comece Aqui e o tutorial em vídeo.</p></details>
       <details><summary>Funciona no celular?</summary><p>Sim. Pelo aplicativo do Notion você consulta e atualiza tudo pelo celular. Para a primeira configuração, o computador é mais confortável.</p></details>
-      <details><summary>Posso personalizar?</summary><p>Pode e deve. Depois de duplicada, a central é sua: dá para mudar cores, nomes, campos e setores do jeito que preferir.</p></details>
-      <details><summary>O preço vai subir depois do lançamento?</summary><p>Sim. R$ 29,90 é o preço de lançamento. Quem comprar agora paga uma única vez e não paga a diferença depois.</p></details>
-      <details><summary>É mensalidade?</summary><p>Não. Você paga R$ 29,90 uma única vez e a central é sua para sempre.</p></details>
-      <details><summary>Serve para quem trabalha com equipe?</summary><p>Sim. Você pode convidar colaboradores para o seu Notion e usar o setor de Equipe para organizar freelas, valores e demandas.</p></details>
-      <details><summary>O que vem no produto?</summary><ul class="faq-list">
-        <li>Central Organiza SM com 7 setores conectados</li>
-        <li>+100 scripts que fecham, do primeiro direct à renovação do contrato</li>
-        <li>+200 ganchos para reels, carrossel e stories</li>
-        <li>Prompts de IA no método que eu uso com os meus clientes</li>
-        <li>Modelo de relatório mensal para cliente</li>
-        <li>Mensagens prontas para clientes</li>
-        <li>Planilha financeira para controlar faturamento, preço dos pacotes e lucro</li>
-        <li>Atualizações futuras</li>
-      </ul></details>
-      <details><summary>Os complementos são obrigatórios?</summary><p>Não. A central e todos os materiais vêm completos. O banco de ganchos e a documentação de agência são opcionais: você compra pelo botão de cada um ou escolhe no checkout, junto com a Organiza SM.</p></details>
+      <details><summary>O preço vai subir depois do lançamento?</summary><p>Sim. R$ 29,90 vale até 27 de novembro. Quem comprar até lá paga uma única vez e não paga a diferença depois.</p></details>
       <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Se não fizer sentido para você, pede o reembolso pela plataforma de pagamento e recebe o valor de volta.</p></details>
-    </div>
-    <div class="cta">
-      <a class="btn btn-cta btn-go" href="#oferta">Sem dúvidas, quero a central <span class="go" aria-hidden="true">→</span></a>
-      <p class="cta-note"><b>R$ 29,90</b> · pagamento único · acesso imediato</p>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA FINAL ============ -->
+<!-- ============ 8. FECHAMENTO ============ -->
 <section class="sec sec-dark final">
   <div class="wrap narrow center">
     <div class="kicker">a decisão é sua</div>

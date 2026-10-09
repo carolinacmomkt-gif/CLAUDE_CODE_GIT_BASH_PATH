@@ -13,7 +13,7 @@ const CONFIG = {
   contato: {
     // Link do WhatsApp para dúvidas, perto do botão de compra. Vazio = o link não aparece.
     // Exemplo: "https://wa.me/5511999999999"
-    whatsapp: "",
+    whatsapp: "https://wa.me/message/NFKQBSU3F4QRB1",
   },
   rastreamento: {
     // Cole só os IDs. Vazio = não carrega nada.
