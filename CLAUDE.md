@@ -64,7 +64,7 @@ Chamadas para a oferta: hero, o que tem dentro, garantia e fechamento. Padrão: 
 Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
 
 ## Pendências
-- [x] Checkout da Hubla em `CONFIG.checkout.central`
+- [x] Checkout da Hubla em `CONFIG.checkout.central`: https://pay.hub.la/Z31VtTvN6YhrGbSagzjr (mesmo ID do antigo combo; confirmar na Hubla que cobra R$ 29,90 e entrega tudo)
 - [x] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124, recortada em 4:5)
 - [x] Texto "Quem criou": +20 clientes ao mesmo tempo, hoje tem uma agência que atende clientes da área da saúde (sem citar o nome da agência)
 - [x] Prints reais em `assets/img/` (central e documentacao)
