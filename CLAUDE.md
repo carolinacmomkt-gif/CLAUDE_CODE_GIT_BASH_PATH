@@ -43,19 +43,20 @@ Complementos, dentro da seção da oferta: **Banco de 100 ganchos** (R$ 9,99, `C
 
 Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): `central` (botão da oferta), `ganchos` e `documentacao` (cards dos complementos). Cada botão usa `data-checkout="<nome>"`. O script de rastreamento da Hubla (`data.hub.la/hub.min.js`) fica no `<head>` do `index.html`. O link de dúvidas no WhatsApp fica em `CONFIG.contato.whatsapp`: https://wa.me/message/NFKQBSU3F4QRB1. Todos os outros botões levam para a oferta (#oferta).
 
-## Estrutura da página (8 seções)
+## Estrutura da página (9 seções)
 Topbar ("Oferta de lançamento até 27 de novembro", sem preço) e depois:
 
 1. **Hero**: título em uma frase ("Pare de gerenciar clientes pelo WhatsApp."), subtítulo "Comece a trabalhar como agência.", print real da página inicial (`central.jpg`), botão com o preço (a única vez que o preço aparece na primeira dobra), âncora "R$ 286 se você montasse por fora", letra miúda "pagamento único · 7 dias de garantia" e a frase da Carol. No celular de 375px, promessa, print e botão aparecem sem rolar.
 2. **Depoimentos**: prints reais em `assets/img/depoimentos/` (computador 3 + 2, tablet 2 por linha, celular carrossel)
 3. **O que tem dentro**: demonstração da central (5 abas que trocam sozinhas, clientes de exemplo), os 7 setores com uma linha cada e "e vem junto" (scripts, ganchos, prompts, relatório, planilha, mensagens)
 4. **Antes x depois**
-5. **Oferta**: prazo (27 de novembro), três blocos sem preço por item, R$ 286 riscado, preço, botão, Pix/cartão, WhatsApp, e embaixo os complementos
-6. **Garantia**
-7. **FAQ** com 5 perguntas: pagar pelo Notion, saber usar o Notion, celular, preço depois do lançamento, e se eu não gostar
-8. **Fechamento**
+5. **Quem criou** (Carol Lima: foto, história, +20 clientes, agência que atende clientes da área da saúde). Mantida a pedido da Carol, sem botão (a oferta vem logo depois)
+6. **Oferta**: prazo (27 de novembro), três blocos sem preço por item, R$ 286 riscado, preço, botão, Pix/cartão, WhatsApp, e embaixo os complementos
+7. **Garantia**
+8. **FAQ** com 5 perguntas: pagar pelo Notion, saber usar o Notion, celular, preço depois do lançamento, e se eu não gostar
+9. **Fechamento**
 
-Rodapé e barra fixa no celular continuam. Saíram: lista de dores, custo da bagunça, números do produto, artigos longos dos setores, quem criou, um dia com a central, como funciona, para quem é.
+Rodapé e barra fixa no celular continuam. Saíram: lista de dores, custo da bagunça, números do produto, artigos longos dos setores, um dia com a central, como funciona, para quem é.
 
 Chamadas para a oferta: hero, o que tem dentro, garantia e fechamento. Padrão: `<div class="cta">` com `.btn.btn-go` e `.cta-note`. Em seção escura use `.btn-caramel`. Não colocar duas chamadas seguidas sem conteúdo entre elas.
 
