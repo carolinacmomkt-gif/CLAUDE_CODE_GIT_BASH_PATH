@@ -110,6 +110,23 @@ const CONFIG = {
     if (!CONFIG.checkout[k]) console.warn("[Organiza SM] Falta o link de pagamento em CONFIG.checkout." + k + " (assets/js/main.js).");
   });
 
+  /* ---------- vídeo da central no topo ---------- */
+  // Toca sozinho, sem som e em repetição. Pausa fora da tela e não toca sozinho
+  // para quem pediu menos movimento (aí aparecem os controles).
+  const heroVideo = document.querySelector(".hero-video");
+  if (heroVideo) {
+    if (reduceMotion) {
+      heroVideo.removeAttribute("autoplay");
+      heroVideo.pause();
+      heroVideo.controls = true;
+    } else if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) heroVideo.play().catch(() => {});
+        else heroVideo.pause();
+      }, { threshold: 0.15 }).observe(heroVideo);
+    }
+  }
+
   /* ---------- WhatsApp para dúvidas ---------- */
   const wa = CONFIG.contato.whatsapp;
   document.querySelectorAll("[data-whatsapp]").forEach((a) => {

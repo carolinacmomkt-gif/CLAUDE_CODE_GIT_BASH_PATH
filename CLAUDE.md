@@ -11,6 +11,7 @@ Produto da Carol Lima. **Não tem relação com a Agência Essence**: nunca cita
   - `assets/css/style.css`: estilos. Cores e raios ficam nas variáveis do `:root`
   - `assets/js/main.js`: **links de checkout** (objeto `CONFIG`), link do WhatsApp, pixels, demonstração da central no topo, lista de dores clicável, barra fixa no celular e animações
   - `assets/img/`: foto da Carol, prints do Notion e, em `depoimentos/`, os prints das mensagens das clientes
+  - `assets/video/`: vídeo do topo, gravação de tela da central (85 s, sem som). `central.mp4`/`.webm` (1280 px) para o computador, `central-720.mp4`/`.webm` para o celular e `central-poster.jpg` como capa. Toca sozinho, sem som e em repetição, pausa fora da tela e não toca sozinho com movimento reduzido. Para trocar o vídeo, gerar os 4 arquivos e a capa com o ffmpeg (H.264 crf 28/29 com `+faststart` e VP9 crf 40)
 
 ## Identidade visual
 | token | cor | uso |
@@ -46,7 +47,7 @@ Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): 
 ## Estrutura da página (9 seções)
 Topbar ("Oferta de lançamento até 27 de novembro", sem preço) e depois:
 
-1. **Hero**: título em uma frase ("Pare de gerenciar clientes pelo WhatsApp."), subtítulo "Comece a trabalhar como agência.", print real da página inicial (`central.jpg`), botão com o preço (a única vez que o preço aparece na primeira dobra), âncora "R$ 286 se você montasse por fora", letra miúda "pagamento único · 7 dias de garantia" e a frase da Carol. No celular de 375px, promessa, print e botão aparecem sem rolar.
+1. **Hero**: título em uma frase ("Pare de gerenciar clientes pelo WhatsApp."), subtítulo "Comece a trabalhar como agência.", vídeo real da central (gravação de tela da Carol, em `assets/video/`), botão com o preço (a única vez que o preço aparece na primeira dobra), âncora "R$ 286 se você montasse por fora", letra miúda "pagamento único · 7 dias de garantia" e a frase da Carol. No celular de 375px, promessa, print e botão aparecem sem rolar.
 2. **Depoimentos**: prints reais em `assets/img/depoimentos/` (computador 3 + 2, tablet 2 por linha, celular carrossel)
 3. **O que tem dentro**: demonstração da central (5 abas que trocam sozinhas, clientes de exemplo), os 7 setores com uma linha cada e "e vem junto" (scripts, ganchos, prompts, relatório, planilha, mensagens)
 4. **Antes x depois**
