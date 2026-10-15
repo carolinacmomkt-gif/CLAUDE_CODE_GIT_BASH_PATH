@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fala com a Carol · Organiza SM</title>
+  <meta name="description" content="Me conta como está a sua carteira hoje e eu te digo se a Organiza SM faz sentido para o seu momento.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Fala com a Carol · Organiza SM">
+  <meta property="og:description" content="Me conta como está a sua carteira hoje e eu te digo se a central faz sentido para você.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#43230F">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+  <!-- Meta Pixel Code (mesmo pixel da página de vendas) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1615387966657882');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1615387966657882&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <style>
+    :root {
+      --brown: #3B2A20; --brown-2: #6B4E3D; --brown-deep: #2A1D15; --cover: #43230F;
+      --caramel: #A47E5F; --caramel-ink: #7E5B40; --caramel-soft: #D4B697;
+      --beige: #E6D8C3; --beige-2: #F3ECE1; --cream: #FBF8F3; --white: #FFFFFF;
+      --t-ink: #37302B; --t-line: #EFEBE6;
+      --t-yellow: #FBEBC4; --t-pink: #F5E0E9; --t-purple: #E8DEEE; --t-green: #DBEDDB; --t-blue: #D8E6EE;
+      --f-title: "Fraunces", Georgia, "Times New Roman", serif;
+      --f-text: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; min-height: 100vh; min-height: 100svh;
+      padding: 28px 16px 40px;
+      font: 400 16px/1.55 var(--f-text); color: var(--brown);
+      background:
+        radial-gradient(55% 35% at 100% 0%, rgba(164, 126, 95, .28), transparent 70%),
+        radial-gradient(50% 30% at 0% 100%, rgba(164, 126, 95, .2), transparent 70%),
+        var(--beige-2);
+    }
+    body::before { /* grão de papel */
+      content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .5;
+      background-image: radial-gradient(rgba(107, 78, 61, .08) 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+
+    /* a página é um "cartão" do Notion: capa da marca, ícone com a foto e o conteúdo */
+    .page {
+      position: relative; width: 100%; max-width: 440px; margin: 0 auto;
+      background: var(--white); border-radius: 26px; overflow: hidden;
+      box-shadow: 0 40px 80px -40px rgba(42, 29, 21, .45), 0 0 0 1px rgba(230, 216, 195, .9);
+    }
+    .cover {
+      position: relative; height: 124px; background: var(--cover); color: #F3E6D6;
+      display: grid; place-items: center; text-align: center; overflow: hidden;
+    }
+    .cover::after { /* luz caramelo na capa */
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(60% 90% at 85% 0%, rgba(212, 182, 151, .35), transparent 70%);
+    }
+    .cover-brand { position: relative; z-index: 1; display: grid; gap: 4px; margin-top: -10px; }
+    .cover-brand span { font: 400 2rem/1 var(--f-title); letter-spacing: -.02em; }
+    .cover-brand b { font-family: var(--f-text); font-weight: 700; letter-spacing: -.04em; }
+    .cover-brand em { font: italic 400 .95rem/1 var(--f-title); opacity: .85; }
+
+    .body { padding: 0 24px 26px; }
+    .head { display: flex; align-items: flex-end; gap: 14px; margin-top: -40px; position: relative; z-index: 2; }
+    .photo {
+      width: 92px; height: 92px; flex: none; border-radius: 50%; object-fit: cover; object-position: top;
+      border: 4px solid var(--white); box-shadow: 0 10px 24px -12px rgba(42, 29, 21, .6); background: var(--beige);
+    }
+    .who { padding-bottom: 4px; }
+    .who b { display: block; font-size: 1.02rem; }
+    .who span { font-size: .82rem; color: var(--brown-2); }
+
+    .kicker { margin: 20px 0 8px; font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--caramel-ink); }
+    h1 { margin: 0 0 12px; font: 300 clamp(1.9rem, 8.4vw, 2.35rem)/1.1 var(--f-title); letter-spacing: -.02em; }
+    h1 em { font-style: italic; color: var(--caramel-ink); }
+    .lead { margin: 0 0 20px; color: var(--brown-2); }
+    .lead strong { color: var(--brown); }
+
+    /* perguntas como etiquetas do Notion */
+    .ask { margin: 26px 0 8px; font-size: .84rem; font-weight: 700; color: var(--brown); }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+    .tags li { font-size: .82rem; color: var(--t-ink); padding: 5px 10px; border-radius: 6px; }
+    .tags li:nth-child(1) { background: var(--t-yellow); }
+    .tags li:nth-child(2) { background: var(--t-pink); }
+    .tags li:nth-child(3) { background: var(--t-purple); }
+    .tags li:nth-child(4) { background: var(--t-green); }
+    .tags li:nth-child(5) { background: var(--t-blue); }
+
+    .btn {
+      position: relative; overflow: hidden; isolation: isolate;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      min-height: 66px; padding: 10px 10px 10px 24px; border-radius: 999px;
+      background: var(--brown); color: var(--cream); text-decoration: none;
+      font: 700 1.05rem/1.2 var(--f-text);
+      box-shadow: 0 18px 34px -18px rgba(42, 29, 21, .8);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn { white-space: nowrap; }
+    .btn:hover { background: var(--brown-deep); transform: translateY(-2px); }
+    .btn:focus-visible { outline: 3px solid var(--caramel); outline-offset: 3px; }
+    .btn::after { /* brilho que passa de tempos em tempos */
+      content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, .18) 50%, transparent 65%);
+      transform: translateX(-120%); animation: shine 5s ease-in-out 1.2s infinite;
+    }
+    @keyframes shine { 0%, 72% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+    .btn i { flex: none; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--caramel-soft); color: var(--brown-deep); }
+    .btn-note { margin: 10px 0 0; text-align: center; font-size: .8rem; color: var(--brown-2); }
+
+    /* prova: print real de uma mensagem que chegou */
+    .proof { margin: 28px 0 0; }
+    .proof figcaption { font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--caramel-ink); margin-bottom: 10px; }
+    .proof-frame { background: #141414; border-radius: 18px; padding: 6px; box-shadow: 0 18px 36px -22px rgba(0, 0, 0, .7); }
+    .proof img { display: block; width: 100%; height: auto; border-radius: 13px; }
+
+    /* links para o site, no estilo dos atalhos da central */
+    .more { margin: 28px 0 0; padding-top: 22px; border-top: 1px dashed var(--beige); }
+    .more p { margin: 0 0 10px; font-size: .84rem; color: var(--brown-2); }
+    .row {
+      display: flex; align-items: center; gap: 12px; padding: 13px 14px; margin-top: 8px;
+      background: #F1E7E2; border-radius: 10px; text-decoration: none; color: var(--t-ink);
+      transition: background .2s ease;
+    }
+    .row:nth-of-type(2) { background: #ECEAE6; }
+    .row:hover { background: var(--beige); }
+    .row:focus-visible { outline: 3px solid var(--caramel); outline-offset: 2px; }
+    .row b { font-weight: 700; }
+    .row small { color: #8A7E74; }
+    .row span { flex: 1; font-size: .92rem; }
+    .row svg { flex: none; color: var(--caramel-ink); }
+
+    .foot { margin: 22px 0 0; text-align: center; font-size: .72rem; font-weight: 700; letter-spacing: .3em; color: var(--caramel); }
+
+    @media (max-width: 400px) { .btn { font-size: .98rem; padding-left: 20px; } .body { padding: 0 20px 24px; } }
+    @media (min-width: 640px) {
+      body { padding-top: 56px; }
+      .cover { height: 170px; }
+      .body { padding: 0 34px 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .btn, .row { transition: none; }
+      .btn:hover { transform: none; }
+      .btn::after { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="cover" aria-hidden="true">
+      <div class="cover-brand"><span>Organiza <b>SM</b></span><em>seu escritório</em></div>
+    </div>
+
+    <div class="body">
+      <div class="head">
+        <img class="photo" src="../assets/img/carol.jpg" alt="Carol Lima" width="92" height="92">
+        <div class="who"><b>Carol Lima</b><span>criei a Organiza SM</span></div>
+      </div>
+
+      <p class="kicker">antes de você decidir</p>
+      <h1>Me conta como está a sua carteira <em>hoje.</em></h1>
+      <p class="lead">Quantos clientes você atende, onde fica o briefing, como você lembra do que vence. Com isso eu te digo se a central <strong>faz sentido para o seu momento</strong>.</p>
+
+
+      <a class="btn" id="wa" href="https://wa.me/message/NFKQBSU3F4QRB1" target="_blank" rel="noopener">
+        Chamar no WhatsApp
+        <i><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 9.2c.2 2.6 3 5.4 5.6 5.6l1-1.3-1.8-.9-.8.8c-.9-.4-1.9-1.4-2.3-2.3l.8-.8-.9-1.8z" fill="currentColor"/></svg></i>
+      </a>
+      <p class="btn-note">abre direto no seu WhatsApp</p>
+
+      <p class="ask">Não sabe por onde começar? Pode me perguntar:</p>
+      <ul class="tags">
+        <li>Serve para quem tem 2 clientes?</li>
+        <li>Preciso pagar o Notion?</li>
+        <li>Dá para usar no celular?</li>
+        <li>Consigo pôr minha equipe?</li>
+        <li>Como recebo o acesso?</li>
+      </ul>
+
+      <figure class="proof">
+        <figcaption>chegou para mim</figcaption>
+        <div class="proof-frame"><img src="../assets/img/depoimentos/depoimento-5.jpg" alt="Mensagem de uma cliente: Carol, sério, que alívio. Eu achava que o problema era eu, que eu era desorganizada. Era só falta de um lugar pra colocar as coisas." width="1078" height="406" loading="lazy"></div>
+      </figure>
+
+      <nav class="more" aria-label="Página da Organiza SM">
+        <p>Prefere ver tudo antes de chamar?</p>
+        <a class="row" data-site href="../#produto">
+          <span><b>Ver a central por dentro</b><br><small>7 setores, scripts, ganchos e planilha</small></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="row" data-site href="../#oferta">
+          <span><b>Ver a oferta de lançamento</b><br><small>R$ 29,90 até 27 de novembro</small></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+
+      <p class="foot">ORGANIZA SM</p>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      // Leva UTMs e IDs de clique do anúncio para os links do site
+      var params = new URLSearchParams(location.search);
+      document.querySelectorAll("[data-site]").forEach(function (a) {
+        try {
+          var url = new URL(a.getAttribute("href"), location.href);
+          params.forEach(function (v, k) {
+            if (/^(utm_|fbclid$|gclid$|ttclid$|src$|sck$)/.test(k)) url.searchParams.set(k, v);
+          });
+          a.href = url.toString();
+        } catch (e) {}
+      });
+      // Evento de contato no pixel quando a pessoa clica para chamar no WhatsApp
+      var wa = document.getElementById("wa");
+      if (wa) wa.addEventListener("click", function () {
+        if (window.fbq) window.fbq("track", "Contact", { content_name: "WhatsApp Carol" });
+      });
+    })();
+  </script>
+</body>
+</html>
