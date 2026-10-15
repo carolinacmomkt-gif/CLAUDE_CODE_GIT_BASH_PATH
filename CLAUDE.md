@@ -63,6 +63,9 @@ Chamadas para a oferta: hero, o que tem dentro, garantia e fechamento. Padrão: 
 
 Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
 
+## Página de WhatsApp (link de bio para campanhas)
+`whatsapp/index.html`, publicada em **organizasm.netlify.app/whatsapp**. Página curta no visual do site, para remarketing e bio: foto e nome da Carol, "Ficou com dúvida? Me chama no WhatsApp.", botão principal para o WhatsApp (mesmo link de `CONFIG.contato.whatsapp`) e dois botões para o site (#produto e #oferta). Tem o mesmo Pixel da Meta: PageView ao abrir e **Contact** ao clicar no WhatsApp. UTMs e fbclid da campanha seguem para os links do site. `noindex` para não aparecer no Google. Se o link do WhatsApp mudar, trocar aqui e no `main.js`.
+
 ## Pendências
 - [x] Checkout da Hubla em `CONFIG.checkout.central`: https://pay.hub.la/Z31VtTvN6YhrGbSagzjr (mesmo ID do antigo combo; confirmar na Hubla que cobra R$ 29,90 e entrega tudo)
 - [x] Foto da Carol em `assets/img/carol.jpg` (ensaio do Drive, IMG_4124, recortada em 4:5)
