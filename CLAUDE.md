@@ -92,6 +92,14 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - Manter mobile-first: testar em 375px de largura.
 - Acessibilidade: contraste AA, `alt` em todas as imagens (nos depoimentos, o texto da mensagem), respeitar `prefers-reduced-motion`.
 
+## Segurança (auditoria de 18/10/2026)
+Site estático, sem servidor, login, banco de dados, upload ou formulário: os itens de backend não se aplicam. O que foi conferido e feito:
+- Nenhuma chave, senha ou `.env` no código nem no histórico do Git (só valores de teste no outro projeto, branch `claude-sistema`). O ID do Pixel e o código `wk_` da Hubla são públicos por natureza
+- Parâmetros da URL (UTMs) só entram nos links como parâmetros codificados, e só os de rastreamento. Sem `innerHTML` com dado de fora
+- Cabeçalhos de segurança no `netlify.toml` (nosniff, proibido embutir em outro site, Referrer-Policy, Permissions-Policy, HSTS e CSP básico). O CSP não restringe scripts para não quebrar Pixel e Hubla
+- Arquivos internos respondem 404 (regras no `netlify.toml`)
+- O repositório no GitHub é **público**: o código e este arquivo ficam visíveis lá. Recomendado deixar privado (a Netlify continua publicando)
+
 ## Publicar
 O site está publicado na **Netlify direto do repositório** (branch `claude`). O `netlify.toml` define a pasta publicada e esconde `CLAUDE.md`, `README.md`, `netlify.toml`, `.git/` e `.claude/` (respondem 404 com a página `404.html`). Arquivo interno novo na raiz precisa de uma regra igual no `netlify.toml`.
 

@@ -209,26 +209,6 @@ const CONFIG = {
     show(0);
   }
 
-  /* ---------- lista de dores: marcar e contar ---------- */
-  const pain = document.getElementById("pain");
-  const result = document.getElementById("pain-result");
-  if (pain && result) {
-    const original = result.innerHTML;
-    const buttons = Array.from(pain.querySelectorAll("button"));
-    const update = () => {
-      const n = buttons.filter((b) => b.getAttribute("aria-pressed") === "true").length;
-      if (n === 0) { result.innerHTML = original; return; }
-      const label = n === 1 ? "1 de 6 marcada." : n + " de 6 marcadas.";
-      result.innerHTML = n >= 2
-        ? '<span class="count">' + label + "</span>O problema não é você. <strong>Você está fazendo trabalho de agência sem o sistema de uma agência.</strong>"
-        : '<span class="count">' + label + "</span>Já é um sinal. Uma por mês vira doze por ano.";
-    };
-    buttons.forEach((b) => b.addEventListener("click", () => {
-      b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true");
-      update();
-    }));
-  }
-
   /* ---------- barra fixa no celular ---------- */
   // Aparece depois do hero e some quando a oferta ou o CTA final estão na tela.
   const sticky = document.getElementById("sticky");

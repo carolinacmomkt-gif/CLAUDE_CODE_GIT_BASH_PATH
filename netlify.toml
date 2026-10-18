@@ -32,3 +32,16 @@
   to = "/404.html"
   status = 404
   force = true
+
+# Cabeçalhos de segurança para todas as páginas.
+# O CSP aqui só trava o que não depende de serviços de fora (moldura, <base>, plugins, formulários).
+# Não restringe scripts para não quebrar o Pixel da Meta e o rastreamento da Hubla.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), usb=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000"
+    Content-Security-Policy = "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests"
