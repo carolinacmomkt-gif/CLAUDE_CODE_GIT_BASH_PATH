@@ -26,7 +26,7 @@ Produto da Carol Lima. **Não tem relação com a Agência Essence**: nunca cita
 Tom de voz: direto, acolhedor, de social media para social media. Frases curtas, sem exagero, sem promessas de faturamento.
 
 ## A oferta
-Um produto só, a **Organiza SM completa**, por **R$ 29,90** no lançamento (pagamento único). Não existe mais "de R$ 357" nem combo: a planilha financeira vem junto no produto.
+Um produto só, a **Organiza SM completa**, por **R$ 29,90** (pagamento único). **O preço só aparece na seção de compra (#oferta)** e não se fala mais em oferta de lançamento nem em prazo. Não existe mais "de R$ 357" nem combo: a planilha financeira vem junto no produto.
 
 | O que vem | Valor mostrado na oferta |
 |---|---|
@@ -45,16 +45,16 @@ Complementos, dentro da seção da oferta: **Banco de 200 ganchos** (R$ 9,99, `C
 Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): `central` (botão da oferta), `ganchos` e `documentacao` (cards dos complementos). Cada botão usa `data-checkout="<nome>"`. O script de rastreamento da Hubla (`data.hub.la/hub.min.js`) fica no `<head>` do `index.html`. O link de dúvidas no WhatsApp fica em `CONFIG.contato.whatsapp`: https://wa.me/message/NFKQBSU3F4QRB1. Todos os outros botões levam para a oferta (#oferta).
 
 ## Estrutura da página (9 seções)
-Topbar ("Oferta de lançamento até 27 de novembro", sem preço) e depois:
+Sem faixa no topo (saiu junto com a oferta de lançamento). As seções:
 
-1. **Hero**: título em uma frase ("Pare de gerenciar clientes pelo WhatsApp."), subtítulo "Comece a trabalhar como agência.", vídeo real da central (gravação de tela da Carol, em `assets/video/`), botão com o preço (a única vez que o preço aparece na primeira dobra), âncora "R$ 286 se você montasse por fora", letra miúda "pagamento único · 7 dias de garantia" e a frase da Carol. No celular de 375px, promessa, print e botão aparecem sem rolar.
+1. **Hero**: título em uma frase ("Pare de gerenciar clientes pelo WhatsApp."), subtítulo "Comece a trabalhar como agência.", vídeo real da central (gravação de tela da Carol, em `assets/video/`), botão "Quero a central" (sem preço), letra miúda "pagamento único · 7 dias de garantia" e a frase da Carol. No celular de 375px, promessa, vídeo e botão aparecem sem rolar.
 2. **Depoimentos**: prints reais em `assets/img/depoimentos/` (computador 3 + 2, tablet 2 por linha, celular carrossel)
 3. **O que tem dentro**: demonstração da central (5 abas que trocam sozinhas, clientes de exemplo), os 7 setores com uma linha cada e "e vem junto" (scripts, ganchos, prompts, relatório, planilha, mensagens)
 4. **Antes x depois**
 5. **Quem criou** (Carol Lima: foto, história, +20 clientes, agência que atende clientes da área da saúde). Mantida a pedido da Carol, sem botão (a oferta vem logo depois)
-6. **Oferta**: prazo (27 de novembro), três blocos sem preço por item, R$ 286 riscado, preço, botão, Pix/cartão, WhatsApp, e embaixo os complementos
+6. **Oferta** (único lugar com preço): faixa "pagamento único", três blocos sem preço por item, R$ 286 riscado, R$ 29,90, botão, Pix/cartão, WhatsApp, e embaixo os complementos
 7. **Garantia**
-8. **FAQ** com 5 perguntas: pagar pelo Notion, saber usar o Notion, celular, preço depois do lançamento, e se eu não gostar
+8. **FAQ** com 5 perguntas: pagar pelo Notion, saber usar o Notion, celular, como recebo o acesso, e se eu não gostar
 9. **Fechamento**
 
 Rodapé e barra fixa no celular continuam. Saíram: lista de dores, custo da bagunça, números do produto, artigos longos dos setores, um dia com a central, como funciona, para quem é.
@@ -64,7 +64,7 @@ Chamadas para a oferta: hero, o que tem dentro, garantia e fechamento. Padrão: 
 Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
 
 ## Página de WhatsApp (link de bio para campanhas)
-`whatsapp/index.html`, publicada em **organizasm.netlify.app/whatsapp**. Feita como uma página do Notion: capa da marca ("Organiza SM · seu escritório"), foto da Carol como ícone, título "Me conta como está a sua carteira hoje.", botão "Chamar no WhatsApp" (mesmo link de `CONFIG.contato.whatsapp`), perguntas de exemplo como etiquetas do Notion, um print de depoimento real e dois atalhos para o site (#produto e #oferta). Tem o mesmo Pixel da Meta: PageView ao abrir e **Contact** ao clicar no WhatsApp. UTMs e fbclid da campanha seguem para os links do site. `noindex` para não aparecer no Google. No celular, o botão do WhatsApp aparece sem rolar. Se o link do WhatsApp mudar, trocar aqui e no `main.js`.
+`whatsapp/index.html`, publicada em **organizasm.netlify.app/whatsapp**. Feita como uma página do Notion: capa da marca ("Organiza SM · seu escritório"), foto da Carol como ícone, título "Me conta como está a sua carteira hoje.", botão "Chamar no WhatsApp" (mesmo link de `CONFIG.contato.whatsapp`), perguntas de exemplo como etiquetas do Notion, um print de depoimento real e dois atalhos para o site (#produto e #oferta), sem preço. Tem o mesmo Pixel da Meta: PageView ao abrir e **Contact** ao clicar no WhatsApp. UTMs e fbclid da campanha seguem para os links do site. `noindex` para não aparecer no Google. No celular, o botão do WhatsApp aparece sem rolar. Se o link do WhatsApp mudar, trocar aqui e no `main.js`.
 
 ## Pendências
 - [x] Checkout da Hubla em `CONFIG.checkout.central`: https://pay.hub.la/Z31VtTvN6YhrGbSagzjr (mesmo ID do antigo combo; confirmar na Hubla que cobra R$ 29,90 e entrega tudo)
@@ -75,7 +75,6 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [x] Depoimentos: 5 prints de mensagens enviados pela Carol em `assets/img/depoimentos/`
 - [x] Link do WhatsApp em `CONFIG.contato.whatsapp`
 - [ ] Garantia: a página usa 7 dias em todo lugar. O pedido da reformulação citava 30 dias na letra miúda; se a Hubla estiver configurada para 30, trocar em todos os lugares de uma vez
-- [ ] Depois de 27 de novembro: trocar o preço ou o prazo (topbar, oferta e FAQ)
 - [x] Ganchos: são 200, no produto e no banco avulso
 - [ ] `og:image` 1200x630
 - [ ] Confirmar que a central funciona no plano gratuito do Notion (o FAQ afirma isso)
@@ -87,7 +86,7 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 
 ## Regras
 - Nunca inventar depoimentos, números de vendas, alunas ou resultados. Depoimento só com print real enviado pela Carol.
-- Sem "de R$ 357" e sem contador regressivo. A ancoragem é R$ 286 (o que custaria montar por fora) contra R$ 29,90, e o prazo é uma data escrita: 27 de novembro.
+- Preço só na seção de compra. Sem "oferta de lançamento", sem prazo, sem "de R$ 357" e sem contador. A ancoragem é R$ 286 (o que custaria montar por fora) contra R$ 29,90, dentro da oferta. Exceção: o print do depoimento 2 mostra "R$ 29,90" (é a mensagem real da cliente)
 - Texto: português do Brasil, tom de conversa, segunda pessoa, frases curtas, sem emoji em título. Proibido: travessão; negação seguida de revelação ("não é sobre X, é sobre Y"); "isso muda tudo"; sujeito vago ("ninguém", "todo mundo", "pouca gente", "tem gente que"); "sem perceber", "nem percebeu"; caminhada, aprofundamento, clareza, às vezes, na prática, "real" como reforço; estrangeirismo quando há palavra em português (exceto nomes de campos do Notion); promessa de vantagem por entender antes dos outros; "porque" encadeado.
 - Manter mobile-first: testar em 375px de largura.
 - Acessibilidade: contraste AA, `alt` em todas as imagens (nos depoimentos, o texto da mensagem), respeitar `prefers-reduced-motion`.
