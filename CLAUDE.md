@@ -50,17 +50,17 @@ Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): 
 - **Alt das imagens:** com termo de busca ("central de clientes no Notion para social media" etc.)
 
 1. **Topo**: H1 pequeno "Sistema no Notion para social media", H2 grande "Se você já pensou em largar tudo e virar CLT, senta aqui.", a frase "Eu já gerenciei mais de 20 clientes ao mesmo tempo..." (sem foto), mockup (notebook e celular, `assets/img/mockup-central.webp`), botão e "Pix ou cartão · compra segura · 7 dias de garantia". Sem lista de itens. Em 375×667 tudo aparece sem rolar, na ordem texto, mockup, botão
-2. **Os 7 setores**: "Como organizar os clientes de social media num lugar só", o vídeo da central (sai do topo; só carrega quando aparece na tela) e os 7 setores com uma linha cada
+2. **Os 7 setores**: "Como organizar os clientes de social media num lugar só", o vídeo da central grande em cima (até 1000 px; só carrega quando aparece na tela) e embaixo os 7 setores em cartões (4 + 3 no computador, 2 por linha no tablet, um embaixo do outro no celular)
 3. **Antes e depois**: 6 pares "Hoje / Com a central" (no celular, cada par vira um cartão)
 4. **Bônus** (fundo escuro): 6 cartões, cada um com uma mini tela ilustrativa feita em HTML (scripts, ganchos, prompts, relatório, planilha, mensagens) e botão. No celular, carrossel
-5. **Prova**: "+20 clientes ao mesmo tempo · 1 agência construída com esse sistema" e os 5 prints (senha e orçamento primeiro)
+5. **Prova**: "+20 clientes ao mesmo tempo · 1 agência construída com esse sistema" (no celular, dois cartões lado a lado) e os 5 prints (senha e orçamento primeiro). O espaçamento colado no preço usa `.sec.sec-proof` e `.sec.sec-price` para vencer o padding padrão do celular
 6. **Preço** (colado na prova, mesmo fundo; único lugar com preço na página): "Hoje você leva", 6 itens, mockup da central com os bônus (`assets/img/mockup-oferta.webp`), ~~R$ 286~~ R$ 29,90, botão para o checkout e "Pix ou cartão · compra segura pela Hubla · central na hora, scripts no 7º dia · 7 dias de garantia". O cartão inteiro cabe numa tela de celular (testado em 360×640). Embaixo: link do WhatsApp e os complementos (ganchos e documentação, sem mudança)
 7. **Garantia**: selo, título e botão
 8. **FAQ** com 4 perguntas: saber usar o Notion, celular, como recebo o acesso (scripts no 7º dia), serve pra quem está começando
 9. **Fechamento**: título e botão "Quero parar de surtar"
 10. **Rodapé**: © Organiza SM, aviso da marca Notion e e-mail de suporte, sem botão. A barra fixa no celular continua
 
-Saíram: "Oi, eu sou a Carol" (Quem criou), a demonstração com abas, o "e vem junto", a pergunta sobre pagar o Notion e a de "e se eu não gostar". Os mockups foram montados com telas do vídeo da Carol (página inicial e ficha do cliente); para refazer, ver `assets/img/` e gerar de novo a partir de um print.
+Saíram: "Oi, eu sou a Carol" (Quem criou), a demonstração com abas, o "e vem junto", a pergunta sobre pagar o Notion e a de "e se eu não gostar". Os mockups foram montados com telas do vídeo da Carol, sem sombra embutida (a sombra é feita no CSS com `drop-shadow`, que acompanha o contorno) (página inicial e ficha do cliente); para refazer, ver `assets/img/` e gerar de novo a partir de um print.
 
 ## Página de WhatsApp (link de bio para campanhas)
 `whatsapp/index.html`, publicada em **organizasm.netlify.app/whatsapp**. Feita como uma página do Notion: capa da marca ("Organiza SM · seu escritório"), foto da Carol como ícone, título "Me conta como está a sua carteira hoje.", botão "Chamar no WhatsApp" (mesmo link de `CONFIG.contato.whatsapp`), perguntas de exemplo como etiquetas do Notion, um print de depoimento real e dois atalhos para o site (#produto e #oferta), sem preço. Tem o mesmo Pixel da Meta: PageView ao abrir e **Contact** ao clicar no WhatsApp. UTMs e fbclid da campanha seguem para os links do site. `noindex` para não aparecer no Google. No celular, o botão do WhatsApp aparece sem rolar. Se o link do WhatsApp mudar, trocar aqui e no `main.js`.
