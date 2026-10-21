@@ -61,7 +61,7 @@ Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): 
 10. **Rodapé**: © Organiza SM, aviso da marca Notion e e-mail de suporte, sem botão. A barra fixa no celular continua
 
 **Animações (inspiradas no site cool office da Karol Sabará, com as cores da marca):**
-- No topo, o mockup tem camadas: `mockup-kit-base.webp` / `mockup-kit-celular-base.webp` sem as capas, e as 3 capas soltas (`capa-1/2/3.webp`, `-m` no celular) flutuando por cima. Duas etiquetas ("Post aprovado" e "Lead respondeu", a segunda desfocada) só no computador. Para refazer as camadas, gerar de novo a composição e recortar com a mesma caixa do mockup inteiro
+- No topo, o mockup tem camadas: `mockup-kit-base.webp` / `mockup-kit-celular-base.webp` sem as capas, e as 3 capas soltas (`capa-1/2/3.webp`, `-m` no celular) flutuando por cima. Por cima, feitos em HTML: logo do Notion desfocada (pedido da Carol, no canto de cima à direita), cursor "você" passeando pelo notebook e, só no computador, o cartão "QUA 23 · 3 posts agendados" e as etiquetas "Post aprovado" e "Em aprovação". **Nada pode ficar em cima do rosto da Carol nas capas** (testado de 375 a 1920 px durante as animações). Para refazer as camadas, gerar de novo a composição e recortar com a mesma caixa do mockup inteiro
 - Barra de leitura caramelo no alto (`.read-bar`)
 - Seções que abrem em arco (`.sec-arc`, pseudo-elemento com a cor da seção)
 - 7 setores empilhando no celular (`position: sticky`, `--i` vem do `main.js`)
