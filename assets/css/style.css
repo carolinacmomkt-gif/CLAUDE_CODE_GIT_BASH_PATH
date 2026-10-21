@@ -1057,6 +1057,15 @@ strong, b { font-weight: 700; }
 @media (min-width: 1600px) {
   .hero > .wrap { max-width: 1540px; }
 }
+/* computador: texto do topo maior para equilibrar com o mockup */
+@media (min-width: 1100px) {
+  .hero .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); column-gap: 56px; }
+  .hero .hero-h1 { font-size: .9rem; margin-bottom: 18px; }
+  .hero .hero-h2 { font-size: clamp(3.2rem, 3.9vw, 4.6rem); margin-bottom: 22px; }
+  .hero-me p { font-size: 1.18rem; line-height: 1.5; }
+  .hero-cta .btn { padding: 20px 34px; font-size: 1.1rem; }
+  .hero .micro { font-size: .95rem; margin-top: 12px; }
+}
 
 /* =========================================================
    Acessibilidade: menos movimento
