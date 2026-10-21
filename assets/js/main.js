@@ -234,6 +234,41 @@ const CONFIG = {
     hideZones.forEach((z) => zoneObserver.observe(z));
   }
 
+  /* ---------- barra de leitura ---------- */
+  const readBar = document.querySelector(".read-bar i");
+  if (readBar) {
+    let ticking = false;
+    const paint = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      readBar.style.transform = "scaleX(" + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ")";
+      ticking = false;
+    };
+    window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }, { passive: true });
+    paint();
+  }
+
+  /* ---------- 7 setores: ordem de cada cartão (empilham no celular) ---------- */
+  document.querySelectorAll(".setores li").forEach((li, i) => li.style.setProperty("--i", i));
+
+  /* ---------- números da prova contando ---------- */
+  const counters = document.querySelectorAll("[data-count]");
+  if (counters.length && !reduceMotion && "IntersectionObserver" in window) {
+    const co = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        co.unobserve(e.target);
+        const el = e.target, end = +el.dataset.count, pre = el.dataset.prefix || "", t0 = performance.now(), dur = 1400;
+        const step = (t) => {
+          const k = Math.min((t - t0) / dur, 1);
+          el.textContent = pre + Math.round(end * (1 - Math.pow(1 - k, 3)));
+          if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach((c) => co.observe(c));
+  }
+
   /* ---------- animação de entrada ---------- */
   if (!reduceMotion && "IntersectionObserver" in window) {
     const targets = document.querySelectorAll(

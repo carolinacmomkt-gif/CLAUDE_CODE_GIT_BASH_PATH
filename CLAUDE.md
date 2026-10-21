@@ -60,6 +60,16 @@ Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): 
 9. **Fechamento**: título e botão "Quero parar de surtar"
 10. **Rodapé**: © Organiza SM, aviso da marca Notion e e-mail de suporte, sem botão. A barra fixa no celular continua
 
+**Animações (inspiradas no site cool office da Karol Sabará, com as cores da marca):**
+- No topo, o mockup tem camadas: `mockup-kit-base.webp` / `mockup-kit-celular-base.webp` sem as capas, e as 3 capas soltas (`capa-1/2/3.webp`, `-m` no celular) flutuando por cima. Duas etiquetas ("Post aprovado" e "Lead respondeu", a segunda desfocada) só no computador. Para refazer as camadas, gerar de novo a composição e recortar com a mesma caixa do mockup inteiro
+- Barra de leitura caramelo no alto (`.read-bar`)
+- Seções que abrem em arco (`.sec-arc`, pseudo-elemento com a cor da seção)
+- 7 setores empilhando no celular (`position: sticky`, `--i` vem do `main.js`)
+- Antes e depois: título parado à esquerda no computador e o "hoje" riscado quando o par aparece (`.risk`)
+- Botões com sombra dura que afundam ao clicar (`--edge`)
+- "+20" conta de 0 até 20 (`data-count`); FAQ abre suave
+- Com "reduzir movimento", nada flutua nem conta
+
 Saíram: "Oi, eu sou a Carol" (Quem criou), a demonstração com abas, o "e vem junto", a pergunta sobre pagar o Notion e a de "e se eu não gostar". Os mockups foram montados com telas do vídeo da Carol, sem sombra embutida (a sombra é feita no CSS com `drop-shadow`, que acompanha o contorno) (página inicial e ficha do cliente); para refazer, ver `assets/img/` e gerar de novo a partir de um print.
 
 ## SEO e IAs (ChatGPT, Claude, Perplexity, Gemini)

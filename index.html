@@ -128,6 +128,7 @@
 <body>
 
 <!-- ============ 1. TOPO ============ -->
+<div class="read-bar" aria-hidden="true"><i></i></div>
 <header class="hero" id="topo">
   <div class="wrap">
     <nav class="nav">
@@ -144,10 +145,26 @@
         </div>
       </div>
       <figure class="hero-shot">
-        <picture>
-          <source media="(max-width: 639px)" srcset="assets/img/mockup-kit-celular.webp" width="1000" height="867">
-          <img src="assets/img/mockup-kit.webp" alt="Tudo que vem na Organiza SM: central de clientes no Notion para social media no notebook e no celular, planilha financeira, relatório mensal para cliente e os bônus +100 scripts de venda, +200 ganchos e prompts de IA" width="1800" height="1143" fetchpriority="high">
-        </picture>
+        <div class="kit">
+          <picture>
+            <source media="(max-width: 639px)" srcset="assets/img/mockup-kit-celular-base.webp" width="1000" height="867">
+            <img src="assets/img/mockup-kit-base.webp" alt="Tudo que vem na Organiza SM: central de clientes no Notion para social media no notebook e no celular, planilha financeira, relatório mensal para cliente e os bônus +100 scripts de venda, +200 ganchos e prompts de IA" width="1800" height="1143" fetchpriority="high">
+          </picture>
+          <picture class="kit-cv kit-cv1" aria-hidden="true">
+            <source media="(max-width: 639px)" srcset="assets/img/capa-1-m.webp" width="358" height="476">
+            <img src="assets/img/capa-1.webp" alt="" width="343" height="451">
+          </picture>
+          <picture class="kit-cv kit-cv2" aria-hidden="true">
+            <source media="(max-width: 639px)" srcset="assets/img/capa-2-m.webp" width="322" height="449">
+            <img src="assets/img/capa-2.webp" alt="" width="308" height="430">
+          </picture>
+          <picture class="kit-cv kit-cv3" aria-hidden="true">
+            <source media="(max-width: 639px)" srcset="assets/img/capa-3-m.webp" width="358" height="476">
+            <img src="assets/img/capa-3.webp" alt="" width="342" height="451">
+          </picture>
+          <span class="kit-tag kit-tag1" aria-hidden="true"><i>✓</i> Post aprovado</span>
+          <span class="kit-tag kit-tag2" aria-hidden="true"><i>●</i> Lead respondeu</span>
+        </div>
       </figure>
       <div class="hero-cta">
         <a class="btn btn-cta btn-go" href="#oferta">Quero organizar minha carteira <span class="go" aria-hidden="true">→</span></a>
@@ -188,26 +205,26 @@
 </section>
 
 <!-- ============ 3. ANTES E DEPOIS ============ -->
-<section class="sec sec-beige">
-  <div class="wrap narrow">
-    <div class="center">
+<section class="sec sec-beige sec-arc">
+  <div class="wrap narrow vs-wrap">
+    <div class="center vs-title">
       <div class="kicker">antes e depois</div>
       <h2>Sua semana hoje e <em>com o Organiza SM</em></h2>
     </div>
     <div class="vs" role="table" aria-label="Sua semana hoje e com a central">
       <div class="vs-head" role="row"><span role="columnheader">Hoje</span><span role="columnheader">Com a central</span></div>
-      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small>Rolando o grupo atrás da senha que o cliente mandou em março</p><p class="vs-b" role="cell"><small>com a central</small>Abre a ficha e está lá</p></div>
-      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small>“E aquele post?” e você trava</p><p class="vs-b" role="cell"><small>com a central</small>Cada post com status, da pauta até a postagem</p></div>
-      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small>Orçamento visualizado e esquecido</p><p class="vs-b" role="cell"><small>com a central</small>Lead com data pra chamar de novo e script pronto</p></div>
-      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small>A freela pergunta tudo no seu WhatsApp</p><p class="vs-b" role="cell"><small>com a central</small>Ela tem a ficha de cada cliente</p></div>
-      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small>Domingo à noite montando o calendário de todo mundo</p><p class="vs-b" role="cell"><small>com a central</small>Planejamento de conteúdo do mês num quadro só</p></div>
-      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small>Trabalhando que nem doida e o Pix igual</p><p class="vs-b" role="cell"><small>com a central</small>Tempo livre pra fechar mais cliente</p></div>
+      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small><span class="risk">Rolando o grupo atrás da senha que o cliente mandou em março</span></p><p class="vs-b" role="cell"><small>com a central</small>Abre a ficha e está lá</p></div>
+      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small><span class="risk">“E aquele post?” e você trava</span></p><p class="vs-b" role="cell"><small>com a central</small>Cada post com status, da pauta até a postagem</p></div>
+      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small><span class="risk">Orçamento visualizado e esquecido</span></p><p class="vs-b" role="cell"><small>com a central</small>Lead com data pra chamar de novo e script pronto</p></div>
+      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small><span class="risk">A freela pergunta tudo no seu WhatsApp</span></p><p class="vs-b" role="cell"><small>com a central</small>Ela tem a ficha de cada cliente</p></div>
+      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small><span class="risk">Domingo à noite montando o calendário de todo mundo</span></p><p class="vs-b" role="cell"><small>com a central</small>Planejamento de conteúdo do mês num quadro só</p></div>
+      <div class="vs-row" role="row"><p class="vs-a" role="cell"><small>hoje</small><span class="risk">Trabalhando que nem doida e o Pix igual</span></p><p class="vs-b" role="cell"><small>com a central</small>Tempo livre pra fechar mais cliente</p></div>
     </div>
   </div>
 </section>
 
 <!-- ============ 4. BÔNUS ============ -->
-<section class="sec sec-dark" id="bonus">
+<section class="sec sec-dark sec-arc" id="bonus">
   <div class="wrap">
     <div class="center">
       <div class="kicker">bônus</div>
@@ -247,10 +264,10 @@
 </section>
 
 <!-- ============ 5. PROVA ============ -->
-<section class="sec sec-beige sec-proof" id="depoimentos">
+<section class="sec sec-beige sec-proof sec-arc" id="depoimentos">
   <div class="wrap">
     <div class="proof-stats">
-      <div><b>+20</b><span>clientes ao mesmo tempo</span></div>
+      <div><b data-count="20" data-prefix="+">+20</b><span>clientes ao mesmo tempo</span></div>
       <div><b>1</b><span>agência construída com esse sistema</span></div>
     </div>
     <div class="center"><h2>O que as social medias <em>estão me mandando</em></h2></div>
@@ -319,7 +336,7 @@
 </section>
 
 <!-- ============ 7. GARANTIA ============ -->
-<section class="sec sec-dark">
+<section class="sec sec-dark sec-arc">
   <div class="wrap narrow guarantee">
     <div class="seal">7<br><small>dias</small></div>
     <div>
@@ -330,7 +347,7 @@
 </section>
 
 <!-- ============ 8. FAQ ============ -->
-<section class="sec" id="faq">
+<section class="sec sec-cream sec-arc" id="faq">
   <div class="wrap narrow">
     <div class="center"><div class="kicker">dúvidas frequentes</div><h2>Dúvidas sobre o sistema no Notion <em>para social media</em></h2></div>
     <div class="faq">
@@ -343,7 +360,7 @@
 </section>
 
 <!-- ============ 9. FECHAMENTO ============ -->
-<section class="sec sec-dark final">
+<section class="sec sec-dark sec-arc final">
   <div class="wrap narrow center">
     <h2>Daqui a 30 dias você pode estar com a mesma bagunça de hoje.<br><em>Ou com a carteira inteira organizada.</em></h2>
     <a class="btn btn-light btn-big btn-go" href="#oferta">Quero parar de surtar <span class="go" aria-hidden="true">→</span></a>
