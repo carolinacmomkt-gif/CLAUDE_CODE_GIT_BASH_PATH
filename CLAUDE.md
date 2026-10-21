@@ -69,6 +69,7 @@ Nada garante que uma IA recomende o produto: elas respondem com o que encontram 
 - No `<head>` do `index.html`: canonical, robots, Open Graph com `assets/img/og-image.jpg` (1200x630) e dados estruturados JSON-LD (Product com preço, FAQPage com as perguntas do FAQ e WebSite). **Se mudar o preço ou o FAQ, mudar o JSON-LD também.** Sem avaliações (`aggregateRating`) no JSON-LD: só colocar com avaliações reais
 - Tudo aponta para `https://organizasm.netlify.app/`. Se comprar domínio próprio, trocar em canonical, og:url, og:image, JSON-LD, `robots.txt`, `sitemap.xml` e `llms.txt`
 - Google Search Console verificado em 21/10/2026 (propriedade de prefixo `https://organizasm.netlify.app/`) com o arquivo `google542f53483e7b73d1.html` na raiz. **Nunca apagar esse arquivo**: sem ele o Google perde a verificação
+- Bing Webmaster Tools: arquivo `BingSiteAuth.xml` na raiz. **Nunca apagar** também
 - Fora do site (Carol): cadastrar no Google Search Console e no Bing Webmaster Tools (a busca do ChatGPT usa o Bing) e enviar o sitemap; conseguir menções em outros lugares (Instagram, YouTube, blogs, grupos, Reddit) com o nome "Organiza SM" e a frase "sistema no Notion para social media"
 
 ## Página de WhatsApp (link de bio para campanhas)
