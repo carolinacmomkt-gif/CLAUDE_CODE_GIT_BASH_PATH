@@ -891,6 +891,7 @@ strong, b { font-weight: 700; }
   .hero-list { gap: 5px; }
   .hero-shot { margin: 0 -6px; }
   .sticky-cta small { display: none; }
+  .hero-shot img { width: 90%; margin: -6px auto -4px; }
   /* prova no celular: números lado a lado, alinhados, e menos espaço */
   .proof-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 22px; }
   .proof-stats div { flex-direction: column; align-items: center; gap: 4px; text-align: center; background: var(--white); border: 1px solid var(--beige); border-radius: var(--r); padding: 14px 10px; }
