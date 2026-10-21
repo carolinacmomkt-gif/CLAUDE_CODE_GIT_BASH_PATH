@@ -110,20 +110,22 @@ const CONFIG = {
     if (!CONFIG.checkout[k]) console.warn("[Organiza SM] Falta o link de pagamento em CONFIG.checkout." + k + " (assets/js/main.js).");
   });
 
-  /* ---------- vídeo da central no topo ---------- */
-  // Toca sozinho, sem som e em repetição. Pausa fora da tela e não toca sozinho
-  // para quem pediu menos movimento (aí aparecem os controles).
-  const heroVideo = document.querySelector(".hero-video");
-  if (heroVideo) {
+  /* ---------- vídeo da central (seção dos 7 setores) ---------- */
+  // Só carrega e toca quando aparece na tela (sem som e em repetição) e pausa quando sai.
+  // Para quem pediu menos movimento, não toca sozinho e mostra os controles.
+  const centralVideo = document.querySelector(".central-video");
+  if (centralVideo) {
+    centralVideo.muted = true;
     if (reduceMotion) {
-      heroVideo.removeAttribute("autoplay");
-      heroVideo.pause();
-      heroVideo.controls = true;
+      centralVideo.controls = true;
+      centralVideo.preload = "metadata";
     } else if ("IntersectionObserver" in window) {
       new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) heroVideo.play().catch(() => {});
-        else heroVideo.pause();
-      }, { threshold: 0.15 }).observe(heroVideo);
+        if (e.isIntersecting) centralVideo.play().catch(() => {});
+        else centralVideo.pause();
+      }, { threshold: 0.25 }).observe(centralVideo);
+    } else {
+      centralVideo.controls = true;
     }
   }
 
@@ -235,7 +237,7 @@ const CONFIG = {
   /* ---------- animação de entrada ---------- */
   if (!reduceMotion && "IntersectionObserver" in window) {
     const targets = document.querySelectorAll(
-      ".sec h2, .pain li, .cost, .cmp-col, .deep-ui, .mini, .day li, .step, .card-yes, .card-no, .offer, .addon, .faq details"
+      ".sec h2, .setores li, .vs-row, .bonus-card, .price-card, .addon, .faq details"
     );
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {

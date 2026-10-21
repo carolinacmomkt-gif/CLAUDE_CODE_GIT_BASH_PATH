@@ -9,8 +9,8 @@ Produto da Carol Lima. **Não tem relação com a Agência Essence**: nunca cita
 - Arquivos:
   - `index.html`: toda a página, seção por seção, com comentários `<!-- ===== SEÇÃO ===== -->`
   - `assets/css/style.css`: estilos. Cores e raios ficam nas variáveis do `:root`
-  - `assets/js/main.js`: **links de checkout** (objeto `CONFIG`), link do WhatsApp, pixels, demonstração da central no topo, lista de dores clicável, barra fixa no celular e animações
-  - `assets/img/`: foto da Carol, prints do Notion e, em `depoimentos/`, os prints das mensagens das clientes
+  - `assets/js/main.js`: **links de checkout** (objeto `CONFIG`), link do WhatsApp, pixels, vídeo da central (seção dos 7 setores), barra fixa no celular, animações e FAQ
+  - `assets/img/`: foto da Carol, prints do Notion, mockups (`mockup-central.webp` no topo, `mockup-oferta.webp` no preço) e, em `depoimentos/`, os prints das mensagens das clientes
   - `assets/video/`: vídeo do topo, gravação de tela da central (85 s, sem som). `central.mp4`/`.webm` (1280 px) para o computador, `central-720.mp4`/`.webm` para o celular e `central-poster.jpg` como capa. Toca sozinho, sem som e em repetição, pausa fora da tela e não toca sozinho com movimento reduzido. Para trocar o vídeo, gerar os 4 arquivos e a capa com o ffmpeg (H.264 crf 28/29 com `+faststart` e VP9 crf 40)
 
 ## Identidade visual
@@ -44,24 +44,23 @@ Complementos, dentro da seção da oferta: **Banco de 200 ganchos** (R$ 9,99, `C
 
 Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): `central` (botão da oferta), `ganchos` e `documentacao` (cards dos complementos). Cada botão usa `data-checkout="<nome>"`. O script de rastreamento da Hubla (`data.hub.la/hub.min.js`) fica no `<head>` do `index.html`. O link de dúvidas no WhatsApp fica em `CONFIG.contato.whatsapp`: https://wa.me/message/NFKQBSU3F4QRB1. Todos os outros botões levam para a oferta (#oferta).
 
-## Estrutura da página (9 seções)
-Sem faixa no topo (saiu junto com a oferta de lançamento). As seções:
+## Estrutura da página (versão de 21/10/2026, texto final da Carol)
+- **Título da aba:** "Organiza SM | Sistema no Notion para social media organizar clientes". **Meta description:** "Central pronta no Notion para social media organizar clientes, planejamento de conteúdo, aprovações e leads. Com +100 scripts para conseguir clientes. R$ 29,90." (o único preço fora da compra, só no Google)
+- **Botões:** todos levam para o bloco de preço (#oferta) e dizem "Quero organizar minha carteira", menos a garantia ("Quero testar por 7 dias") e o fechamento ("Quero parar de surtar"). Só o botão do preço ("Quero a Organiza SM completa") e os dos complementos vão para o checkout
+- **Alt das imagens:** com termo de busca ("central de clientes no Notion para social media" etc.)
 
-1. **Hero**: título em uma frase ("Pare de gerenciar clientes pelo WhatsApp."), subtítulo "Comece a trabalhar como agência.", vídeo real da central (gravação de tela da Carol, em `assets/video/`), botão "Quero a central" (sem preço), letra miúda "pagamento único · 7 dias de garantia" e a frase da Carol. No celular de 375px, promessa, vídeo e botão aparecem sem rolar.
-2. **Depoimentos**: prints reais em `assets/img/depoimentos/` (computador 3 + 2, tablet 2 por linha, celular carrossel)
-3. **O que tem dentro**: demonstração da central (5 abas que trocam sozinhas, clientes de exemplo), os 7 setores com uma linha cada e "e vem junto" (scripts, ganchos, prompts, relatório, planilha, mensagens)
-4. **Antes x depois**
-5. **Quem criou** (Carol Lima: foto, história, +20 clientes, agência que atende clientes da área da saúde). Mantida a pedido da Carol, sem botão (a oferta vem logo depois)
-6. **Oferta** (único lugar com preço): faixa "pagamento único", três blocos sem preço por item, R$ 286 riscado, R$ 29,90, botão, Pix/cartão, WhatsApp, e embaixo os complementos
-7. **Garantia**
-8. **FAQ** com 5 perguntas: pagar pelo Notion, saber usar o Notion, celular, como recebo o acesso, e se eu não gostar
-9. **Fechamento**
+1. **Topo**: H1 pequeno "Sistema no Notion para social media", H2 grande "Se você já pensou em largar tudo e virar CLT, senta aqui.", foto redonda da Carol com a frase dos +20 clientes, "Fiz o Organiza SM pra quem...", 4 itens, mockup (notebook e celular, `assets/img/mockup-central.webp`), botão e "pagamento único · 7 dias de garantia". No celular o botão vem antes do mockup: em 375×667 o botão aparece sem rolar; em 390×844 aparece tudo, mockup junto. No computador, o botão aparece sem rolar a partir de 720 px de altura
+2. **Os 7 setores**: "Como organizar os clientes de social media num lugar só", o vídeo da central (sai do topo; só carrega quando aparece na tela) e os 7 setores com uma linha cada
+3. **Antes e depois**: 6 pares "Hoje / Com a central" (no celular, cada par vira um cartão)
+4. **Bônus** (fundo escuro): 6 cartões, cada um com uma mini tela ilustrativa feita em HTML (scripts, ganchos, prompts, relatório, planilha, mensagens) e botão. No celular, carrossel
+5. **Prova**: "+20 clientes ao mesmo tempo · 1 agência construída com esse sistema" e os 5 prints (senha e orçamento primeiro)
+6. **Preço** (colado na prova, mesmo fundo; único lugar com preço na página): "Hoje você leva", 6 itens, mockup da central com os bônus (`assets/img/mockup-oferta.webp`), ~~R$ 286~~ R$ 29,90, botão para o checkout e "Pix ou cartão · compra segura pela Hubla · central na hora, scripts no 7º dia · 7 dias de garantia". O cartão inteiro cabe numa tela de celular (testado em 360×640). Embaixo: link do WhatsApp e os complementos (ganchos e documentação, sem mudança)
+7. **Garantia**: selo, título e botão
+8. **FAQ** com 4 perguntas: saber usar o Notion, celular, como recebo o acesso (scripts no 7º dia), serve pra quem está começando
+9. **Fechamento**: título e botão "Quero parar de surtar"
+10. **Rodapé**: © Organiza SM, aviso da marca Notion e e-mail de suporte, sem botão. A barra fixa no celular continua
 
-Rodapé e barra fixa no celular continuam. Saíram: lista de dores, custo da bagunça, números do produto, artigos longos dos setores, um dia com a central, como funciona, para quem é.
-
-Chamadas para a oferta: hero, o que tem dentro, garantia e fechamento. Padrão: `<div class="cta">` com `.btn.btn-go` e `.cta-note`. Em seção escura use `.btn-caramel`. Não colocar duas chamadas seguidas sem conteúdo entre elas.
-
-Se a central mudar no Notion (nomes de setores, status, número de perguntas), atualize a demonstração e os números.
+Saíram: "Oi, eu sou a Carol" (Quem criou), a demonstração com abas, o "e vem junto", a pergunta sobre pagar o Notion e a de "e se eu não gostar". Os mockups foram montados com telas do vídeo da Carol (página inicial e ficha do cliente); para refazer, ver `assets/img/` e gerar de novo a partir de um print.
 
 ## Página de WhatsApp (link de bio para campanhas)
 `whatsapp/index.html`, publicada em **organizasm.netlify.app/whatsapp**. Feita como uma página do Notion: capa da marca ("Organiza SM · seu escritório"), foto da Carol como ícone, título "Me conta como está a sua carteira hoje.", botão "Chamar no WhatsApp" (mesmo link de `CONFIG.contato.whatsapp`), perguntas de exemplo como etiquetas do Notion, um print de depoimento real e dois atalhos para o site (#produto e #oferta), sem preço. Tem o mesmo Pixel da Meta: PageView ao abrir e **Contact** ao clicar no WhatsApp. UTMs e fbclid da campanha seguem para os links do site. `noindex` para não aparecer no Google. No celular, o botão do WhatsApp aparece sem rolar. Se o link do WhatsApp mudar, trocar aqui e no `main.js`.
@@ -76,7 +75,8 @@ Se a central mudar no Notion (nomes de setores, status, número de perguntas), a
 - [x] Link do WhatsApp em `CONFIG.contato.whatsapp`
 - [ ] Garantia: a página usa 7 dias em todo lugar. O pedido da reformulação citava 30 dias na letra miúda; se a Hubla estiver configurada para 30, trocar em todos os lugares de uma vez
 - [x] Ganchos: são 200, no produto e no banco avulso
-- [ ] `og:image` 1200x630
+- [ ] `og:image` 1200x630 (dá para usar o mockup do topo como base)
+- [ ] Confirmar na Hubla a entrega dos scripts no 7º dia (a página e o FAQ prometem isso) e que os ganchos vêm separados por nicho
 - [ ] Confirmar que a central funciona no plano gratuito do Notion (o FAQ afirma isso)
 - [x] E-mail de suporte no rodapé: suporteorganizasm@gmail.com
 - [ ] Termos de uso e política de privacidade (links removidos do rodapé até as páginas existirem)
