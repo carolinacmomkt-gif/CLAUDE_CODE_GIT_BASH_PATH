@@ -54,9 +54,9 @@ Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): 
 3. **Antes e depois**: 6 pares "Hoje / Com a central" (no celular, cada par vira um cartão)
 4. **Bônus** (fundo escuro): 6 cartões, cada um com uma mini tela ilustrativa feita em HTML (scripts, ganchos, prompts, relatório, planilha, mensagens) e botão. No celular, carrossel
 5. **Prova**: "+20 clientes ao mesmo tempo · 1 agência construída com esse sistema" (no celular, dois cartões lado a lado) e os 5 prints (senha e orçamento primeiro). O espaçamento colado no preço usa `.sec.sec-proof` e `.sec.sec-price` para vencer o padding padrão do celular
-6. **Preço** (colado na prova, mesmo fundo; único lugar com preço na página): "Hoje você leva", 6 itens, o mesmo mockup do topo (`mockup-kit.webp` / `mockup-kit-celular.webp`, 70% da largura no celular), ~~R$ 286~~ R$ 29,90, botão para o checkout e "Pix ou cartão · compra segura pela Hubla · central na hora, scripts no 7º dia · 7 dias de garantia". O cartão inteiro cabe numa tela de celular (testado em 360×640). Embaixo: link do WhatsApp e os complementos (ganchos e documentação, sem mudança)
+6. **Preço** (colado na prova, mesmo fundo; único lugar com preço na página): "Hoje você leva", 6 itens, o mesmo mockup do topo (`mockup-kit.webp` / `mockup-kit-celular.webp`, 70% da largura no celular), ~~R$ 286~~ R$ 29,90, botão para o checkout e "Pix ou cartão · 7 dias de garantia" (sem citar a Hubla nem prazo de entrega). O cartão inteiro cabe numa tela de celular (testado em 360×640). Embaixo: link do WhatsApp e os complementos (ganchos e documentação, sem mudança)
 7. **Garantia**: selo, título e botão
-8. **FAQ** com 4 perguntas: saber usar o Notion, celular, como recebo o acesso (scripts no 7º dia), serve pra quem está começando
+8. **FAQ** com 4 perguntas: saber usar o Notion, celular, como recebo o acesso (por e-mail, logo depois do pagamento; a página não fala em entrega no 7º dia), serve pra quem está começando
 9. **Fechamento**: título e botão "Quero parar de surtar"
 10. **Rodapé**: © Organiza SM, aviso da marca Notion e e-mail de suporte, sem botão. A barra fixa no celular continua
 
@@ -86,7 +86,7 @@ Nada garante que uma IA recomende o produto: elas respondem com o que encontram 
 - [ ] Garantia: a página usa 7 dias em todo lugar. O pedido da reformulação citava 30 dias na letra miúda; se a Hubla estiver configurada para 30, trocar em todos os lugares de uma vez
 - [x] Ganchos: são 200, no produto e no banco avulso
 - [x] `og:image` 1200x630 em `assets/img/og-image.jpg`
-- [ ] Confirmar na Hubla a entrega dos scripts no 7º dia (a página e o FAQ prometem isso) e que os ganchos vêm separados por nicho
+- [ ] Confirmar na Hubla que os ganchos vêm separados por nicho (a menção à entrega dos scripts no 7º dia saiu da página a pedido da Carol)
 - [ ] Confirmar que a central funciona no plano gratuito do Notion (o FAQ afirma isso)
 - [x] E-mail de suporte no rodapé: suporteorganizasm@gmail.com
 - [ ] Termos de uso e política de privacidade (links removidos do rodapé até as páginas existirem)
