@@ -62,6 +62,14 @@ Checkout: **Hubla**. Os links ficam em `CONFIG.checkout` (`assets/js/main.js`): 
 
 Saíram: "Oi, eu sou a Carol" (Quem criou), a demonstração com abas, o "e vem junto", a pergunta sobre pagar o Notion e a de "e se eu não gostar". Os mockups foram montados com telas do vídeo da Carol, sem sombra embutida (a sombra é feita no CSS com `drop-shadow`, que acompanha o contorno) (página inicial e ficha do cliente); para refazer, ver `assets/img/` e gerar de novo a partir de um print.
 
+## SEO e IAs (ChatGPT, Claude, Perplexity, Gemini)
+Nada garante que uma IA recomende o produto: elas respondem com o que encontram na internet (o site e o que falam dele em outros lugares). O que está feito no site:
+- `robots.txt` liberando buscadores e robôs de IA (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended etc.) e apontando para o `sitemap.xml`
+- `llms.txt`: resumo do produto em texto simples para IAs (o que é, para quem, o que vem, preço, compra, links). **Atualizar quando a oferta mudar**
+- No `<head>` do `index.html`: canonical, robots, Open Graph com `assets/img/og-image.jpg` (1200x630) e dados estruturados JSON-LD (Product com preço, FAQPage com as perguntas do FAQ e WebSite). **Se mudar o preço ou o FAQ, mudar o JSON-LD também.** Sem avaliações (`aggregateRating`) no JSON-LD: só colocar com avaliações reais
+- Tudo aponta para `https://organizasm.netlify.app/`. Se comprar domínio próprio, trocar em canonical, og:url, og:image, JSON-LD, `robots.txt`, `sitemap.xml` e `llms.txt`
+- Fora do site (Carol): cadastrar no Google Search Console e no Bing Webmaster Tools (a busca do ChatGPT usa o Bing) e enviar o sitemap; conseguir menções em outros lugares (Instagram, YouTube, blogs, grupos, Reddit) com o nome "Organiza SM" e a frase "sistema no Notion para social media"
+
 ## Página de WhatsApp (link de bio para campanhas)
 `whatsapp/index.html`, publicada em **organizasm.netlify.app/whatsapp**. Feita como uma página do Notion: capa da marca ("Organiza SM · seu escritório"), foto da Carol como ícone, título "Me conta como está a sua carteira hoje.", botão "Chamar no WhatsApp" (mesmo link de `CONFIG.contato.whatsapp`), perguntas de exemplo como etiquetas do Notion, um print de depoimento real e dois atalhos para o site (#produto e #oferta), sem preço. Tem o mesmo Pixel da Meta: PageView ao abrir e **Contact** ao clicar no WhatsApp. UTMs e fbclid da campanha seguem para os links do site. `noindex` para não aparecer no Google. No celular, o botão do WhatsApp aparece sem rolar. Se o link do WhatsApp mudar, trocar aqui e no `main.js`.
 
@@ -75,7 +83,7 @@ Saíram: "Oi, eu sou a Carol" (Quem criou), a demonstração com abas, o "e vem 
 - [x] Link do WhatsApp em `CONFIG.contato.whatsapp`
 - [ ] Garantia: a página usa 7 dias em todo lugar. O pedido da reformulação citava 30 dias na letra miúda; se a Hubla estiver configurada para 30, trocar em todos os lugares de uma vez
 - [x] Ganchos: são 200, no produto e no banco avulso
-- [ ] `og:image` 1200x630 (dá para usar o mockup do topo como base)
+- [x] `og:image` 1200x630 em `assets/img/og-image.jpg`
 - [ ] Confirmar na Hubla a entrega dos scripts no 7º dia (a página e o FAQ prometem isso) e que os ganchos vêm separados por nicho
 - [ ] Confirmar que a central funciona no plano gratuito do Notion (o FAQ afirma isso)
 - [x] E-mail de suporte no rodapé: suporteorganizasm@gmail.com

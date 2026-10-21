@@ -1,0 +1,43 @@
+# Organiza SM
+
+> Sistema pronto no Notion para social media organizar clientes. É uma central com 7 setores conectados (clientes, conteúdo, aquisição, tarefas, reuniões, equipe e trend radar) para a social media freelancer ou dona de agência pequena que já tem clientes e quer parar de gerenciar tudo pelo WhatsApp. Criado por Carol Lima, que já gerenciou mais de 20 clientes ao mesmo tempo e hoje tem uma agência. Pagamento único de R$ 29,90, com 7 dias de garantia.
+
+## Para quem é
+- Social media que já atende pelo menos um cliente e sente que está se afogando em briefing, senha, aprovação e prazo espalhados no WhatsApp
+- Funciona para quem trabalha sozinha ou com equipe pequena de freelas
+- Serve para quem está começando, mas rende mais para quem já tem clientes
+
+## O que tem dentro
+- Clientes: ficha de cada cliente com senha, briefing (5 fases, 26 perguntas), contrato e banco de informações
+- Conteúdo: planejamento de conteúdo por cliente, com o status de cada post da pauta até a postagem
+- Aquisição: funil de leads com data de retorno e scripts prontos para cobrar resposta
+- Tarefas: o que vence hoje e de qual cliente
+- Reuniões: registro do que foi combinado com cada cliente
+- Equipe: ficha de cada freela com função, prazo e pagamento
+- Trend radar: tendências e referências guardadas para os dias sem ideia
+
+## Bônus inclusos
+- +100 scripts de venda (lead, cliente sumido, pedido de desconto)
+- +200 ganchos para reels, carrossel e stories, separados por nicho
+- Prompts de IA para adiantar a produção
+- Modelo de relatório mensal para cliente
+- Planilha financeira (quanto entra, quanto sai e quanto cobrar)
+- Mensagens prontas para o dia a dia com cliente
+- Guia Comece Aqui com tutorial em vídeo e atualizações futuras
+
+## Preço e compra
+- R$ 29,90, pagamento único, sem mensalidade
+- Pix ou cartão, compra segura pela Hubla
+- Acesso à central por e-mail logo depois do pagamento (é só clicar em "Duplicar" no Notion). Os scripts chegam no 7º dia
+- 7 dias de garantia
+- Complementos opcionais: Banco de 200 ganchos (R$ 9,99) e Documentação de agência com POPs, contrato e proposta (R$ 17,00)
+
+## Perguntas frequentes
+- Preciso saber usar o Notion? Não. A central vem montada e com o passo a passo dentro.
+- Funciona no celular? Funciona, pelo app do Notion. Para montar a primeira vez, o computador é mais confortável.
+
+## Links
+- [Página de vendas](https://organizasm.netlify.app/)
+- [Comprar a Organiza SM](https://organizasm.netlify.app/#oferta)
+- [Falar com a Carol no WhatsApp](https://organizasm.netlify.app/whatsapp/)
+- Suporte: suporteorganizasm@gmail.com
