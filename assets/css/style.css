@@ -881,9 +881,6 @@ strong, b { font-weight: 700; }
   .nav { gap: 8px; margin-bottom: 20px; }
   .nav-cta { font-size: .7rem; padding: 8px 10px; white-space: nowrap; }
   .brand { font-size: .72rem; letter-spacing: .1em; white-space: nowrap; }
-  /* no celular o botão vem antes do mockup, para aparecer sem rolar */
-  .hero-cta { order: 1; }
-  .hero-shot { order: 2; margin-top: 8px; }
   .hero .hero-h2 { font-size: 1.85rem; margin-bottom: 14px; }
   .hero .hero-h1 { font-size: .7rem; margin-bottom: 10px; }
   .hero-me img { width: 44px; height: 44px; }
